@@ -13,5 +13,16 @@ struct MCStartApp: App {
         WindowGroup {
             ContentView()
         }
+        .commands {
+            SidebarCommands()
+            
+            CommandGroup(after: .appInfo) {
+                
+            }
+        }
+        
+        Settings {
+            SettingsView()
+        }
     }
 }

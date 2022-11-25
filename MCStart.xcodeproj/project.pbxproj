@@ -11,6 +11,16 @@
 		635CF86E293127C300184766 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF86D293127C300184766 /* ContentView.swift */; };
 		635CF870293127C400184766 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635CF86F293127C400184766 /* Assets.xcassets */; };
 		635CF873293127C400184766 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635CF872293127C400184766 /* Preview Assets.xcassets */; };
+		635CF87C2931281300184766 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF87B2931281300184766 /* SidebarView.swift */; };
+		635CF87F2931288900184766 /* InstanceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF87E2931288900184766 /* InstanceListView.swift */; };
+		635CF8812931299F00184766 /* InstanceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF8802931299F00184766 /* InstanceDetailView.swift */; };
+		635CF88629312A3200184766 /* Instance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF88529312A3200184766 /* Instance.swift */; };
+		635CF88829312AA600184766 /* Instance Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF88729312AA600184766 /* Instance Category.swift */; };
+		635CF88B293132EB00184766 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF88A293132EB00184766 /* SettingsView.swift */; };
+		635CF88D2931338C00184766 /* Instance Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF88C2931338C00184766 /* Instance Settings.swift */; };
+		635CF8902931396F00184766 /* EditableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF88F2931396F00184766 /* EditableLabel.swift */; };
+		635CF893293141F300184766 /* Open Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF892293141F300184766 /* Open Finder.swift */; };
+		635CF89529314D9500184766 /* Toggle Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF89429314D9500184766 /* Toggle Sidebar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +30,16 @@
 		635CF86F293127C400184766 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		635CF872293127C400184766 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		635CF874293127C400184766 /* MCStart.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MCStart.entitlements; sourceTree = "<group>"; };
+		635CF87B2931281300184766 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		635CF87E2931288900184766 /* InstanceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceListView.swift; sourceTree = "<group>"; };
+		635CF8802931299F00184766 /* InstanceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceDetailView.swift; sourceTree = "<group>"; };
+		635CF88529312A3200184766 /* Instance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instance.swift; sourceTree = "<group>"; };
+		635CF88729312AA600184766 /* Instance Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Category.swift"; sourceTree = "<group>"; };
+		635CF88A293132EB00184766 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		635CF88C2931338C00184766 /* Instance Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Settings.swift"; sourceTree = "<group>"; };
+		635CF88F2931396F00184766 /* EditableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableLabel.swift; sourceTree = "<group>"; };
+		635CF892293141F300184766 /* Open Finder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Open Finder.swift"; sourceTree = "<group>"; };
+		635CF89429314D9500184766 /* Toggle Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Toggle Sidebar.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +72,10 @@
 		635CF86A293127C300184766 /* MCStart */ = {
 			isa = PBXGroup;
 			children = (
+				635CF88429312A2800184766 /* Extensions */,
+				635CF88329312A2400184766 /* Structs */,
+				635CF88229312A1E00184766 /* Logic */,
+				635CF87A2931280700184766 /* Views */,
 				635CF86B293127C300184766 /* MCStartApp.swift */,
 				635CF86D293127C300184766 /* ContentView.swift */,
 				635CF86F293127C400184766 /* Assets.xcassets */,
@@ -67,6 +91,76 @@
 				635CF872293127C400184766 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		635CF87A2931280700184766 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				635CF88E2931396100184766 /* Misc */,
+				635CF889293132E200184766 /* Settings */,
+				635CF87D2931288000184766 /* Instance */,
+				635CF87B2931281300184766 /* SidebarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		635CF87D2931288000184766 /* Instance */ = {
+			isa = PBXGroup;
+			children = (
+				635CF87E2931288900184766 /* InstanceListView.swift */,
+				635CF8802931299F00184766 /* InstanceDetailView.swift */,
+			);
+			path = Instance;
+			sourceTree = "<group>";
+		};
+		635CF88229312A1E00184766 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				635CF891293141E800184766 /* Files */,
+				635CF89429314D9500184766 /* Toggle Sidebar.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		635CF88329312A2400184766 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				635CF88529312A3200184766 /* Instance.swift */,
+				635CF88729312AA600184766 /* Instance Category.swift */,
+				635CF88C2931338C00184766 /* Instance Settings.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		635CF88429312A2800184766 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		635CF889293132E200184766 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				635CF88A293132EB00184766 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		635CF88E2931396100184766 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				635CF88F2931396F00184766 /* EditableLabel.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		635CF891293141E800184766 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				635CF892293141F300184766 /* Open Finder.swift */,
+			);
+			path = Files;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +233,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				635CF88829312AA600184766 /* Instance Category.swift in Sources */,
+				635CF88B293132EB00184766 /* SettingsView.swift in Sources */,
 				635CF86E293127C300184766 /* ContentView.swift in Sources */,
+				635CF89529314D9500184766 /* Toggle Sidebar.swift in Sources */,
+				635CF87F2931288900184766 /* InstanceListView.swift in Sources */,
+				635CF893293141F300184766 /* Open Finder.swift in Sources */,
+				635CF8812931299F00184766 /* InstanceDetailView.swift in Sources */,
+				635CF8902931396F00184766 /* EditableLabel.swift in Sources */,
 				635CF86C293127C300184766 /* MCStartApp.swift in Sources */,
+				635CF88629312A3200184766 /* Instance.swift in Sources */,
+				635CF87C2931281300184766 /* SidebarView.swift in Sources */,
+				635CF88D2931338C00184766 /* Instance Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

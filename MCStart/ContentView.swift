@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var instanceCategories = InstanceCategories()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            SidebarView(instanceCategories: instanceCategories)
+            Text("no Category Selected")
+            Text("No Instance Selected")
         }
-        .padding()
+        .environmentObject(instanceCategories)
     }
 }
 
