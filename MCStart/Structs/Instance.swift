@@ -12,11 +12,13 @@ struct Instance: Identifiable, Codable {
     var id: UUID = UUID()
     
     var name: String
-    let version: Int
+    let version: String
     
     let dateCreated: Date
     
     let iconSymbolName: String
+    
+    var mods: [Mod]?
     
     let settings: InstanceSettings
     

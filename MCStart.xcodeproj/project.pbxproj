@@ -21,6 +21,10 @@
 		635CF8902931396F00184766 /* EditableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF88F2931396F00184766 /* EditableLabel.swift */; };
 		635CF893293141F300184766 /* Open Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF892293141F300184766 /* Open Finder.swift */; };
 		635CF89529314D9500184766 /* Toggle Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF89429314D9500184766 /* Toggle Sidebar.swift */; };
+		635CF89729315B6A00184766 /* Mod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF89629315B6A00184766 /* Mod.swift */; };
+		635CF89A293164B700184766 /* InstanceSettingMods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF899293164B700184766 /* InstanceSettingMods.swift */; };
+		635CF89C293164CC00184766 /* InstanceSettingJavaOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF89B293164CC00184766 /* InstanceSettingJavaOptions.swift */; };
+		635CF89E293169CF00184766 /* App State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF89D293169CF00184766 /* App State.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		635CF88F2931396F00184766 /* EditableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableLabel.swift; sourceTree = "<group>"; };
 		635CF892293141F300184766 /* Open Finder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Open Finder.swift"; sourceTree = "<group>"; };
 		635CF89429314D9500184766 /* Toggle Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Toggle Sidebar.swift"; sourceTree = "<group>"; };
+		635CF89629315B6A00184766 /* Mod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mod.swift; sourceTree = "<group>"; };
+		635CF899293164B700184766 /* InstanceSettingMods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceSettingMods.swift; sourceTree = "<group>"; };
+		635CF89B293164CC00184766 /* InstanceSettingJavaOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceSettingJavaOptions.swift; sourceTree = "<group>"; };
+		635CF89D293169CF00184766 /* App State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App State.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,7 @@
 				635CF86F293127C400184766 /* Assets.xcassets */,
 				635CF874293127C400184766 /* MCStart.entitlements */,
 				635CF871293127C400184766 /* Preview Content */,
+				635CF89D293169CF00184766 /* App State.swift */,
 			);
 			path = MCStart;
 			sourceTree = "<group>";
@@ -107,6 +116,7 @@
 		635CF87D2931288000184766 /* Instance */ = {
 			isa = PBXGroup;
 			children = (
+				635CF8982931649B00184766 /* Instance Settings */,
 				635CF87E2931288900184766 /* InstanceListView.swift */,
 				635CF8802931299F00184766 /* InstanceDetailView.swift */,
 			);
@@ -128,6 +138,7 @@
 				635CF88529312A3200184766 /* Instance.swift */,
 				635CF88729312AA600184766 /* Instance Category.swift */,
 				635CF88C2931338C00184766 /* Instance Settings.swift */,
+				635CF89629315B6A00184766 /* Mod.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -161,6 +172,15 @@
 				635CF892293141F300184766 /* Open Finder.swift */,
 			);
 			path = Files;
+			sourceTree = "<group>";
+		};
+		635CF8982931649B00184766 /* Instance Settings */ = {
+			isa = PBXGroup;
+			children = (
+				635CF899293164B700184766 /* InstanceSettingMods.swift */,
+				635CF89B293164CC00184766 /* InstanceSettingJavaOptions.swift */,
+			);
+			path = "Instance Settings";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,15 +253,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				635CF89A293164B700184766 /* InstanceSettingMods.swift in Sources */,
 				635CF88829312AA600184766 /* Instance Category.swift in Sources */,
 				635CF88B293132EB00184766 /* SettingsView.swift in Sources */,
 				635CF86E293127C300184766 /* ContentView.swift in Sources */,
 				635CF89529314D9500184766 /* Toggle Sidebar.swift in Sources */,
 				635CF87F2931288900184766 /* InstanceListView.swift in Sources */,
+				635CF89729315B6A00184766 /* Mod.swift in Sources */,
 				635CF893293141F300184766 /* Open Finder.swift in Sources */,
 				635CF8812931299F00184766 /* InstanceDetailView.swift in Sources */,
 				635CF8902931396F00184766 /* EditableLabel.swift in Sources */,
+				635CF89C293164CC00184766 /* InstanceSettingJavaOptions.swift in Sources */,
 				635CF86C293127C300184766 /* MCStartApp.swift in Sources */,
+				635CF89E293169CF00184766 /* App State.swift in Sources */,
 				635CF88629312A3200184766 /* Instance.swift in Sources */,
 				635CF87C2931281300184766 /* SidebarView.swift in Sources */,
 				635CF88D2931338C00184766 /* Instance Settings.swift in Sources */,

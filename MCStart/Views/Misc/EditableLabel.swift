@@ -26,6 +26,7 @@ public struct EditableLabel: View {
             // Text variation of View
             Text(text)
                 .opacity(editProcessGoing ? 0 : 1)
+                .padding(.leading, 0)
             
             // TextField for edit mode of View
             TextField("", text: $newValue,

@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @StateObject var instanceCategories = InstanceCategories()
+    @StateObject var appState = AppState()
     
     var body: some View {
         NavigationView {
@@ -18,6 +19,7 @@ struct ContentView: View {
             Text("No Instance Selected")
         }
         .environmentObject(instanceCategories)
+        .environmentObject(appState)
     }
 }
 
