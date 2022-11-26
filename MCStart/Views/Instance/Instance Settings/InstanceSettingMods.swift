@@ -60,14 +60,16 @@ struct InstanceSettingMods: View {
                     
                     Spacer()
                     
-                    OpenModsFolderButton()
+                    #warning("Switch this to the actual instance's mods folder after it's implemented")
+                    OpenModsFolderButton(modsFolder: "/Applications")
                         .labelStyle(.titleOnly)
 
                 }
             } else {
                 VStack(alignment: .center) {
+                    #warning("Switch this to the actual instance's mods folder after it's implemented")
                     NoticeView(noticeType: .notice, noticeText: "This instance has no mods installed", isFullscreen: false)
-                    OpenModsFolderButton()
+                    OpenModsFolderButton(modsFolder: "/Applications")
                         .labelStyle(.titleOnly)
                 }
             }

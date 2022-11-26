@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct OpenModsFolderButton: View {
+    
+    @State var modsFolder: String
+    
     var body: some View {
         Button {
-            print("Would open mods folder")
+            openFinder(at: URL(string: modsFolder)!)
         } label: {
             Label("Open Mods Folder", systemImage: "checklist")
         }
