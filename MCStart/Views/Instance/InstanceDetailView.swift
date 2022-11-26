@@ -40,12 +40,25 @@ struct InstanceDetailView: View {
                             .gridCellUnsizedAxes(
                                 .horizontal)
                         GridRow {
-                            Text("Created")
-                            Text(instance.convertDateToPresentableFormat(date: instance.dateCreated))
+                            Text("Mod Loader")
+                            Text(instance.modLoader.rawValue)
                         }
                     }
                 } label: {
-                    Text("Instance Information")
+                    Text("Version Information")
+                }
+
+                GroupBox {
+                    Grid(alignment: .leading) {
+                        GridRow {
+                            Text("Created")
+                            Text(instance.convertDateToPresentableFormat(date: instance.dateCreated))
+                        }
+                        Divider()
+                            .gridCellUnsizedAxes(.horizontal)
+                    }
+                } label: {
+                    Text("Statistics")
                 }
 
                 
@@ -75,16 +88,21 @@ struct InstanceDetailView: View {
             if appState.isShowingInstanceSettings {
                 
                 TabView(selection: $appState.currentlyOpenedSettingsTab) {
+                    InstanceSettingMinecraftOptions()
+                        .tabItem {
+                            Label("Minecraft", systemImage: "cube")
+                        }
+                        .tag(1)
                     InstanceSettingMods(mods: $instance.mods)
                         .tabItem {
                             Label("Mods", systemImage: "checklist")
                         }
-                        .tag(1)
+                        .tag(2)
                     InstanceSettingJavaOptions(settings: $instance.settings)
                         .tabItem {
                             Label("Java Options", systemImage: "memorychip")
                         }
-                        .tag(2)
+                        .tag(3)
                 }
                 .padding()
                 .frame(

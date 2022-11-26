@@ -32,6 +32,7 @@
 		63F0B9502932870F00317642 /* App Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B94F2932870F00317642 /* App Globals.swift */; };
 		63F0B95229328A7C00317642 /* Check if Exists At Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B95129328A7C00317642 /* Check if Exists At Path.swift */; };
 		63F0B95529328AA600317642 /* Initialize Folders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B95429328AA600317642 /* Initialize Folders.swift */; };
+		63F0B9572932A90500317642 /* InstanceSettingMinecraftOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B9562932A90500317642 /* InstanceSettingMinecraftOptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,8 @@
 		63F0B94F2932870F00317642 /* App Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Globals.swift"; sourceTree = "<group>"; };
 		63F0B95129328A7C00317642 /* Check if Exists At Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Check if Exists At Path.swift"; sourceTree = "<group>"; };
 		63F0B95429328AA600317642 /* Initialize Folders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Initialize Folders.swift"; sourceTree = "<group>"; };
+		63F0B9562932A90500317642 /* InstanceSettingMinecraftOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceSettingMinecraftOptions.swift; sourceTree = "<group>"; };
+		63F0B9582932AA6900317642 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,7 @@
 		635CF85F293127C300184766 = {
 			isa = PBXGroup;
 			children = (
+				63F0B9582932AA6900317642 /* README.md */,
 				635CF86A293127C300184766 /* MCStart */,
 				635CF869293127C300184766 /* Products */,
 			);
@@ -198,6 +202,7 @@
 				63F0B94A2932590900317642 /* Buttons */,
 				635CF899293164B700184766 /* InstanceSettingMods.swift */,
 				635CF89B293164CC00184766 /* InstanceSettingJavaOptions.swift */,
+				63F0B9562932A90500317642 /* InstanceSettingMinecraftOptions.swift */,
 			);
 			path = "Instance Settings";
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 				63F0B9502932870F00317642 /* App Globals.swift in Sources */,
 				635CF89C293164CC00184766 /* InstanceSettingJavaOptions.swift in Sources */,
 				63F0B94929324D0C00317642 /* NoticeView.swift in Sources */,
+				63F0B9572932A90500317642 /* InstanceSettingMinecraftOptions.swift in Sources */,
 				635CF86C293127C300184766 /* MCStartApp.swift in Sources */,
 				63F0B9462932488100317642 /* Select File.swift in Sources */,
 				63F0B95529328AA600317642 /* Initialize Folders.swift in Sources */,
