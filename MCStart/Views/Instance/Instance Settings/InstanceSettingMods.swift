@@ -21,8 +21,10 @@ struct InstanceSettingMods: View {
                             get: {
                                 return mod.isEnabled
                             },
-                            set: { _ in
-                                //mod.isEnabled = $0
+                            set: {
+                                if let index = mods.firstIndex(where: { $0.id == mod.id }) {
+                                    mods[index].isEnabled = $0
+                                }
                             }
                         ))
                     }
