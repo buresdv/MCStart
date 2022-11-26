@@ -12,6 +12,8 @@ struct InstanceSettings: Identifiable, Codable {
     
     var javaExecutablePath: String
     
+    var javaArguments: [String]
+    
     var minMemory: Int?
     var maxMemory: Int?
     

@@ -36,9 +36,7 @@ struct InstanceDetailView: View {
                             Text("Version")
                             Text(instance.version)
                         }
-                        Divider()
-                            .gridCellUnsizedAxes(
-                                .horizontal)
+                        DividerMaintainingGridWidth()
                         GridRow {
                             Text("Mod Loader")
                             Text(instance.modLoader.rawValue)
@@ -54,8 +52,7 @@ struct InstanceDetailView: View {
                             Text("Created")
                             Text(instance.convertDateToPresentableFormat(date: instance.dateCreated))
                         }
-                        Divider()
-                            .gridCellUnsizedAxes(.horizontal)
+                        DividerMaintainingGridWidth()
                     }
                 } label: {
                     Text("Statistics")
