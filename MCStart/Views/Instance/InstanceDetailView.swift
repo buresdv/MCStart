@@ -53,7 +53,7 @@ struct InstanceDetailView: View {
                 
                 HStack {
                     Button {
-                        print("Would open instance folder")
+                        openFinder(at: AppGlobals.categoriesDirectoryPath)
                     } label: {
                         Text("Open Instance Folder")
                     }
@@ -74,18 +74,17 @@ struct InstanceDetailView: View {
             
             if appState.isShowingInstanceSettings {
                 
-                TabView {
-                    
+                TabView(selection: $appState.currentlyOpenedSettingsTab) {
                     InstanceSettingMods(mods: $instance.mods)
                         .tabItem {
                             Label("Mods", systemImage: "checklist")
                         }
-                    
+                        .tag(1)
                     InstanceSettingJavaOptions(settings: $instance.settings)
                         .tabItem {
                             Label("Java Options", systemImage: "memorychip")
                         }
-                    
+                        .tag(2)
                 }
                 .padding()
                 .frame(
@@ -95,6 +94,10 @@ struct InstanceDetailView: View {
                     maxHeight: .infinity,
                     alignment: .leading
                 )
+                //Remember which tab was opened when switching between instances
+                .onChange(of: appState.currentlyOpenedSettingsTab) { newValue in
+                    appState.currentlyOpenedSettingsTab = newValue
+                }
                 
             }
         }

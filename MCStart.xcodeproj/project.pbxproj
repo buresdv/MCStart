@@ -29,6 +29,9 @@
 		63F0B94929324D0C00317642 /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B94829324D0C00317642 /* NoticeView.swift */; };
 		63F0B94C29325AAC00317642 /* OpenModsFolderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B94B29325AAC00317642 /* OpenModsFolderButton.swift */; };
 		63F0B94E2932622400317642 /* View - Conditional Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B94D2932622400317642 /* View - Conditional Modifiers.swift */; };
+		63F0B9502932870F00317642 /* App Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B94F2932870F00317642 /* App Globals.swift */; };
+		63F0B95229328A7C00317642 /* Check if Exists At Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B95129328A7C00317642 /* Check if Exists At Path.swift */; };
+		63F0B95529328AA600317642 /* Initialize Folders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B95429328AA600317642 /* Initialize Folders.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		63F0B94829324D0C00317642 /* NoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoticeView.swift; path = MCStart/Views/NoticeView.swift; sourceTree = SOURCE_ROOT; };
 		63F0B94B29325AAC00317642 /* OpenModsFolderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenModsFolderButton.swift; sourceTree = "<group>"; };
 		63F0B94D2932622400317642 /* View - Conditional Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View - Conditional Modifiers.swift"; sourceTree = "<group>"; };
+		63F0B94F2932870F00317642 /* App Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Globals.swift"; sourceTree = "<group>"; };
+		63F0B95129328A7C00317642 /* Check if Exists At Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Check if Exists At Path.swift"; sourceTree = "<group>"; };
+		63F0B95429328AA600317642 /* Initialize Folders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Initialize Folders.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,7 @@
 				635CF874293127C400184766 /* MCStart.entitlements */,
 				635CF871293127C400184766 /* Preview Content */,
 				635CF89D293169CF00184766 /* App State.swift */,
+				63F0B94F2932870F00317642 /* App Globals.swift */,
 			);
 			path = MCStart;
 			sourceTree = "<group>";
@@ -179,8 +186,8 @@
 		635CF891293141E800184766 /* Files */ = {
 			isa = PBXGroup;
 			children = (
-				635CF892293141F300184766 /* Open Finder.swift */,
-				63F0B9452932488100317642 /* Select File.swift */,
+				63F0B95329328A9700317642 /* Helpers */,
+				63F0B95429328AA600317642 /* Initialize Folders.swift */,
 			);
 			path = Files;
 			sourceTree = "<group>";
@@ -210,6 +217,16 @@
 				63F0B94B29325AAC00317642 /* OpenModsFolderButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		63F0B95329328A9700317642 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				635CF892293141F300184766 /* Open Finder.swift */,
+				63F0B9452932488100317642 /* Select File.swift */,
+				63F0B95129328A7C00317642 /* Check if Exists At Path.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,13 +308,16 @@
 				635CF89729315B6A00184766 /* Mod.swift in Sources */,
 				63F0B94C29325AAC00317642 /* OpenModsFolderButton.swift in Sources */,
 				635CF893293141F300184766 /* Open Finder.swift in Sources */,
+				63F0B95229328A7C00317642 /* Check if Exists At Path.swift in Sources */,
 				635CF8812931299F00184766 /* InstanceDetailView.swift in Sources */,
 				635CF8902931396F00184766 /* EditableLabel.swift in Sources */,
 				63F0B94E2932622400317642 /* View - Conditional Modifiers.swift in Sources */,
+				63F0B9502932870F00317642 /* App Globals.swift in Sources */,
 				635CF89C293164CC00184766 /* InstanceSettingJavaOptions.swift in Sources */,
 				63F0B94929324D0C00317642 /* NoticeView.swift in Sources */,
 				635CF86C293127C300184766 /* MCStartApp.swift in Sources */,
 				63F0B9462932488100317642 /* Select File.swift in Sources */,
+				63F0B95529328AA600317642 /* Initialize Folders.swift in Sources */,
 				635CF89E293169CF00184766 /* App State.swift in Sources */,
 				635CF88629312A3200184766 /* Instance.swift in Sources */,
 				635CF87C2931281300184766 /* SidebarView.swift in Sources */,

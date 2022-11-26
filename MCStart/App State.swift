@@ -10,5 +10,6 @@ import Foundation
 class AppState: ObservableObject {
     
     @Published var isShowingInstanceSettings: Bool = false
+    @Published var currentlyOpenedSettingsTab: Int = 1
     
 }

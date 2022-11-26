@@ -20,6 +20,10 @@ struct ContentView: View {
         }
         .environmentObject(instanceCategories)
         .environmentObject(appState)
+        .onAppear {
+            print(AppGlobals.categoriesDirectoryPath)
+            initializeFolders()
+        }
     }
 }
 
