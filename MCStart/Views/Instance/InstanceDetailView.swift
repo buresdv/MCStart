@@ -76,12 +76,12 @@ struct InstanceDetailView: View {
                 
                 TabView {
                     
-                    InstanceSettingMods()
+                    InstanceSettingMods(mods: $instance.mods)
                         .tabItem {
                             Label("Mods", systemImage: "checklist")
                         }
                     
-                    InstanceSettingJavaOptions()
+                    InstanceSettingJavaOptions(settings: $instance.settings)
                         .tabItem {
                             Label("Java Options", systemImage: "memorychip")
                         }
@@ -106,24 +106,20 @@ struct InstanceDetailView: View {
             alignment: .leading
         )
         .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                Button {
-                    print("Started")
-                } label: {
-                    Label("Start", systemImage: "play.fill")
-                }
-
-            }
-            
-            ToolbarItem(placement: .primaryAction) {
-                Button {
-                    withAnimation {
-                        appState.isShowingInstanceSettings.toggle()
+            ToolbarItemGroup(placement: .primaryAction) {
+                    Button {
+                        print("Started")
+                    } label: {
+                        Label("Start", systemImage: "play.fill")
                     }
-                } label: {
-                    Label("Instance Settings", systemImage: "gear")
-                }
-
+                
+                    Button {
+                        withAnimation {
+                            appState.isShowingInstanceSettings.toggle()
+                        }
+                    } label: {
+                        Label("Instance Settings", systemImage: "gear")
+                    }
             }
         }
     }

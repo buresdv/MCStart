@@ -8,13 +8,56 @@
 import SwiftUI
 
 struct InstanceSettingJavaOptions: View {
+    
+    @Binding var settings: InstanceSettings
+    
     var body: some View {
-        Text("Java Options")
-    }
-}
+        VStack {
+            GroupBox {
+                Grid(alignment: .leading) {
+                    GridRow {
+                        Text("Java Executable Path")
+                        HStack {
+                            TextField("Java Executable Path", text: $settings.javaExecutablePath)
+                            Button {
+                                do {
+                                    let selectedPath = try selectFile(canChooseFiles: false, canChooseDirectories: true, title: "Select Java Installation")
+                                    
+                                    settings.javaExecutablePath = selectedPath.absoluteString
+                                    
+                                } catch let error as NSError {
+                                    print(error)
+                                }
+                            } label: {
+                                Label("Select Java Installation", systemImage: "magnifyingglass")
+                                    .labelStyle(.iconOnly)
+                            }
 
-struct InstanceSettingJavaOptions_Previews: PreviewProvider {
-    static var previews: some View {
-        InstanceSettingJavaOptions()
+                        }
+                    }
+                }
+            } label: {
+                Text("Java Settings")
+            }
+            
+            GroupBox {
+                Grid(alignment: .leading) {
+                    GridRow {
+                        Text("Min Memory")
+                        TextField("Min Memory", value: $settings.minMemory, formatter: NumberFormatter())
+                    }
+                    
+                    GridRow {
+                        Text("Max Memory")
+                        TextField("Max Memory", value: $settings.maxMemory, formatter: NumberFormatter())
+                    }
+                }
+            } label: {
+                Text("Memory Settings")
+            }
+            
+            Spacer()
+        }
+        .padding()
     }
 }

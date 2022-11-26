@@ -6,3 +6,8 @@
 //
 
 import Foundation
+import AppKit
+
+func openFinder(at path: URL) -> Void {
+    NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: path.path)
+}

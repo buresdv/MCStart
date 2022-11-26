@@ -25,6 +25,10 @@
 		635CF89A293164B700184766 /* InstanceSettingMods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF899293164B700184766 /* InstanceSettingMods.swift */; };
 		635CF89C293164CC00184766 /* InstanceSettingJavaOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF89B293164CC00184766 /* InstanceSettingJavaOptions.swift */; };
 		635CF89E293169CF00184766 /* App State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF89D293169CF00184766 /* App State.swift */; };
+		63F0B9462932488100317642 /* Select File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B9452932488100317642 /* Select File.swift */; };
+		63F0B94929324D0C00317642 /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B94829324D0C00317642 /* NoticeView.swift */; };
+		63F0B94C29325AAC00317642 /* OpenModsFolderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B94B29325AAC00317642 /* OpenModsFolderButton.swift */; };
+		63F0B94E2932622400317642 /* View - Conditional Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B94D2932622400317642 /* View - Conditional Modifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		635CF899293164B700184766 /* InstanceSettingMods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceSettingMods.swift; sourceTree = "<group>"; };
 		635CF89B293164CC00184766 /* InstanceSettingJavaOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceSettingJavaOptions.swift; sourceTree = "<group>"; };
 		635CF89D293169CF00184766 /* App State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App State.swift"; sourceTree = "<group>"; };
+		63F0B9452932488100317642 /* Select File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Select File.swift"; sourceTree = "<group>"; };
+		63F0B94829324D0C00317642 /* NoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoticeView.swift; path = MCStart/Views/NoticeView.swift; sourceTree = SOURCE_ROOT; };
+		63F0B94B29325AAC00317642 /* OpenModsFolderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenModsFolderButton.swift; sourceTree = "<group>"; };
+		63F0B94D2932622400317642 /* View - Conditional Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View - Conditional Modifiers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +113,7 @@
 		635CF87A2931280700184766 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				63F0B94729324CFB00317642 /* Reusables */,
 				635CF88E2931396100184766 /* Misc */,
 				635CF889293132E200184766 /* Settings */,
 				635CF87D2931288000184766 /* Instance */,
@@ -117,8 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				635CF8982931649B00184766 /* Instance Settings */,
-				635CF87E2931288900184766 /* InstanceListView.swift */,
 				635CF8802931299F00184766 /* InstanceDetailView.swift */,
+				635CF87E2931288900184766 /* InstanceListView.swift */,
 			);
 			path = Instance;
 			sourceTree = "<group>";
@@ -146,6 +155,7 @@
 		635CF88429312A2800184766 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				63F0B94D2932622400317642 /* View - Conditional Modifiers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -170,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				635CF892293141F300184766 /* Open Finder.swift */,
+				63F0B9452932488100317642 /* Select File.swift */,
 			);
 			path = Files;
 			sourceTree = "<group>";
@@ -177,10 +188,28 @@
 		635CF8982931649B00184766 /* Instance Settings */ = {
 			isa = PBXGroup;
 			children = (
+				63F0B94A2932590900317642 /* Buttons */,
 				635CF899293164B700184766 /* InstanceSettingMods.swift */,
 				635CF89B293164CC00184766 /* InstanceSettingJavaOptions.swift */,
 			);
 			path = "Instance Settings";
+			sourceTree = "<group>";
+		};
+		63F0B94729324CFB00317642 /* Reusables */ = {
+			isa = PBXGroup;
+			children = (
+				63F0B94829324D0C00317642 /* NoticeView.swift */,
+			);
+			name = Reusables;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		63F0B94A2932590900317642 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				63F0B94B29325AAC00317642 /* OpenModsFolderButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,11 +289,15 @@
 				635CF89529314D9500184766 /* Toggle Sidebar.swift in Sources */,
 				635CF87F2931288900184766 /* InstanceListView.swift in Sources */,
 				635CF89729315B6A00184766 /* Mod.swift in Sources */,
+				63F0B94C29325AAC00317642 /* OpenModsFolderButton.swift in Sources */,
 				635CF893293141F300184766 /* Open Finder.swift in Sources */,
 				635CF8812931299F00184766 /* InstanceDetailView.swift in Sources */,
 				635CF8902931396F00184766 /* EditableLabel.swift in Sources */,
+				63F0B94E2932622400317642 /* View - Conditional Modifiers.swift in Sources */,
 				635CF89C293164CC00184766 /* InstanceSettingJavaOptions.swift in Sources */,
+				63F0B94929324D0C00317642 /* NoticeView.swift in Sources */,
 				635CF86C293127C300184766 /* MCStartApp.swift in Sources */,
+				63F0B9462932488100317642 /* Select File.swift in Sources */,
 				635CF89E293169CF00184766 /* App State.swift in Sources */,
 				635CF88629312A3200184766 /* Instance.swift in Sources */,
 				635CF87C2931281300184766 /* SidebarView.swift in Sources */,

@@ -18,9 +18,9 @@ struct Instance: Identifiable, Codable {
     
     let iconSymbolName: String
     
-    var mods: [Mod]?
-    
-    let settings: InstanceSettings
+    var mods: [Mod]
+
+    var settings: InstanceSettings
     
     func convertDateToPresentableFormat(date: Date) -> String {
         let dateFormatter = DateFormatter()

@@ -10,7 +10,9 @@ import Foundation
 struct InstanceSettings: Identifiable, Codable {
     var id: UUID = UUID()
     
-    let minMemory: Int?
-    let maxMemory: Int?
+    var javaExecutablePath: String
+    
+    var minMemory: Int?
+    var maxMemory: Int?
     
 }

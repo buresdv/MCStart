@@ -7,9 +7,11 @@
 
 import Foundation
 
-struct Mod: Codable {
+struct Mod: Codable, Identifiable {
+    var id: UUID = UUID()
+    
     let name: String
     let version: String
     
-    let isEnabled: Bool
+    var isEnabled: Bool
 }
