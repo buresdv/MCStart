@@ -23,6 +23,12 @@ struct ContentView: View {
         .onAppear {
             print(AppGlobals.categoriesDirectoryPath)
             initializeFolders()
+            
+            Task {
+                let loginPrerequisites: [String] = await getLoginPrerequisites()
+                print("sFTTag: \(loginPrerequisites[0])")
+                print("urlPost: \(loginPrerequisites[1])")
+            }
         }
     }
 }
