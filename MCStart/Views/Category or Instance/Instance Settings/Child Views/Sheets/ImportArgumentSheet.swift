@@ -15,8 +15,6 @@ struct ImportArgumentSheet: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            
-            #warning("Make this put the arguments into the list only when the user clicks a button")
             Text("Paste the arguments below")
             NicerTextEditor(text: $massInsertedArguments)
             

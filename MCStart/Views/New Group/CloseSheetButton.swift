@@ -11,11 +11,14 @@ struct CloseSheetButton: View {
     
     @Binding var isShowingSheet: Bool
     
+    @State var customButtonText: String?
+    
     var body: some View {
         Button {
             isShowingSheet.toggle()
         } label: {
-            Label("Close", systemImage: "xmark")
+            Label(customButtonText ?? "Close", systemImage: "xmark")
+                .labelStyle(.titleOnly)
         }
     }
 }

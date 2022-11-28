@@ -42,6 +42,17 @@
 		63F0B96C2932D31E00317642 /* ImportArgumentSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B96B2932D31E00317642 /* ImportArgumentSheet.swift */; };
 		63F0B96E2932D32A00317642 /* ExportArgumentSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B96D2932D32A00317642 /* ExportArgumentSheet.swift */; };
 		63F0B9722932D3A700317642 /* CloseSheetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B9712932D3A700317642 /* CloseSheetButton.swift */; };
+		63F4C0D12935042E00BC0328 /* UISettingsPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4C0D02935042E00BC0328 /* UISettingsPane.swift */; };
+		63F4C0D32935047D00BC0328 /* SettingsPaneTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4C0D22935047D00BC0328 /* SettingsPaneTemplate.swift */; };
+		63F4C0D62935073B00BC0328 /* Initialize User Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4C0D52935073B00BC0328 /* Initialize User Defaults.swift */; };
+		63F4C0D92935176700BC0328 /* Load Up Item Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4C0D82935176700BC0328 /* Load Up Item Metadata.swift */; };
+		63F4C0DB293517CD00BC0328 /* Save Item Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4C0DA293517CD00BC0328 /* Save Item Metadata.swift */; };
+		63F4C0DF29351B1C00BC0328 /* AddCategorySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4C0DE29351B1C00BC0328 /* AddCategorySheet.swift */; };
+		63F4C0E22935231E00BC0328 /* SymbolPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 63F4C0E12935231E00BC0328 /* SymbolPicker */; };
+		63F4C0E42935353200BC0328 /* SheetWithHeadline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4C0E32935353200BC0328 /* SheetWithHeadline.swift */; };
+		63F4C0E72935388800BC0328 /* AddInstanceSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4C0E62935388800BC0328 /* AddInstanceSheet.swift */; };
+		63F4C0E929353D4700BC0328 /* IconPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4C0E829353D4700BC0328 /* IconPicker.swift */; };
+		63F4C0EC29357F6700BC0328 /* Alert Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4C0EB29357F6700BC0328 /* Alert Types.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +94,16 @@
 		63F0B96B2932D31E00317642 /* ImportArgumentSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportArgumentSheet.swift; sourceTree = "<group>"; };
 		63F0B96D2932D32A00317642 /* ExportArgumentSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportArgumentSheet.swift; sourceTree = "<group>"; };
 		63F0B9712932D3A700317642 /* CloseSheetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseSheetButton.swift; sourceTree = "<group>"; };
+		63F4C0D02935042E00BC0328 /* UISettingsPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISettingsPane.swift; sourceTree = "<group>"; };
+		63F4C0D22935047D00BC0328 /* SettingsPaneTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPaneTemplate.swift; sourceTree = "<group>"; };
+		63F4C0D52935073B00BC0328 /* Initialize User Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Initialize User Defaults.swift"; sourceTree = "<group>"; };
+		63F4C0D82935176700BC0328 /* Load Up Item Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Load Up Item Metadata.swift"; sourceTree = "<group>"; };
+		63F4C0DA293517CD00BC0328 /* Save Item Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Save Item Metadata.swift"; sourceTree = "<group>"; };
+		63F4C0DE29351B1C00BC0328 /* AddCategorySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategorySheet.swift; sourceTree = "<group>"; };
+		63F4C0E32935353200BC0328 /* SheetWithHeadline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetWithHeadline.swift; sourceTree = "<group>"; };
+		63F4C0E62935388800BC0328 /* AddInstanceSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInstanceSheet.swift; sourceTree = "<group>"; };
+		63F4C0E829353D4700BC0328 /* IconPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPicker.swift; sourceTree = "<group>"; };
+		63F4C0EB29357F6700BC0328 /* Alert Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert Types.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63F4C0E22935231E00BC0328 /* SymbolPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +138,7 @@
 		635CF86A293127C300184766 /* MCStart */ = {
 			isa = PBXGroup;
 			children = (
+				63F4C0EA29357F4300BC0328 /* Enums */,
 				635CF88429312A2800184766 /* Extensions */,
 				635CF88329312A2400184766 /* Structs */,
 				635CF88229312A1E00184766 /* Logic */,
@@ -145,25 +168,29 @@
 				63F0B94729324CFB00317642 /* Reusables */,
 				635CF88E2931396100184766 /* Misc */,
 				635CF889293132E200184766 /* Settings */,
-				635CF87D2931288000184766 /* Instance */,
+				635CF87D2931288000184766 /* Category or Instance */,
 				635CF87B2931281300184766 /* SidebarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		635CF87D2931288000184766 /* Instance */ = {
+		635CF87D2931288000184766 /* Category or Instance */ = {
 			isa = PBXGroup;
 			children = (
+				63F4C0E52935387B00BC0328 /* Add Instances */,
+				63F4C0DC29351B0500BC0328 /* Add Categories */,
 				635CF8982931649B00184766 /* Instance Settings */,
 				635CF8802931299F00184766 /* InstanceDetailView.swift */,
 				635CF87E2931288900184766 /* InstanceListView.swift */,
 			);
-			path = Instance;
+			path = "Category or Instance";
 			sourceTree = "<group>";
 		};
 		635CF88229312A1E00184766 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				63F4C0D72935175800BC0328 /* Instances */,
+				63F4C0D42935072D00BC0328 /* User Defaults */,
 				63F0B95F2932B66D00317642 /* Misc */,
 				63F0B9592932B23C00317642 /* Networking */,
 				635CF891293141E800184766 /* Files */,
@@ -193,6 +220,8 @@
 		635CF889293132E200184766 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				63F4C0CF2935042200BC0328 /* Panes */,
+				63F4C0D22935047D00BC0328 /* SettingsPaneTemplate.swift */,
 				635CF88A293132EB00184766 /* SettingsView.swift */,
 			);
 			path = Settings;
@@ -234,6 +263,8 @@
 				63F0B9622932BDFE00317642 /* DividerMaintainingGridWidth.swift */,
 				63F0B9672932CE3000317642 /* NicerTextEditor.swift */,
 				63F0B9712932D3A700317642 /* CloseSheetButton.swift */,
+				63F4C0E32935353200BC0328 /* SheetWithHeadline.swift */,
+				63F4C0E829353D4700BC0328 /* IconPicker.swift */,
 			);
 			name = Reusables;
 			path = "New Group";
@@ -301,6 +332,55 @@
 			path = Sheets;
 			sourceTree = "<group>";
 		};
+		63F4C0CF2935042200BC0328 /* Panes */ = {
+			isa = PBXGroup;
+			children = (
+				63F4C0D02935042E00BC0328 /* UISettingsPane.swift */,
+			);
+			path = Panes;
+			sourceTree = "<group>";
+		};
+		63F4C0D42935072D00BC0328 /* User Defaults */ = {
+			isa = PBXGroup;
+			children = (
+				63F4C0D52935073B00BC0328 /* Initialize User Defaults.swift */,
+			);
+			path = "User Defaults";
+			sourceTree = "<group>";
+		};
+		63F4C0D72935175800BC0328 /* Instances */ = {
+			isa = PBXGroup;
+			children = (
+				63F4C0D82935176700BC0328 /* Load Up Item Metadata.swift */,
+				63F4C0DA293517CD00BC0328 /* Save Item Metadata.swift */,
+			);
+			path = Instances;
+			sourceTree = "<group>";
+		};
+		63F4C0DC29351B0500BC0328 /* Add Categories */ = {
+			isa = PBXGroup;
+			children = (
+				63F4C0DE29351B1C00BC0328 /* AddCategorySheet.swift */,
+			);
+			path = "Add Categories";
+			sourceTree = "<group>";
+		};
+		63F4C0E52935387B00BC0328 /* Add Instances */ = {
+			isa = PBXGroup;
+			children = (
+				63F4C0E62935388800BC0328 /* AddInstanceSheet.swift */,
+			);
+			path = "Add Instances";
+			sourceTree = "<group>";
+		};
+		63F4C0EA29357F4300BC0328 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				63F4C0EB29357F6700BC0328 /* Alert Types.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -317,6 +397,9 @@
 			dependencies = (
 			);
 			name = MCStart;
+			packageProductDependencies = (
+				63F4C0E12935231E00BC0328 /* SymbolPicker */,
+			);
 			productName = MCStart;
 			productReference = 635CF868293127C300184766 /* MCStart.app */;
 			productType = "com.apple.product-type.application";
@@ -345,6 +428,9 @@
 				Base,
 			);
 			mainGroup = 635CF85F293127C300184766;
+			packageReferences = (
+				63F4C0E02935231E00BC0328 /* XCRemoteSwiftPackageReference "SymbolPicker" */,
+			);
 			productRefGroup = 635CF869293127C300184766 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -373,6 +459,7 @@
 			files = (
 				635CF89A293164B700184766 /* InstanceSettingMods.swift in Sources */,
 				635CF88829312AA600184766 /* Instance Category.swift in Sources */,
+				63F4C0D32935047D00BC0328 /* SettingsPaneTemplate.swift in Sources */,
 				635CF88B293132EB00184766 /* SettingsView.swift in Sources */,
 				635CF86E293127C300184766 /* ContentView.swift in Sources */,
 				635CF89529314D9500184766 /* Toggle Sidebar.swift in Sources */,
@@ -382,8 +469,13 @@
 				63F0B9722932D3A700317642 /* CloseSheetButton.swift in Sources */,
 				63F0B9612932B67C00317642 /* Extract Text Using REGEX.swift in Sources */,
 				635CF893293141F300184766 /* Open Finder.swift in Sources */,
+				63F4C0DB293517CD00BC0328 /* Save Item Metadata.swift in Sources */,
 				63F0B95229328A7C00317642 /* Check if Exists At Path.swift in Sources */,
+				63F4C0D12935042E00BC0328 /* UISettingsPane.swift in Sources */,
+				63F4C0D62935073B00BC0328 /* Initialize User Defaults.swift in Sources */,
 				63F0B96C2932D31E00317642 /* ImportArgumentSheet.swift in Sources */,
+				63F4C0E72935388800BC0328 /* AddInstanceSheet.swift in Sources */,
+				63F4C0E42935353200BC0328 /* SheetWithHeadline.swift in Sources */,
 				635CF8812931299F00184766 /* InstanceDetailView.swift in Sources */,
 				63F0B96A2932D25D00317642 /* Copy to Clipboard.swift in Sources */,
 				63F0B95B2932B29F00317642 /* Networking Manager.swift in Sources */,
@@ -402,8 +494,12 @@
 				635CF89E293169CF00184766 /* App State.swift in Sources */,
 				635CF88629312A3200184766 /* Instance.swift in Sources */,
 				63F0B96E2932D32A00317642 /* ExportArgumentSheet.swift in Sources */,
+				63F4C0D92935176700BC0328 /* Load Up Item Metadata.swift in Sources */,
 				635CF87C2931281300184766 /* SidebarView.swift in Sources */,
+				63F4C0EC29357F6700BC0328 /* Alert Types.swift in Sources */,
 				635CF88D2931338C00184766 /* Instance Settings.swift in Sources */,
+				63F4C0DF29351B1C00BC0328 /* AddCategorySheet.swift in Sources */,
+				63F4C0E929353D4700BC0328 /* IconPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +695,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		63F4C0E02935231E00BC0328 /* XCRemoteSwiftPackageReference "SymbolPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/xnth97/SymbolPicker?ref=iosexample.com";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		63F4C0E12935231E00BC0328 /* SymbolPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63F4C0E02935231E00BC0328 /* XCRemoteSwiftPackageReference "SymbolPicker" */;
+			productName = SymbolPicker;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 635CF860293127C300184766 /* Project object */;
 }

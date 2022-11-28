@@ -10,9 +10,9 @@ import Foundation
 struct InstanceCategory: Identifiable, Codable {
     var id: UUID = UUID()
     
-    let name: String
+    var name: String
     
-    let iconSymbolName: String
+    var iconSymbolName: String
     
     var instances: [Instance]
     

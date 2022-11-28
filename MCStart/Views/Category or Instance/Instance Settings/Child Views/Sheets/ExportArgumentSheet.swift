@@ -30,6 +30,7 @@ struct ExportArgumentSheet: View {
                     copyToClipboard(textToCopy: currentActiveArgumentsJoined)
                 } label: {
                     Label("Copy", systemImage: "doc.on.doc")
+                        .labelStyle(.titleOnly)
                 }
                 
                 Spacer()

@@ -11,7 +11,11 @@ struct SidebarView: View {
     
     @StateObject var instanceCategories: InstanceCategories
     
+    @State private var newCategory: InstanceCategory = InstanceCategory(name: "", iconSymbolName: "", instances: [Instance(name: "", version: "", dateCreated: Date(), iconSymbolName: "", modLoader: .vanilla, mods: [], settings: InstanceSettings(javaExecutablePath: "", javaArguments: []))])
+    
     @State private var isDefaultItemActive = true
+    
+    @State private var isShowingAddCategorySheet: Bool = false
     
     var body: some View {
         List {
@@ -38,22 +42,25 @@ struct SidebarView: View {
         
         Spacer()
         VStack(alignment: .leading) {
-            HStack(alignment: .center) {
-                Button {
-                    print("Would add category")
-                } label: {
-                    Label("Add Category", systemImage: "plus")
-                        .labelStyle(.iconOnly)
-                }
-                .buttonStyle(.plain)
-                .padding(6)
+            Button {
+                
+                isShowingAddCategorySheet.toggle()
+                
+            } label: {
+                Label("Add Category", systemImage: "plus")
+                    .labelStyle(.iconOnly)
             }
+            .buttonStyle(.plain)
+            .padding(.bottom, 6)
+            .padding(.leading, 12)
         }
         .frame(
             minWidth: 0,
             maxWidth: .infinity,
             alignment: .leading
         )
-        .border(.red)
+        .sheet(isPresented: $isShowingAddCategorySheet) {
+            AddCategorySheet(isShowingAddCategorySheet: $isShowingAddCategorySheet, categories: $instanceCategories.categories, newCategory: $newCategory)
+        }
     }
 }
