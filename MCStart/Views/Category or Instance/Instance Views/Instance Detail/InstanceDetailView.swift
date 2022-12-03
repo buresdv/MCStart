@@ -21,14 +21,15 @@ struct InstanceDetailView: View {
                     
                     Image(systemName: instance.iconSymbolName)
                         .resizable()
-                        .frame(width: 40, height: 40)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 40)
                     
                     EditableLabel($instance.name) {
                         print("New Name: \(instance.name)")
                     }
                     .font(.title)
                 }
-                .border(.blue)
+                //.border(.blue)
                 
                 GroupBox {
                     Grid(alignment: .leading) {

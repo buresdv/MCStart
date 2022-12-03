@@ -29,9 +29,7 @@ struct InstanceSettingMods: View {
                         ))
                     }
                     .width(30)
-                    /*TableColumn("On") { toggleValue in
-                        Toggle("", isOn: toggleValue.isEnabled)
-                    }*/
+
                     TableColumn("Name", value: \.name)
                     TableColumn("Version", value: \.version)
                 }

@@ -16,6 +16,6 @@ struct NicerTextEditor: View {
             .font(.body)
             .background(Color.white)
             .padding(5)
-            .border(.secondary)
+            .border(Color(nsColor: NSColor.separatorColor))
     }
 }

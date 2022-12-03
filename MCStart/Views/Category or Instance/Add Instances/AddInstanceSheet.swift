@@ -17,7 +17,7 @@ struct AddInstanceSheet: View {
     
     @State private var chosenSymbol: String = "magnifyingglass"
     
-    var emptyInstance: Instance = Instance(name: "", version: "", dateCreated: Date(), iconSymbolName: "", modLoader: .vanilla, mods: [], settings: InstanceSettings(javaExecutablePath: "", javaArguments: []))
+    var emptyInstance: Instance = Instance(name: "", version: "", dateCreated: getCurrentTimeAndDate(), iconSymbolName: "", modLoader: .vanilla, mods: [], settings: InstanceSettings(javaExecutablePath: "", javaArguments: []))
     
     var availableVersions: [String] = ["1.19.2", "1.19.1", "1.19", "1.18.2", "1.18.1"]
     

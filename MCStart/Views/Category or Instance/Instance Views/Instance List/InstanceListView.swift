@@ -25,8 +25,25 @@ struct InstanceListView: View {
                     NavigationLink {
                         InstanceDetailView(instance: instance)
                     } label: {
-                        Label(instance.name, systemImage: instance.iconSymbolName)
+                        InstanceListItemView(instance: instance)
                     }
+                    .contextMenu {
+                        Button {
+                            print("\(instance.name): \(instance.id)")
+                        } label: {
+                            Text("Print instance name")
+                        }
+
+                        Divider()
+                        
+                        Button {
+                            category.instances.removeAll(where: { $0.id == instance.id })
+                        } label: {
+                            Text("Delete")
+                        }
+
+                    }
+
                 }
                 .onMove(perform: move)
                 

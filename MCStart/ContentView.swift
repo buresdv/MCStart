@@ -15,7 +15,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             SidebarView(instanceCategories: instanceCategories)
-            Text("no Category Selected")
+            Text("No Category Selected")
             Text("No Instance Selected")
         }
         .environmentObject(instanceCategories)

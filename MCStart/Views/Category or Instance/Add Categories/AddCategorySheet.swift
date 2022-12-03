@@ -22,7 +22,7 @@ struct AddCategorySheet: View {
     @State private var isShowingAlert: Bool = false
     @State private var activeAlert: ActiveAlert = .name
     
-    var emptyCategory: InstanceCategory = InstanceCategory(name: "", iconSymbolName: "", instances: [Instance(name: "", version: "", dateCreated: Date(), iconSymbolName: "", modLoader: .vanilla, mods: [], settings: InstanceSettings(javaExecutablePath: "", javaArguments: []))])
+    var emptyCategory: InstanceCategory = InstanceCategory(name: "", iconSymbolName: "", instances: [])
     
     var body: some View {
         

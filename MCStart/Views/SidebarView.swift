@@ -11,7 +11,7 @@ struct SidebarView: View {
     
     @StateObject var instanceCategories: InstanceCategories
     
-    @State private var newCategory: InstanceCategory = InstanceCategory(name: "", iconSymbolName: "", instances: [Instance(name: "", version: "", dateCreated: Date(), iconSymbolName: "", modLoader: .vanilla, mods: [], settings: InstanceSettings(javaExecutablePath: "", javaArguments: []))])
+    @State private var newCategory: InstanceCategory = InstanceCategory(name: "", iconSymbolName: "", instances: [])
     
     @State private var isDefaultItemActive = true
     
