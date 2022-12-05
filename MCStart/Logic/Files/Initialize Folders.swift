@@ -8,36 +8,60 @@
 import Foundation
 
 func initializeFolders() -> Void {
-    // First, check if the Categories directory exists
-    if FileManager.default.fileExists(atPath: AppGlobals.categoriesDirectoryPath.absoluteString) {
-        print("Does not exist")
-        // Create the Categories folder in Application Support
+    
+    var categoryPaths: [URL] = []
+    
+    print("Folder: \(AppGlobals.applicationSupportDirectoryPath.path)")
+    
+    /// First, check if the app's folder exists in Application Support
+    if !FileManager.default.fileExists(atPath: AppGlobals.applicationSupportDirectoryPath.path) {
+        
+        /// If it does not, create it and initialize it
         do {
-            try FileManager.default.createDirectory(at: AppGlobals.categoriesDirectoryPath, withIntermediateDirectories: true)
+            
+            /// Step 1: Create the folder in Application Support
+            print("Application Support directory for MCStart not found")
+            print("Creating directory in Application SUpport...")
+            
+            try FileManager.default.createDirectory(at: AppGlobals.applicationSupportDirectoryPath, withIntermediateDirectories: false)
+            
+            /// Step 2: Create the folder for Categories inside the app's Application Support directory
+            do {
+                try FileManager.default.createDirectory(at: AppGlobals.categoriesDirectoryPath, withIntermediateDirectories: false)
+            } catch let error as NSError {
+                print("Failed creating Categories folder in Application Support: \(error)")
+            }
+            
         } catch let error as NSError {
-            print("Failed while creating the categories folder at \(AppGlobals.categoriesDirectoryPath): \n \(error)")
+            print("Failed creating folder in Application Support: \(error)")
         }
+        
     } else {
+        
+        print("Application Support folder exists")
+        
         print("Categories folder exists")
         
         do {
             
-            let categoriesFolders = try FileManager.default.contentsOfDirectory(at: AppGlobals.categoriesDirectoryPath, includingPropertiesForKeys: nil, options: [.skipsHiddenFiles])
+            let categoriesFolders: [URL] = try FileManager.default.contentsOfDirectory(at: AppGlobals.categoriesDirectoryPath, includingPropertiesForKeys: nil, options: [.skipsHiddenFiles])
             
             for categoryFolderPath in categoriesFolders {
-                print(categoryFolderPath)
+                print("Category folder path: \(categoryFolderPath)")
                 
-                let metadataFilePath: String = "\(categoryFolderPath)Metadata"
+                let metadataFilePath: URL = categoryFolderPath.appendingPathComponent("Metadata", conformingTo: .data)
                 
-                if FileManager.default.fileExists(atPath: metadataFilePath) {
+                let metadataFilePathAsString: String = metadataFilePath.path
+                
+                if FileManager.default.fileExists(atPath: metadataFilePathAsString) {
                     
-                    print("Metadata file at \(metadataFilePath) exists")
+                    print("[Y] Metadata file at \(metadataFilePathAsString) exists")
                     
-                    print(decodeDataFromDisk(from: metadataFilePath))
+                    categoryPaths.append(metadataFilePath)
                     
                 } else {
                     
-                    print("Metadata file at \(metadataFilePath) does NOT exist")
+                    print("[X] Metadata file at \(metadataFilePathAsString) does NOT exist")
                     
                     let burnerMetadataContents: InstanceCategory = InstanceCategory(name: "Test", iconSymbolName: "plus", instances: [])
                     
@@ -50,7 +74,7 @@ func initializeFolders() -> Void {
                         var encodedData = try encodeDataForSaving(from: burnerMetadataContents)
                         
                         do {
-                            try encodedData.write(to: URL(string: metadataFilePath)!)
+                            try encodedData.write(to: metadataFilePath)
                         } catch let error as NSError {
                             print("Failed while saving metadata to file: \(error)")
                         }
@@ -58,15 +82,21 @@ func initializeFolders() -> Void {
                     } catch let error as NSError {
                         print("Failed while encoding data: \(error)")
                     }
-
-                    
                     
                 }
             }
+            
+            print("Category Paths: \(categoryPaths)")
+            
+            let initializedInstances: [InstanceCategory] = try decodeCategoriesFromDisk(atPaths: categoryPaths)
+            
+            print("Initialized Instances: \(initializedInstances)")
             
         } catch let error as NSError {
             print("Error: \(error)")
         }
         
     }
+        
+    
 }

@@ -8,34 +8,44 @@
 import Foundation
 
 enum DecodingError: Error {
+    case failedToAccessCategoriesFolder
     case failedToReadFile
     case failedtoDecodeFromBase64
     case failedToCreateObject
 }
 
-func decodeDataFromDisk<T: Codable>(from filePath: String) throws -> some Codable {
+func decodeCategoriesFromDisk(atPaths: [URL]) throws -> [InstanceCategory] {
     
-    var finalObject: T
+    var finalObject: [InstanceCategory] = []
     
-    if let data: Data = FileManager.default.contents(atPath: filePath) {
-        if let decodedData = Data(base64Encoded: data) {
-            let decoder = JSONDecoder()
+    for path in atPaths {
+        
+        print("In function: Path: \(path)")
+        
+        if let data: Data = FileManager.default.contents(atPath: path.path) {
             
-            do {
+            print("In function: Data: \(data)")
+            
+            if let decodedData = Data(base64Encoded: data) {
+                let decoder = JSONDecoder()
                 
-                var decodedObject = try decoder.decode(T.self, from: decodedData)
-                
-                finalObject = decodedObject
-                
-            } catch {
-                throw DecodingError.failedToCreateObject
+                do {
+                    
+                    let decodedCategory = try decoder.decode(InstanceCategory.self, from: decodedData)
+                    
+                    finalObject.append(decodedCategory)
+                    
+                } catch {
+                    throw DecodingError.failedToCreateObject
+                }
+            } else {
+                throw DecodingError.failedtoDecodeFromBase64
             }
         } else {
-            throw DecodingError.failedtoDecodeFromBase64
+            throw DecodingError.failedToReadFile
         }
-    } else {
-        throw DecodingError.failedToReadFile
     }
-        
+    
     return finalObject
+    
 }
