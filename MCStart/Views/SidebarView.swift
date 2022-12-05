@@ -60,7 +60,7 @@ struct SidebarView: View {
             alignment: .leading
         )
         .sheet(isPresented: $isShowingAddCategorySheet) {
-            AddCategorySheet(isShowingAddCategorySheet: $isShowingAddCategorySheet, categories: $instanceCategories.categories, newCategory: $newCategory)
+            AddCategorySheet(isShowingAddCategorySheet: $isShowingAddCategorySheet, categoryTracker: instanceCategories, newCategory: $newCategory)
         }
     }
 }

@@ -12,7 +12,8 @@ struct AddCategorySheet: View {
     
     @Binding var isShowingAddCategorySheet: Bool
     
-    @Binding var categories: [InstanceCategory]
+    @ObservedObject var categoryTracker: InstanceCategories
+    
     @Binding var newCategory: InstanceCategory
     
     @State private var chosenSymbol: String = "magnifyingglass"
@@ -57,9 +58,7 @@ struct AddCategorySheet: View {
                             
                             print("Will append: \(newCategory)")
                             
-                            withAnimation {
-                                categories.append(newCategory)
-                            }
+                            addCategory(newCategory: newCategory, categoryTracker: categoryTracker)
                             
                             isShowingAddCategorySheet.toggle()
                             

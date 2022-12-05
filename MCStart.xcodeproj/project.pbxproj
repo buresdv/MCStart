@@ -28,6 +28,7 @@
 		635CF89C293164CC00184766 /* InstanceSettingJavaOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF89B293164CC00184766 /* InstanceSettingJavaOptions.swift */; };
 		635CF89E293169CF00184766 /* App State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF89D293169CF00184766 /* App State.swift */; };
 		63A63289293E7A5C007FD5A0 /* Add Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A63288293E7A5C007FD5A0 /* Add Category.swift */; };
+		63A6328B293E7D19007FD5A0 /* Create Metadata File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6328A293E7D19007FD5A0 /* Create Metadata File.swift */; };
 		63C29B4E293971CF0083151C /* Delete Instance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C29B4D293971CF0083151C /* Delete Instance.swift */; };
 		63C29B552939758E0083151C /* InstanceListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C29B542939758E0083151C /* InstanceListItemView.swift */; };
 		63C8ED7E293E5EB600394803 /* Get Path to Metadata File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8ED7D293E5EB600394803 /* Get Path to Metadata File.swift */; };
@@ -86,6 +87,7 @@
 		635CF89B293164CC00184766 /* InstanceSettingJavaOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceSettingJavaOptions.swift; sourceTree = "<group>"; };
 		635CF89D293169CF00184766 /* App State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App State.swift"; sourceTree = "<group>"; };
 		63A63288293E7A5C007FD5A0 /* Add Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add Category.swift"; sourceTree = "<group>"; };
+		63A6328A293E7D19007FD5A0 /* Create Metadata File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create Metadata File.swift"; sourceTree = "<group>"; };
 		63C29B4D293971CF0083151C /* Delete Instance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Delete Instance.swift"; sourceTree = "<group>"; };
 		63C29B542939758E0083151C /* InstanceListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceListItemView.swift; sourceTree = "<group>"; };
 		63C8ED7D293E5EB600394803 /* Get Path to Metadata File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Get Path to Metadata File.swift"; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			children = (
 				63F0B95329328A9700317642 /* Helpers */,
 				63F0B95429328AA600317642 /* Initialize Folders.swift */,
+				63A6328A293E7D19007FD5A0 /* Create Metadata File.swift */,
 			);
 			path = Files;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				635CF88B293132EB00184766 /* SettingsView.swift in Sources */,
 				635CF86E293127C300184766 /* ContentView.swift in Sources */,
 				635CF89529314D9500184766 /* Toggle Sidebar.swift in Sources */,
+				63A6328B293E7D19007FD5A0 /* Create Metadata File.swift in Sources */,
 				635CF87F2931288900184766 /* InstanceListView.swift in Sources */,
 				635CF89729315B6A00184766 /* Mod.swift in Sources */,
 				63F0B94C29325AAC00317642 /* OpenModsFolderButton.swift in Sources */,

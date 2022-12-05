@@ -11,16 +11,20 @@ enum MetadataAccessError: Error {
     case metadataFileNotFound
 }
 
-func getPathToMetadataFile(in folder: URL) throws -> URL {
+func getPathToMetadataFile(in folder: URL, checkIfMetadataFileAlreadyExists: Bool) throws -> URL {
     
     var metadataFilePath: URL
     
     let metadataFileLocation: URL = folder.appendingPathComponent("Metadata", conformingTo: .data)
     
-    if FileManager.default.fileExists(atPath: metadataFileLocation.path) {
-        metadataFilePath = metadataFileLocation
+    if checkIfMetadataFileAlreadyExists {
+        if FileManager.default.fileExists(atPath: metadataFileLocation.path) {
+            metadataFilePath = metadataFileLocation
+        } else {
+            throw MetadataAccessError.metadataFileNotFound
+        }
     } else {
-        throw MetadataAccessError.metadataFileNotFound
+        metadataFilePath = metadataFileLocation
     }
     
     return metadataFilePath

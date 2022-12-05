@@ -62,7 +62,7 @@ func decodeInstancesFromDisk(atCategoryPath: URL) throws -> [Instance] {
         
         for instanceFolder in instanceFoldersInCategoryFolder {
             do {
-                let instanceMetadataFileLocation: URL = try getPathToMetadataFile(in: instanceFolder)
+                let instanceMetadataFileLocation: URL = try getPathToMetadataFile(in: instanceFolder, checkIfMetadataFileAlreadyExists: true)
                 
                 if let data: Data = FileManager.default.contents(atPath: instanceMetadataFileLocation.path) {
                     if let decodedData = Data(base64Encoded: data) {
