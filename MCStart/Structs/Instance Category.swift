@@ -19,7 +19,7 @@ struct InstanceCategory: Identifiable, Codable {
 }
 
 class InstanceCategories: ObservableObject {
-    @Published var categories: [InstanceCategory] = [
+    /*@Published var categories: [InstanceCategory] = [
         InstanceCategory(name: "Vanilla", iconSymbolName: "folder", instances: [
             Instance(name: "Server", version: "1.20", dateCreated: Date(), iconSymbolName: "rectangle.portrait.and.arrow.forward", modLoader: .vanilla, mods: [], settings: InstanceSettings(javaExecutablePath: "/Users/david/Downloads", javaArguments: [], minMemory: 100, maxMemory: 5000)),
             Instance(name: "1.19", version: "1.19.3", dateCreated: Date(), iconSymbolName: "pencil.circle", modLoader: .vanilla, mods: [], settings: InstanceSettings(javaExecutablePath: "/Applications", javaArguments: [
@@ -78,5 +78,6 @@ class InstanceCategories: ObservableObject {
                 "XX:G1MixedGCCountTarget=8"
             ], minMemory: 100, maxMemory: 5000)),
         ])
-    ]
+    ]*/
+    @Published var categories: [InstanceCategory] = []
 }

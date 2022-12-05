@@ -22,13 +22,14 @@ struct ContentView: View {
         .environmentObject(appState)
         .onAppear {
             print(AppGlobals.categoriesDirectoryPath)
-            initializeFolders()
+            initializeFolders(categoryTracker: instanceCategories)
             
             Task {
                 let loginPrerequisites: [String] = await getLoginPrerequisites()
                 print("sFTTag: \(loginPrerequisites[0])")
                 print("urlPost: \(loginPrerequisites[1])")
             }
+            print(instanceCategories.categories)
         }
     }
 }

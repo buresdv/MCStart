@@ -27,8 +27,10 @@
 		635CF89A293164B700184766 /* InstanceSettingMods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF899293164B700184766 /* InstanceSettingMods.swift */; };
 		635CF89C293164CC00184766 /* InstanceSettingJavaOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF89B293164CC00184766 /* InstanceSettingJavaOptions.swift */; };
 		635CF89E293169CF00184766 /* App State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF89D293169CF00184766 /* App State.swift */; };
+		63A63289293E7A5C007FD5A0 /* Add Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A63288293E7A5C007FD5A0 /* Add Category.swift */; };
 		63C29B4E293971CF0083151C /* Delete Instance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C29B4D293971CF0083151C /* Delete Instance.swift */; };
 		63C29B552939758E0083151C /* InstanceListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C29B542939758E0083151C /* InstanceListItemView.swift */; };
+		63C8ED7E293E5EB600394803 /* Get Path to Metadata File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8ED7D293E5EB600394803 /* Get Path to Metadata File.swift */; };
 		63E7F6E2293B70E800D0C6FB /* Decode From Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E7F6E1293B70E800D0C6FB /* Decode From Disk.swift */; };
 		63F0B9462932488100317642 /* Select File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B9452932488100317642 /* Select File.swift */; };
 		63F0B94929324D0C00317642 /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B94829324D0C00317642 /* NoticeView.swift */; };
@@ -83,8 +85,10 @@
 		635CF899293164B700184766 /* InstanceSettingMods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceSettingMods.swift; sourceTree = "<group>"; };
 		635CF89B293164CC00184766 /* InstanceSettingJavaOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceSettingJavaOptions.swift; sourceTree = "<group>"; };
 		635CF89D293169CF00184766 /* App State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App State.swift"; sourceTree = "<group>"; };
+		63A63288293E7A5C007FD5A0 /* Add Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add Category.swift"; sourceTree = "<group>"; };
 		63C29B4D293971CF0083151C /* Delete Instance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Delete Instance.swift"; sourceTree = "<group>"; };
 		63C29B542939758E0083151C /* InstanceListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceListItemView.swift; sourceTree = "<group>"; };
+		63C8ED7D293E5EB600394803 /* Get Path to Metadata File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Get Path to Metadata File.swift"; sourceTree = "<group>"; };
 		63E7F6E1293B70E800D0C6FB /* Decode From Disk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decode From Disk.swift"; sourceTree = "<group>"; };
 		63F0B9452932488100317642 /* Select File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Select File.swift"; sourceTree = "<group>"; };
 		63F0B94829324D0C00317642 /* NoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoticeView.swift; path = MCStart/Views/NoticeView.swift; sourceTree = SOURCE_ROOT; };
@@ -207,7 +211,7 @@
 		635CF88229312A1E00184766 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
-				63F4C0D72935175800BC0328 /* Instances */,
+				63F4C0D72935175800BC0328 /* Categories & Instances */,
 				63F4C0D42935072D00BC0328 /* User Defaults */,
 				63F0B95F2932B66D00317642 /* Misc */,
 				63F0B9592932B23C00317642 /* Networking */,
@@ -287,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				63C29B4D293971CF0083151C /* Delete Instance.swift */,
+				63A63288293E7A5C007FD5A0 /* Add Category.swift */,
 			);
 			path = "Adding + Removing";
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 				635CF892293141F300184766 /* Open Finder.swift */,
 				63F0B9452932488100317642 /* Select File.swift */,
 				63F0B95129328A7C00317642 /* Check if Exists At Path.swift */,
+				63C8ED7D293E5EB600394803 /* Get Path to Metadata File.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -418,14 +424,14 @@
 			path = "User Defaults";
 			sourceTree = "<group>";
 		};
-		63F4C0D72935175800BC0328 /* Instances */ = {
+		63F4C0D72935175800BC0328 /* Categories & Instances */ = {
 			isa = PBXGroup;
 			children = (
 				63267A71293AB0F200E66588 /* File Handling */,
 				63C29B4C293971BE0083151C /* Adding + Removing */,
 				63C29B4B293971B50083151C /* Metadata */,
 			);
-			path = Instances;
+			path = "Categories & Instances";
 			sourceTree = "<group>";
 		};
 		63F4C0DC29351B0500BC0328 /* Add Categories */ = {
@@ -552,10 +558,12 @@
 				63267A73293AB10800E66588 /* Encode Data for Saving to Disk.swift in Sources */,
 				63F0B95B2932B29F00317642 /* Networking Manager.swift in Sources */,
 				63F0B95E2932B52700317642 /* Get Login Prerequisites.swift in Sources */,
+				63A63289293E7A5C007FD5A0 /* Add Category.swift in Sources */,
 				635CF8902931396F00184766 /* EditableLabel.swift in Sources */,
 				63E7F6E2293B70E800D0C6FB /* Decode From Disk.swift in Sources */,
 				63F0B94E2932622400317642 /* View - Conditional Modifiers.swift in Sources */,
 				63F0B9502932870F00317642 /* App Globals.swift in Sources */,
+				63C8ED7E293E5EB600394803 /* Get Path to Metadata File.swift in Sources */,
 				63F0B9682932CE3000317642 /* NicerTextEditor.swift in Sources */,
 				635CF89C293164CC00184766 /* InstanceSettingJavaOptions.swift in Sources */,
 				63C29B4E293971CF0083151C /* Delete Instance.swift in Sources */,

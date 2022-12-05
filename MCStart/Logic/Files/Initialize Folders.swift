@@ -7,7 +7,7 @@
 
 import Foundation
 
-func initializeFolders() -> Void {
+func initializeFolders(categoryTracker: InstanceCategories) -> Void {
     
     var categoryPaths: [URL] = []
     
@@ -88,9 +88,11 @@ func initializeFolders() -> Void {
             
             print("Category Paths: \(categoryPaths)")
             
-            let initializedInstances: [InstanceCategory] = try decodeCategoriesFromDisk(atPaths: categoryPaths)
+            let initializedCategories: [InstanceCategory] = try decodeCategoriesFromDisk(atPaths: categoryPaths)
             
-            print("Initialized Instances: \(initializedInstances)")
+            categoryTracker.categories = initializedCategories
+            
+            print("Initialized Instances: \(initializedCategories)")
             
         } catch let error as NSError {
             print("Error: \(error)")
