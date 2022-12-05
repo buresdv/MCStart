@@ -55,10 +55,10 @@ func decodeCategoriesFromDisk(atPaths: [URL]) throws -> [InstanceCategory] {
 func decodeInstancesFromDisk(atCategoryPath: URL) throws -> [Instance] {
     var finalInstances: [Instance] = []
     
-    let instancesFolder: URL = atCategoryPath.appendingPathComponent("Instances", conformingTo: .directory)
-    
     do {
-        let instanceFoldersInCategoryFolder: [URL] = try FileManager.default.contentsOfDirectory(at: instancesFolder, includingPropertiesForKeys: [])
+        var instanceFoldersInCategoryFolder: [URL] = try FileManager.default.contentsOfDirectory(at: atCategoryPath, includingPropertiesForKeys: [.isDirectoryKey])
+        
+        instanceFoldersInCategoryFolder = instanceFoldersInCategoryFolder.filter({ $0.hasDirectoryPath })
         
         for instanceFolder in instanceFoldersInCategoryFolder {
             do {

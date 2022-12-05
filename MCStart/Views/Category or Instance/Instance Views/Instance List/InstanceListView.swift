@@ -9,7 +9,8 @@ import SwiftUI
 
 struct InstanceListView: View {
     
-    @State var category: InstanceCategory
+    @State var parentCategory: InstanceCategory
+    @State var instanceTracker: [Instance] = []
     
     @State var searchString: String = ""
     
@@ -21,7 +22,7 @@ struct InstanceListView: View {
         VStack {
             
             List {
-                ForEach(category.instances) { instance in
+                ForEach(instanceTracker) { instance in
                     NavigationLink {
                         InstanceDetailView(instance: instance)
                     } label: {
@@ -37,7 +38,7 @@ struct InstanceListView: View {
                         Divider()
                         
                         Button {
-                            category.instances.removeAll(where: { $0.id == instance.id })
+                            instanceTracker.removeAll(where: { $0.id == instance.id })
                         } label: {
                             Text("Delete")
                         }
@@ -52,8 +53,8 @@ struct InstanceListView: View {
                 
             }
             .frame(minWidth: 260)
-            .navigationTitle(category.name)
-            .navigationSubtitle("\(category.instances.count) instances")
+            .navigationTitle(parentCategory.name)
+            .navigationSubtitle("\(instanceTracker.count) instances")
             
             Spacer()
             
@@ -77,12 +78,26 @@ struct InstanceListView: View {
             )
             .background(Color.white)
         }
+        .onAppear {
+            #warning("Maybe put this into a separate function")
+            let pathToParentCategory: URL = getPathToCategoryFolderByUUID(categoryUUID: parentCategory.id)
+            
+            do {
+                
+                let decodedInstances: [Instance] = try decodeInstancesFromDisk(atCategoryPath: pathToParentCategory)
+                
+                instanceTracker = decodedInstances
+                
+            } catch let error as NSError {
+                print("Failed while decoding instances in folder: \(error)")
+            }
+        }
         .sheet(isPresented: $isShowingAddInstanceSheet) {
-            AddInstanceSheet(isShowingSheet: $isShowingAddInstanceSheet, parentCategory: $category, newInstance: $newInstance)
+            AddInstanceSheet(isShowingSheet: $isShowingAddInstanceSheet, parentCategory: $parentCategory, newInstance: $newInstance, instanceTracker: $instanceTracker)
         }
     }
     
     func move(from source: IndexSet, to destination: Int) -> Void {
-        category.instances.move(fromOffsets: source, toOffset: destination)
+        instanceTracker.move(fromOffsets: source, toOffset: destination)
     }
 }

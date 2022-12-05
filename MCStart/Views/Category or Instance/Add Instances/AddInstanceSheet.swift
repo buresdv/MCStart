@@ -15,6 +15,8 @@ struct AddInstanceSheet: View {
     
     @Binding var newInstance: Instance
     
+    @Binding var instanceTracker: [Instance]
+    
     @State private var chosenSymbol: String = "magnifyingglass"
     
     var emptyInstance: Instance = Instance(name: "", version: "", dateCreated: getCurrentTimeAndDate(), iconSymbolName: "", modLoader: .vanilla, mods: [], settings: InstanceSettings(javaExecutablePath: "", javaArguments: []))
@@ -100,9 +102,7 @@ struct AddInstanceSheet: View {
                         
                         print("Will append \(newInstance)")
                         
-                        withAnimation {
-                            parentCategory.instances.append(newInstance)
-                        }
+                        addInstance(newInstance: newInstance, parentCategoryUUID: parentCategory.id, instanceTracker: &instanceTracker)
                         
                         isShowingSheet = false
                         

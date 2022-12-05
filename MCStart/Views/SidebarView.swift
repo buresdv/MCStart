@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SidebarView: View {
-    
+
     @StateObject var instanceCategories: InstanceCategories
     
     @State private var newCategory: InstanceCategory = InstanceCategory(name: "", iconSymbolName: "", instances: [])
@@ -21,7 +21,7 @@ struct SidebarView: View {
         List {
             ForEach(instanceCategories.categories) { category in
                 NavigationLink {
-                    InstanceListView(category: category)
+                    InstanceListView(parentCategory: category)
                 } label: {
                     Label(category.name, systemImage: category.iconSymbolName)
                 }

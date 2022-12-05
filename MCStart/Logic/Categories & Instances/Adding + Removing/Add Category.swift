@@ -18,7 +18,7 @@ func addCategory(newCategory: InstanceCategory, categoryTracker: InstanceCategor
     /// Here all the magic begins
     do {
         /// Create a new folder in Application Support with the name of the folder
-        let pathToNewCategory: URL = AppGlobals.categoriesDirectoryPath.appendingPathComponent(newCategory.name, conformingTo: .directory)
+        let pathToNewCategory: URL = AppGlobals.categoriesDirectoryPath.appendingPathComponent(newCategory.id.uuidString, conformingTo: .directory)
         
         try FileManager.default.createDirectory(at: pathToNewCategory, withIntermediateDirectories: false)
         
