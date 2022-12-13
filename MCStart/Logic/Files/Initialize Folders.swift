@@ -13,7 +13,7 @@ func initializeFolders(categoryTracker: InstanceCategories) -> Void {
     
     print("Folder: \(AppGlobals.applicationSupportDirectoryPath.path)")
     
-    /// First, check if the app's folder exists in Application Support
+    /// If the app's folder doesn't exist in Application Support, create it
     if !FileManager.default.fileExists(atPath: AppGlobals.applicationSupportDirectoryPath.path) {
         
         /// If it does not, create it and initialize it
@@ -36,69 +36,67 @@ func initializeFolders(categoryTracker: InstanceCategories) -> Void {
             print("Failed creating folder in Application Support: \(error)")
         }
         
-    } else {
-        
-        print("Application Support folder exists")
-        
-        print("Categories folder exists")
-        
-        do {
-            
-            let categoriesFolders: [URL] = try FileManager.default.contentsOfDirectory(at: AppGlobals.categoriesDirectoryPath, includingPropertiesForKeys: nil, options: [.skipsHiddenFiles])
-            
-            for categoryFolderPath in categoriesFolders {
-                print("Category folder path: \(categoryFolderPath)")
-                
-                let metadataFilePath: URL = categoryFolderPath.appendingPathComponent("Metadata", conformingTo: .data)
-                
-                let metadataFilePathAsString: String = metadataFilePath.path
-                
-                if FileManager.default.fileExists(atPath: metadataFilePathAsString) {
-                    
-                    print("[Y] Metadata file at \(metadataFilePathAsString) exists")
-                    
-                    categoryPaths.append(metadataFilePath)
-                    
-                } else {
-                    
-                    print("[X] Metadata file at \(metadataFilePathAsString) does NOT exist")
-                    
-                    let burnerMetadataContents: InstanceCategory = InstanceCategory(name: "Test", iconSymbolName: "plus", instances: [])
-                    
-                    let encoder = JSONEncoder()
-                        
-                    do {
-                        
-                        print("About to encode")
-                        
-                        var encodedData = try encodeDataForSaving(from: burnerMetadataContents)
-                        
-                        do {
-                            try encodedData.write(to: metadataFilePath)
-                        } catch let error as NSError {
-                            print("Failed while saving metadata to file: \(error)")
-                        }
-                        
-                    } catch let error as NSError {
-                        print("Failed while encoding data: \(error)")
-                    }
-                    
-                }
-            }
-            
-            print("Category Paths: \(categoryPaths)")
-            
-            let initializedCategories: [InstanceCategory] = try decodeCategoriesFromDisk(atPaths: categoryPaths)
-            
-            categoryTracker.categories = initializedCategories
-            
-            print("Initialized Instances: \(initializedCategories)")
-            
-        } catch let error as NSError {
-            print("Error: \(error)")
-        }
-        
     }
         
+    print("Application Support folder exists")
+    
+    print("Categories folder exists")
+    
+    do {
+        
+        let categoriesFolders: [URL] = try FileManager.default.contentsOfDirectory(at: AppGlobals.categoriesDirectoryPath, includingPropertiesForKeys: nil, options: [.skipsHiddenFiles])
+        
+        for categoryFolderPath in categoriesFolders {
+            print("Category folder path: \(categoryFolderPath)")
+            
+            let metadataFilePath: URL = categoryFolderPath.appendingPathComponent("Metadata", conformingTo: .data)
+            
+            let metadataFilePathAsString: String = metadataFilePath.path
+            
+            if FileManager.default.fileExists(atPath: metadataFilePathAsString) {
+                
+                print("[Y] Metadata file at \(metadataFilePathAsString) exists")
+                
+                categoryPaths.append(metadataFilePath)
+                
+            } else {
+                
+                print("[X] Metadata file at \(metadataFilePathAsString) does NOT exist")
+                
+                let burnerMetadataContents: InstanceCategory = InstanceCategory(name: "Test", iconSymbolName: "plus", instances: [])
+                
+                let encoder = JSONEncoder()
+                    
+                do {
+                    
+                    print("About to encode")
+                    
+                    var encodedData = try encodeDataForSaving(from: burnerMetadataContents)
+                    
+                    do {
+                        try encodedData.write(to: metadataFilePath)
+                    } catch let error as NSError {
+                        print("Failed while saving metadata to file: \(error)")
+                    }
+                    
+                } catch let error as NSError {
+                    print("Failed while encoding data: \(error)")
+                }
+                
+            }
+        }
+        
+        print("Category Paths: \(categoryPaths)")
+        
+        let initializedCategories: [InstanceCategory] = try decodeCategoriesFromDisk(atPaths: categoryPaths)
+        
+        categoryTracker.categories = initializedCategories
+        
+        print("Initialized Instances: \(initializedCategories)")
+        
+    } catch let error as NSError {
+        print("Error: \(error)")
+    }
+    
     
 }

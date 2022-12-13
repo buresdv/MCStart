@@ -24,7 +24,7 @@ struct InstanceListView: View {
             List {
                 ForEach(instanceTracker) { instance in
                     NavigationLink {
-                        InstanceDetailView(instance: instance)
+                        InstanceDetailView(parentCategory: parentCategory, instance: instance)
                     } label: {
                         InstanceListItemView(instance: instance)
                     }
@@ -38,7 +38,13 @@ struct InstanceListView: View {
                         Divider()
                         
                         Button {
-                            instanceTracker.removeAll(where: { $0.id == instance.id })
+                            withAnimation {
+                                do {
+                                    try deleteInstance(parentCategoryUUID: parentCategory.id, instanceUUID: instance.id, instanceTracker: &instanceTracker)
+                                } catch let error as NSError {
+                                    print("Failed while attempting to delete instance: \(error)")
+                                }
+                            }
                         } label: {
                             Text("Delete")
                         }
@@ -60,7 +66,6 @@ struct InstanceListView: View {
             
             VStack(alignment: .leading) {
                 Button {
-                    print("Would Add")
                     
                     isShowingAddInstanceSheet.toggle()
                 } label: {

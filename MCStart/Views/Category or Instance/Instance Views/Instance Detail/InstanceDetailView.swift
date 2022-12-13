@@ -9,6 +9,7 @@ import SwiftUI
 
 struct InstanceDetailView: View {
     
+    @State var parentCategory: InstanceCategory
     @State var instance: Instance
     
     @EnvironmentObject var appState: AppState
@@ -64,7 +65,12 @@ struct InstanceDetailView: View {
                 
                 HStack {
                     Button {
-                        openFinder(at: AppGlobals.categoriesDirectoryPath)
+                        let pathToParentCategory: URL = AppGlobals.categoriesDirectoryPath.appendingPathComponent(parentCategory.id.uuidString, conformingTo: .directory)
+                        let pathToInstance: URL = pathToParentCategory.appendingPathComponent(instance.id.uuidString, conformingTo: .directory)
+                        
+                        print("Trying to open \(pathToInstance)")
+                        
+                        openFinder(at: pathToInstance)
                     } label: {
                         Text("Open Instance Folder")
                     }
@@ -126,19 +132,19 @@ struct InstanceDetailView: View {
         )
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {
-                    Button {
-                        print("Started")
-                    } label: {
-                        Label("Start", systemImage: "play.fill")
+                Button {
+                    withAnimation {
+                        appState.isShowingInstanceSettings.toggle()
                     }
+                } label: {
+                    Label("Instance Settings", systemImage: "gear")
+                }
                 
-                    Button {
-                        withAnimation {
-                            appState.isShowingInstanceSettings.toggle()
-                        }
-                    } label: {
-                        Label("Instance Settings", systemImage: "gear")
-                    }
+                Button {
+                    print("Started")
+                } label: {
+                    Label("Start", systemImage: "play.fill")
+                }
             }
         }
     }

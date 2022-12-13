@@ -11,5 +11,4 @@ import SwiftUI
 func initializeUserDefaults() -> Void {
     let userDefaults = UserDefaults.standard
     
-    
 }

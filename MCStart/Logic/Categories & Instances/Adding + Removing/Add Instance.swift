@@ -11,9 +11,7 @@ import SwiftUI
 #warning("This function is basically the same thing as the Add Category function. Maybe merge them somehow?")
 func addInstance(newInstance: Instance, parentCategoryUUID: UUID, instanceTracker: inout [Instance]) -> Void {
     
-    withAnimation {
-        instanceTracker.append(newInstance)
-    }
+    instanceTracker.append(newInstance)
     
     let pathToParentCategory: URL = getPathToCategoryFolderByUUID(categoryUUID: parentCategoryUUID)
     

@@ -31,6 +31,7 @@
 		63A63289293E7A5C007FD5A0 /* Add Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A63288293E7A5C007FD5A0 /* Add Category.swift */; };
 		63A6328B293E7D19007FD5A0 /* Create Metadata File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6328A293E7D19007FD5A0 /* Create Metadata File.swift */; };
 		63A6328D293E8BA5007FD5A0 /* Add Instance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6328C293E8BA5007FD5A0 /* Add Instance.swift */; };
+		63AA3E1E293FF0CF005C7CDF /* Mod Loaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AA3E1D293FF0CF005C7CDF /* Mod Loaders.swift */; };
 		63C29B4E293971CF0083151C /* Delete Instance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C29B4D293971CF0083151C /* Delete Instance.swift */; };
 		63C29B552939758E0083151C /* InstanceListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C29B542939758E0083151C /* InstanceListItemView.swift */; };
 		63C8ED7E293E5EB600394803 /* Get Path to Metadata File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8ED7D293E5EB600394803 /* Get Path to Metadata File.swift */; };
@@ -90,6 +91,7 @@
 		63A63288293E7A5C007FD5A0 /* Add Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add Category.swift"; sourceTree = "<group>"; };
 		63A6328A293E7D19007FD5A0 /* Create Metadata File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create Metadata File.swift"; sourceTree = "<group>"; };
 		63A6328C293E8BA5007FD5A0 /* Add Instance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add Instance.swift"; sourceTree = "<group>"; };
+		63AA3E1D293FF0CF005C7CDF /* Mod Loaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mod Loaders.swift"; sourceTree = "<group>"; };
 		63C29B4D293971CF0083151C /* Delete Instance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Delete Instance.swift"; sourceTree = "<group>"; };
 		63C29B542939758E0083151C /* InstanceListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceListItemView.swift; sourceTree = "<group>"; };
 		63C8ED7D293E5EB600394803 /* Get Path to Metadata File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Get Path to Metadata File.swift"; sourceTree = "<group>"; };
@@ -457,6 +459,7 @@
 			isa = PBXGroup;
 			children = (
 				63F4C0EB29357F6700BC0328 /* Alert Types.swift */,
+				63AA3E1D293FF0CF005C7CDF /* Mod Loaders.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				63F0B95529328AA600317642 /* Initialize Folders.swift in Sources */,
 				635CF89E293169CF00184766 /* App State.swift in Sources */,
 				635CF88629312A3200184766 /* Instance.swift in Sources */,
+				63AA3E1E293FF0CF005C7CDF /* Mod Loaders.swift in Sources */,
 				63A6328D293E8BA5007FD5A0 /* Add Instance.swift in Sources */,
 				63F0B96E2932D32A00317642 /* ExportArgumentSheet.swift in Sources */,
 				635CF87C2931281300184766 /* SidebarView.swift in Sources */,

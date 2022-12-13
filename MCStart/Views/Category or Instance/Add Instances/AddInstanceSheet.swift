@@ -17,6 +17,9 @@ struct AddInstanceSheet: View {
     
     @Binding var instanceTracker: [Instance]
     
+    @State var availableModLoaders: ModLoaders = .vanilla
+    @State private var selectedModLoader: ModLoaders = ModLoaders.allCases.first!
+    
     @State private var chosenSymbol: String = "magnifyingglass"
     
     var emptyInstance: Instance = Instance(name: "", version: "", dateCreated: getCurrentTimeAndDate(), iconSymbolName: "", modLoader: .vanilla, mods: [], settings: InstanceSettings(javaExecutablePath: "", javaArguments: []))
@@ -44,6 +47,12 @@ struct AddInstanceSheet: View {
                         Text(version)
                     }
                 }
+                Picker("Mod Loader:", selection: $selectedModLoader) {
+                    ForEach(ModLoaders.allCases, id: \.self) { modLoader in
+                        Text(modLoader.rawValue)
+                    }
+                }
+                .pickerStyle(.segmented)
                 
                 DisclosureGroup("Memory Settings") {
                     Form {
@@ -99,10 +108,13 @@ struct AddInstanceSheet: View {
                         print("Arrived to instance creation")
                         
                         newInstance.iconSymbolName = chosenSymbol
+                        newInstance.modLoader = selectedModLoader
                         
                         print("Will append \(newInstance)")
                         
-                        addInstance(newInstance: newInstance, parentCategoryUUID: parentCategory.id, instanceTracker: &instanceTracker)
+                        withAnimation {
+                            addInstance(newInstance: newInstance, parentCategoryUUID: parentCategory.id, instanceTracker: &instanceTracker)
+                        }
                         
                         isShowingSheet = false
                         

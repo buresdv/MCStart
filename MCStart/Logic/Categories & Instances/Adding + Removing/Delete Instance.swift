@@ -6,7 +6,22 @@
 //
 
 import Foundation
+import SwiftUI
 
-func deleteInstance(instanceUUID: UUID, instanceTracker: inout [Instance]) -> Void {
+enum DeletionError: Error {
+    case failedToDeleteFolder
+}
+
+func deleteInstance(parentCategoryUUID: UUID, instanceUUID: UUID, instanceTracker: inout [Instance]) throws -> Void {
+    
     instanceTracker.removeAll(where: { $0.id == instanceUUID })
+    
+    let parentCategoryPath: URL = getPathToCategoryFolderByUUID(categoryUUID: parentCategoryUUID)
+    let instancePath: URL = parentCategoryPath.appendingPathComponent(instanceUUID.uuidString, conformingTo: .directory)
+    
+    do {
+        try FileManager.default.removeItem(at: instancePath)
+    } catch let error as NSError {
+        throw DeletionError.failedToDeleteFolder
+    }
 }

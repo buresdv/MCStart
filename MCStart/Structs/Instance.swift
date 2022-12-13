@@ -7,12 +7,6 @@
 
 import Foundation
 
-enum ModLoaders: String, Codable {
-    case vanilla = "Vanilla"
-    case fabric = "Fabric"
-    case forge = "Forge"
-}
-
 struct Instance: Identifiable, Codable {
     
     var id: UUID = UUID()
