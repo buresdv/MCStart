@@ -22,6 +22,7 @@ func deleteInstance(parentCategoryUUID: UUID, instanceUUID: UUID, instanceTracke
     do {
         try FileManager.default.removeItem(at: instancePath)
     } catch let error as NSError {
+        print("Error while deleting instance from disk: \(error)")
         throw DeletionError.failedToDeleteFolder
     }
 }

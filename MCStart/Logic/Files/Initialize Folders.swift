@@ -71,7 +71,7 @@ func initializeFolders(categoryTracker: InstanceCategories) -> Void {
                     
                     print("About to encode")
                     
-                    var encodedData = try encodeDataForSaving(from: burnerMetadataContents)
+                    let encodedData = try encodeDataForSaving(from: burnerMetadataContents)
                     
                     do {
                         try encodedData.write(to: metadataFilePath)

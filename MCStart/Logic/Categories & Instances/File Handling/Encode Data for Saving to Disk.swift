@@ -25,10 +25,12 @@ func encodeDataForSaving(from originalData: some Codable) throws -> Data {
         do {
             encodedData = encodedData?.base64EncodedData()
         } catch let error as NSError {
+            print("Error while encoding to Data type: \(error)")
             throw EncodingError.failedToEncodeToData
         }
         
     } catch let error as NSError {
+        print("Error while encoding to JSON: \(error)")
         throw EncodingError.failedToEncodeToJSON
     }
     
