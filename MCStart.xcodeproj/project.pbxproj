@@ -35,6 +35,7 @@
 		63C29B4E293971CF0083151C /* Delete Instance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C29B4D293971CF0083151C /* Delete Instance.swift */; };
 		63C29B552939758E0083151C /* InstanceListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C29B542939758E0083151C /* InstanceListItemView.swift */; };
 		63C8ED7E293E5EB600394803 /* Get Path to Metadata File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8ED7D293E5EB600394803 /* Get Path to Metadata File.swift */; };
+		63CED976294E34360011905A /* FileSystemPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CED975294E34360011905A /* FileSystemPickerView.swift */; };
 		63E7F6E2293B70E800D0C6FB /* Decode From Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E7F6E1293B70E800D0C6FB /* Decode From Disk.swift */; };
 		63F0B9462932488100317642 /* Select File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B9452932488100317642 /* Select File.swift */; };
 		63F0B94929324D0C00317642 /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B94829324D0C00317642 /* NoticeView.swift */; };
@@ -95,6 +96,7 @@
 		63C29B4D293971CF0083151C /* Delete Instance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Delete Instance.swift"; sourceTree = "<group>"; };
 		63C29B542939758E0083151C /* InstanceListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceListItemView.swift; sourceTree = "<group>"; };
 		63C8ED7D293E5EB600394803 /* Get Path to Metadata File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Get Path to Metadata File.swift"; sourceTree = "<group>"; };
+		63CED975294E34360011905A /* FileSystemPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemPickerView.swift; sourceTree = "<group>"; };
 		63E7F6E1293B70E800D0C6FB /* Decode From Disk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decode From Disk.swift"; sourceTree = "<group>"; };
 		63F0B9452932488100317642 /* Select File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Select File.swift"; sourceTree = "<group>"; };
 		63F0B94829324D0C00317642 /* NoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoticeView.swift; path = MCStart/Views/NoticeView.swift; sourceTree = SOURCE_ROOT; };
@@ -344,6 +346,7 @@
 				63F0B9712932D3A700317642 /* CloseSheetButton.swift */,
 				63F4C0E32935353200BC0328 /* SheetWithHeadline.swift */,
 				63F4C0E829353D4700BC0328 /* IconPicker.swift */,
+				63CED975294E34360011905A /* FileSystemPickerView.swift */,
 			);
 			name = Reusables;
 			path = "New Group";
@@ -578,6 +581,7 @@
 				63F0B9572932A90500317642 /* InstanceSettingMinecraftOptions.swift in Sources */,
 				63F0B9632932BDFE00317642 /* DividerMaintainingGridWidth.swift in Sources */,
 				635CF86C293127C300184766 /* MCStartApp.swift in Sources */,
+				63CED976294E34360011905A /* FileSystemPickerView.swift in Sources */,
 				63F0B9462932488100317642 /* Select File.swift in Sources */,
 				63F0B95529328AA600317642 /* Initialize Folders.swift in Sources */,
 				635CF89E293169CF00184766 /* App State.swift in Sources */,

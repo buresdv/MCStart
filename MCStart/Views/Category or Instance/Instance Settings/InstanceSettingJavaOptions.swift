@@ -24,23 +24,7 @@ struct InstanceSettingJavaOptions: View {
                 Grid(alignment: .leading) {
                     GridRow {
                         Text("Java Executable Path")
-                        HStack {
-                            TextField("Java Executable Path", text: $settings.javaExecutablePath)
-                            Button {
-                                do {
-                                    let selectedPath = try selectFile(canChooseFiles: false, canChooseDirectories: true, title: "Select Java Installation")
-                                    
-                                    settings.javaExecutablePath = selectedPath.absoluteString
-                                    
-                                } catch let error as NSError {
-                                    print(error)
-                                }
-                            } label: {
-                                Label("Select Java Installation", systemImage: "magnifyingglass")
-                                    .labelStyle(.iconOnly)
-                            }
-
-                        }
+                        FileSystemPickerView(label: "Select Java Installation", textFieldPlaceholder: "Java Executable Path", selectedPath: $settings.javaExecutablePath)
                     }
                     
                     DividerMaintainingGridWidth()
