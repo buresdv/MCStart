@@ -17,6 +17,9 @@ struct SidebarView: View {
     
     @State private var isShowingAddCategorySheet: Bool = false
     
+    @AppStorage("accentColor") var accentColor: Color = .black
+    @AppStorage("accentColorAlsoAppliesToCategoryList") var accentColorAlsoAppliesToCategoryList: Bool = false
+    
     var body: some View {
         List {
             ForEach(instanceCategories.categories) { category in
@@ -24,6 +27,9 @@ struct SidebarView: View {
                     InstanceListView(parentCategory: category)
                 } label: {
                     Label(category.name, systemImage: category.iconSymbolName)
+                        .if(accentColorAlsoAppliesToCategoryList, transform: { view in
+                            view.foregroundColor(accentColor)
+                        })
                 }
 
             }

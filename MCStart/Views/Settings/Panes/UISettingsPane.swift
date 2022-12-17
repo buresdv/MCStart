@@ -22,6 +22,7 @@ struct UISettingsPane: View {
     @State var buttonStyleSelection: ButtonStyle = .textOnly
     
     @AppStorage("accentColor") var accentColor: Color = .black
+    @AppStorage("accentColorAlsoAppliesToCategoryList") var accentColorAlsoAppliesToCategoryList: Bool = false
     
     var body: some View {
         SettingsPaneTemplate {
@@ -38,8 +39,16 @@ struct UISettingsPane: View {
                     ColorPicker(selection: $accentColor) {
                         Text("Accent Color:")
                     }
+                    Picker(selection: $accentColorAlsoAppliesToCategoryList) {
+                        Text("Instances Only").tag(false)
+                        Text("Instances and Categories").tag(true)
+                    } label: {
+                        Text("Accent Color Applies To:")
+                    }
+                    .pickerStyle(.menu)
                 }
             }
+            .frame(minWidth: 350)
         }
     }
 }
