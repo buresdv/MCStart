@@ -10,13 +10,13 @@ import SwiftUI
 struct FileSystemPickerView: View {
     
     @State var label: String
-    @State var textFieldPlaceholder: String
+    @State var pickerButtonLabel: String
     
     @Binding var selectedPath: String
     
     var body: some View {
         HStack {
-            TextField(textFieldPlaceholder, text: $selectedPath)
+            TextField(label, text: $selectedPath)
             Button {
                 do {
                     var newPath = try selectFile(canChooseFiles: false, canChooseDirectories: true, title: "Select Java Installation")
@@ -27,7 +27,7 @@ struct FileSystemPickerView: View {
                     print(error)
                 }
             } label: {
-                Label(label, systemImage: "magnifyingglass")
+                Label(pickerButtonLabel, systemImage: "magnifyingglass")
                     .labelStyle(.iconOnly)
             }
 

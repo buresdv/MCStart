@@ -27,6 +27,12 @@ func addInstance(newInstance: Instance, parentCategoryUUID: UUID, instanceTracke
             
             createMetadataFile(inFolder: pathToNewInstance, encodedData: encodedData)
             
+            do {
+                try FileManager.default.createDirectory(at: pathToNewInstance.appendingPathComponent("mods", conformingTo: .directory), withIntermediateDirectories: false)
+            } catch let error as NSError {
+                print("Error creating the mods folder: \(error)")
+            }
+            
         } catch let error as NSError {
             print("Failed while encoding and saving data: \(error)")
         }

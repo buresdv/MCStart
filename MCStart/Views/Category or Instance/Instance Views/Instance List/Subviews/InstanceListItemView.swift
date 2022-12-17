@@ -11,9 +11,12 @@ struct InstanceListItemView: View {
     
     @State var instance: Instance
     
+    @AppStorage("accentColor") var accentColor: Color = .black
+    
     var body: some View {
         HStack(alignment: .firstTextBaseline) {
             Image(systemName: instance.iconSymbolName)
+                .foregroundStyle(accentColor)
             
             VStack(alignment: .leading) {
                 Text(instance.name)

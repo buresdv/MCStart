@@ -14,6 +14,10 @@ struct SettingsView: View {
                 .tabItem {
                     Label("UI Settings", systemImage: "macwindow")
                 }
+            AccountSettingsPage()
+                .tabItem {
+                    Label("Accounts", systemImage: "person.crop.circle")
+                }
         }
         .presentedWindowToolbarStyle(.unified(showsTitle: false))
     }

@@ -62,7 +62,7 @@ struct AddInstanceSheet: View {
                 }
 
                 DisclosureGroup("Java Settings") {
-                    TextField("Java Path", text: $newInstance.settings.javaExecutablePath)
+                    FileSystemPickerView(label: "Java Path", pickerButtonLabel: "Choose Folder", selectedPath: $newInstance.settings.javaExecutablePath)
                 }
             }
             

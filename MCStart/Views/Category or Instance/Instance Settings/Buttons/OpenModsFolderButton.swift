@@ -9,11 +9,11 @@ import SwiftUI
 
 struct OpenModsFolderButton: View {
     
-    @State var modsFolder: String
+    @State var modsFolder: URL
     
     var body: some View {
         Button {
-            openFinder(at: URL(string: modsFolder)!)
+            openFinder(at: modsFolder)
         } label: {
             Label("Open Mods Folder", systemImage: "checklist")
         }

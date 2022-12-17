@@ -29,6 +29,7 @@ struct NoticeView: View {
                     .frame(width: 50, height: 50)
                 Text(noticeText)
                     .font(.title)
+                    .multilineTextAlignment(.center)
                     
             }
             .foregroundColor(Color(nsColor: NSColor.lightGray))

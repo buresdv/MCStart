@@ -24,7 +24,7 @@ struct InstanceSettingJavaOptions: View {
                 Grid(alignment: .leading) {
                     GridRow {
                         Text("Java Executable Path")
-                        FileSystemPickerView(label: "Select Java Installation", textFieldPlaceholder: "Java Executable Path", selectedPath: $settings.javaExecutablePath)
+                        FileSystemPickerView(label: "Java Executable Path", pickerButtonLabel: "Select Java Installation", selectedPath: $settings.javaExecutablePath)
                     }
                     
                     DividerMaintainingGridWidth()

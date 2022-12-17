@@ -14,6 +14,8 @@ struct InstanceDetailView: View {
     
     @EnvironmentObject var appState: AppState
     
+    @AppStorage("accentColor") var accentColor: Color = .black
+    
     var body: some View {
         HSplitView {
             VStack(alignment: .leading) {
@@ -24,6 +26,7 @@ struct InstanceDetailView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(height: 40)
+                        .foregroundStyle(accentColor)
                     
                     EditableLabel($instance.name) {
                         print("New Name: \(instance.name)")
@@ -97,7 +100,7 @@ struct InstanceDetailView: View {
                             Label("Minecraft", systemImage: "cube")
                         }
                         .tag(1)
-                    InstanceSettingMods(mods: $instance.mods)
+                    InstanceSettingMods(parentCategory: parentCategory, instance: $instance)
                         .tabItem {
                             Label("Mods", systemImage: "checklist")
                         }

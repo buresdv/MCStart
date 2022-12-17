@@ -21,6 +21,8 @@ struct UISettingsPane: View {
     
     @State var buttonStyleSelection: ButtonStyle = .textOnly
     
+    @AppStorage("accentColor") var accentColor: Color = .black
+    
     var body: some View {
         SettingsPaneTemplate {
             VStack {
@@ -32,6 +34,10 @@ struct UISettingsPane: View {
                         Text("Button Style:")
                     }
                     .pickerStyle(.inline)
+                    
+                    ColorPicker(selection: $accentColor) {
+                        Text("Accent Color:")
+                    }
                 }
             }
         }

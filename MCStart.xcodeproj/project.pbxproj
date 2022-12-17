@@ -36,6 +36,8 @@
 		63C29B552939758E0083151C /* InstanceListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C29B542939758E0083151C /* InstanceListItemView.swift */; };
 		63C8ED7E293E5EB600394803 /* Get Path to Metadata File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8ED7D293E5EB600394803 /* Get Path to Metadata File.swift */; };
 		63CED976294E34360011905A /* FileSystemPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CED975294E34360011905A /* FileSystemPickerView.swift */; };
+		63CED978294E3BC90011905A /* Color - Encode and Decode into Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CED977294E3BC80011905A /* Color - Encode and Decode into Data.swift */; };
+		63CED97A294E40350011905A /* AccountSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CED979294E40350011905A /* AccountSettingsPage.swift */; };
 		63E7F6E2293B70E800D0C6FB /* Decode From Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E7F6E1293B70E800D0C6FB /* Decode From Disk.swift */; };
 		63F0B9462932488100317642 /* Select File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B9452932488100317642 /* Select File.swift */; };
 		63F0B94929324D0C00317642 /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B94829324D0C00317642 /* NoticeView.swift */; };
@@ -97,6 +99,8 @@
 		63C29B542939758E0083151C /* InstanceListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceListItemView.swift; sourceTree = "<group>"; };
 		63C8ED7D293E5EB600394803 /* Get Path to Metadata File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Get Path to Metadata File.swift"; sourceTree = "<group>"; };
 		63CED975294E34360011905A /* FileSystemPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemPickerView.swift; sourceTree = "<group>"; };
+		63CED977294E3BC80011905A /* Color - Encode and Decode into Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color - Encode and Decode into Data.swift"; sourceTree = "<group>"; };
+		63CED979294E40350011905A /* AccountSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsPage.swift; sourceTree = "<group>"; };
 		63E7F6E1293B70E800D0C6FB /* Decode From Disk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decode From Disk.swift"; sourceTree = "<group>"; };
 		63F0B9452932488100317642 /* Select File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Select File.swift"; sourceTree = "<group>"; };
 		63F0B94829324D0C00317642 /* NoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoticeView.swift; path = MCStart/Views/NoticeView.swift; sourceTree = SOURCE_ROOT; };
@@ -241,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				63F0B94D2932622400317642 /* View - Conditional Modifiers.swift */,
+				63CED977294E3BC80011905A /* Color - Encode and Decode into Data.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -420,6 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				63F4C0D02935042E00BC0328 /* UISettingsPane.swift */,
+				63CED979294E40350011905A /* AccountSettingsPage.swift */,
 			);
 			path = Panes;
 			sourceTree = "<group>";
@@ -561,6 +567,7 @@
 				63F4C0D12935042E00BC0328 /* UISettingsPane.swift in Sources */,
 				63F4C0D62935073B00BC0328 /* Initialize User Defaults.swift in Sources */,
 				63F0B96C2932D31E00317642 /* ImportArgumentSheet.swift in Sources */,
+				63CED97A294E40350011905A /* AccountSettingsPage.swift in Sources */,
 				63F4C0E72935388800BC0328 /* AddInstanceSheet.swift in Sources */,
 				63F4C0E42935353200BC0328 /* SheetWithHeadline.swift in Sources */,
 				635CF8812931299F00184766 /* InstanceDetailView.swift in Sources */,
@@ -574,6 +581,7 @@
 				63F0B94E2932622400317642 /* View - Conditional Modifiers.swift in Sources */,
 				63F0B9502932870F00317642 /* App Globals.swift in Sources */,
 				63C8ED7E293E5EB600394803 /* Get Path to Metadata File.swift in Sources */,
+				63CED978294E3BC90011905A /* Color - Encode and Decode into Data.swift in Sources */,
 				63F0B9682932CE3000317642 /* NicerTextEditor.swift in Sources */,
 				635CF89C293164CC00184766 /* InstanceSettingJavaOptions.swift in Sources */,
 				63C29B4E293971CF0083151C /* Delete Instance.swift in Sources */,
