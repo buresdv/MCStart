@@ -24,13 +24,13 @@ func getContentsOfFolder(at URL: URL, returns: FolderContentType) throws -> [URL
     do {
         switch returns {
         case .folders:
-            folderContents = try FileManager.default.contentsOfDirectory(at: URL, includingPropertiesForKeys: [.isDirectoryKey, .isRegularFileKey])
+            folderContents = try FileManager.default.contentsOfDirectory(at: URL, includingPropertiesForKeys: [.isDirectoryKey, .isRegularFileKey], options: [.skipsHiddenFiles])
             folderContents = folderContents.filter({ $0.hasDirectoryPath })
         case .files:
-            folderContents = try FileManager.default.contentsOfDirectory(at: URL, includingPropertiesForKeys: [.isDirectoryKey, .isRegularFileKey])
+            folderContents = try FileManager.default.contentsOfDirectory(at: URL, includingPropertiesForKeys: [.isDirectoryKey, .isRegularFileKey], options: [.skipsHiddenFiles])
             folderContents = folderContents.filter({ !$0.hasDirectoryPath })
         case .all:
-            folderContents = try FileManager.default.contentsOfDirectory(at: URL, includingPropertiesForKeys: [.isRegularFileKey, .isDirectoryKey])
+            folderContents = try FileManager.default.contentsOfDirectory(at: URL, includingPropertiesForKeys: [.isRegularFileKey, .isDirectoryKey], options: [.skipsHiddenFiles])
         }
         
     } catch let error as NSError {
