@@ -19,33 +19,48 @@ struct UISettingsPane: View {
     
     #warning("Make this actually work")
     
-    @State var buttonStyleSelection: ButtonStyle = .textOnly
-    
     @AppStorage("accentColor") var accentColor: Color = .black
     @AppStorage("accentColorAlsoAppliesToCategoryList") var accentColorAlsoAppliesToCategoryList: Bool = false
+    @AppStorage("accentColorAlsoAppliesToActiveButtonState") var accentColorAlsoAppliesToActiveButtonState: Bool = false
+    @AppStorage("buttonStyle") var buttonStyle: ButtonStyle = .textOnly
     
     var body: some View {
         SettingsPaneTemplate {
             VStack {
                 Form {
-                    Picker(selection: $buttonStyleSelection) {
-                        Text("Text Only").tag(ButtonStyle.textOnly)
-                        Text("Text and Icon").tag(ButtonStyle.textAndIcon)
-                    } label: {
-                        Text("Button Style:")
+                    Section { // Button Styles
+                        Picker(selection: $buttonStyle) {
+                            Text("Text Only").tag(ButtonStyle.textOnly)
+                            Text("Text and Icon").tag(ButtonStyle.textAndIcon)
+                        } label: {
+                            Text("Button Style:")
+                        }
+                        .pickerStyle(.inline)
                     }
-                    .pickerStyle(.inline)
                     
-                    ColorPicker(selection: $accentColor) {
-                        Text("Accent Color:")
+                    Section { // Accent Colors
+                        ColorPicker(selection: $accentColor) {
+                            Text("Accent Color:")
+                        }
+                        Picker(selection: $accentColorAlsoAppliesToCategoryList) {
+                            Text("Instances Only").tag(false)
+                            Text("Instances and Categories").tag(true)
+                        } label: {
+                            Text("Accent Color Applies To:")
+                        }
+                        .pickerStyle(.inline)
+                        
+                        LabeledContent {
+                            Toggle(isOn: $accentColorAlsoAppliesToActiveButtonState) {
+                                Text("Active Buttons")
+                            }
+
+                        } label: {
+                            Text("")
+                        }
+                        .labelsHidden()
+
                     }
-                    Picker(selection: $accentColorAlsoAppliesToCategoryList) {
-                        Text("Instances Only").tag(false)
-                        Text("Instances and Categories").tag(true)
-                    } label: {
-                        Text("Accent Color Applies To:")
-                    }
-                    .pickerStyle(.menu)
                 }
             }
             .frame(minWidth: 350)

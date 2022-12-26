@@ -36,7 +36,16 @@ struct SidebarView: View {
         }
         .listStyle(.sidebar)
         .toolbar {
-            ToolbarItem(placement: .navigation) {
+            /* This would put the button up in the sidebar. Consider what looks nicer
+            ToolbarItem {
+                Button {
+                    print("Ahoj")
+                } label: {
+                    Label("Add Category", systemImage: "plus")
+                }
+
+            }*/
+            ToolbarItem(placement: .automatic) {
                 Button {
                     toggleSidebar()
                 } label: {

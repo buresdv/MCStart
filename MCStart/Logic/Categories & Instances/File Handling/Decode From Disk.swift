@@ -56,9 +56,7 @@ func decodeInstancesFromDisk(atCategoryPath: URL) throws -> [Instance] {
     var finalInstances: [Instance] = []
     
     do {
-        var instanceFoldersInCategoryFolder: [URL] = try FileManager.default.contentsOfDirectory(at: atCategoryPath, includingPropertiesForKeys: [.isDirectoryKey])
-        
-        instanceFoldersInCategoryFolder = instanceFoldersInCategoryFolder.filter({ $0.hasDirectoryPath })
+        let instanceFoldersInCategoryFolder: [URL] = try getContentsOfFolder(at: atCategoryPath, returns: .folders)
         
         for instanceFolder in instanceFoldersInCategoryFolder {
             do {

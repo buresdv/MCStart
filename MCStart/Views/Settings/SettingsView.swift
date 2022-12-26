@@ -18,6 +18,10 @@ struct SettingsView: View {
                 .tabItem {
                     Label("Accounts", systemImage: "person.crop.circle")
                 }
+            OtherSettingsPane()
+                .tabItem {
+                    Label("Other", systemImage: "gearshape")
+                }
         }
         .presentedWindowToolbarStyle(.unified(showsTitle: false))
     }

@@ -15,6 +15,7 @@ struct InstanceDetailView: View {
     @EnvironmentObject var appState: AppState
     
     @AppStorage("accentColor") var accentColor: Color = .black
+    @AppStorage("accentColorAlsoAppliesToActiveButtonState") var accentColorAlsoAppliesToActiveButtonState: Bool = false
     
     var body: some View {
         HSplitView {
@@ -125,6 +126,9 @@ struct InstanceDetailView: View {
                 }
                 
             }
+        }
+        .onAppear {
+            
         }
         .frame(
             minWidth: 400,

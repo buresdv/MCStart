@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63260F08295603B300402E98 /* DSFSearchField in Frameworks */ = {isa = PBXBuildFile; productRef = 63260F07295603B300402E98 /* DSFSearchField */; };
 		63267A70293AA8AB00E66588 /* Get Current Time and Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63267A6F293AA8AB00E66588 /* Get Current Time and Date.swift */; };
 		63267A73293AB10800E66588 /* Encode Data for Saving to Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63267A72293AB10800E66588 /* Encode Data for Saving to Disk.swift */; };
 		635CF86C293127C300184766 /* MCStartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF86B293127C300184766 /* MCStartApp.swift */; };
@@ -27,6 +28,10 @@
 		635CF89A293164B700184766 /* InstanceSettingMods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF899293164B700184766 /* InstanceSettingMods.swift */; };
 		635CF89C293164CC00184766 /* InstanceSettingJavaOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF89B293164CC00184766 /* InstanceSettingJavaOptions.swift */; };
 		635CF89E293169CF00184766 /* App State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF89D293169CF00184766 /* App State.swift */; };
+		636F5906294E778F001A82E7 /* OtherSettingsPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F5905294E778F001A82E7 /* OtherSettingsPane.swift */; };
+		636F5909294E78CF001A82E7 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F5908294E78CF001A82E7 /* OnboardingView.swift */; };
+		636F590B294E7BD7001A82E7 /* OnboardingPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F590A294E7BD7001A82E7 /* OnboardingPicture.swift */; };
+		637F79DD295A0F2A0048A781 /* Get Contents of Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F79DC295A0F2A0048A781 /* Get Contents of Folder.swift */; };
 		639D7563293E9B0C00BD2946 /* Get Category Folder By UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639D7562293E9B0C00BD2946 /* Get Category Folder By UUID.swift */; };
 		63A63289293E7A5C007FD5A0 /* Add Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A63288293E7A5C007FD5A0 /* Add Category.swift */; };
 		63A6328B293E7D19007FD5A0 /* Create Metadata File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6328A293E7D19007FD5A0 /* Create Metadata File.swift */; };
@@ -38,6 +43,7 @@
 		63CED976294E34360011905A /* FileSystemPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CED975294E34360011905A /* FileSystemPickerView.swift */; };
 		63CED978294E3BC90011905A /* Color - Encode and Decode into Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CED977294E3BC80011905A /* Color - Encode and Decode into Data.swift */; };
 		63CED97A294E40350011905A /* AccountSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CED979294E40350011905A /* AccountSettingsPage.swift */; };
+		63CED97E294E55D70011905A /* Button - Encode and Decode Button Style to Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CED97D294E55D70011905A /* Button - Encode and Decode Button Style to Data.swift */; };
 		63E7F6E2293B70E800D0C6FB /* Decode From Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E7F6E1293B70E800D0C6FB /* Decode From Disk.swift */; };
 		63F0B9462932488100317642 /* Select File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B9452932488100317642 /* Select File.swift */; };
 		63F0B94929324D0C00317642 /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0B94829324D0C00317642 /* NoticeView.swift */; };
@@ -90,6 +96,10 @@
 		635CF899293164B700184766 /* InstanceSettingMods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceSettingMods.swift; sourceTree = "<group>"; };
 		635CF89B293164CC00184766 /* InstanceSettingJavaOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceSettingJavaOptions.swift; sourceTree = "<group>"; };
 		635CF89D293169CF00184766 /* App State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App State.swift"; sourceTree = "<group>"; };
+		636F5905294E778F001A82E7 /* OtherSettingsPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherSettingsPane.swift; sourceTree = "<group>"; };
+		636F5908294E78CF001A82E7 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		636F590A294E7BD7001A82E7 /* OnboardingPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPicture.swift; sourceTree = "<group>"; };
+		637F79DC295A0F2A0048A781 /* Get Contents of Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Get Contents of Folder.swift"; sourceTree = "<group>"; };
 		639D7562293E9B0C00BD2946 /* Get Category Folder By UUID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Get Category Folder By UUID.swift"; sourceTree = "<group>"; };
 		63A63288293E7A5C007FD5A0 /* Add Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add Category.swift"; sourceTree = "<group>"; };
 		63A6328A293E7D19007FD5A0 /* Create Metadata File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create Metadata File.swift"; sourceTree = "<group>"; };
@@ -101,6 +111,7 @@
 		63CED975294E34360011905A /* FileSystemPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemPickerView.swift; sourceTree = "<group>"; };
 		63CED977294E3BC80011905A /* Color - Encode and Decode into Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color - Encode and Decode into Data.swift"; sourceTree = "<group>"; };
 		63CED979294E40350011905A /* AccountSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsPage.swift; sourceTree = "<group>"; };
+		63CED97D294E55D70011905A /* Button - Encode and Decode Button Style to Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button - Encode and Decode Button Style to Data.swift"; sourceTree = "<group>"; };
 		63E7F6E1293B70E800D0C6FB /* Decode From Disk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decode From Disk.swift"; sourceTree = "<group>"; };
 		63F0B9452932488100317642 /* Select File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Select File.swift"; sourceTree = "<group>"; };
 		63F0B94829324D0C00317642 /* NoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoticeView.swift; path = MCStart/Views/NoticeView.swift; sourceTree = SOURCE_ROOT; };
@@ -136,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63F4C0E22935231E00BC0328 /* SymbolPicker in Frameworks */,
+				63260F08295603B300402E98 /* DSFSearchField in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +159,7 @@
 			children = (
 				63267A72293AB10800E66588 /* Encode Data for Saving to Disk.swift */,
 				63E7F6E1293B70E800D0C6FB /* Decode From Disk.swift */,
+				637F79DC295A0F2A0048A781 /* Get Contents of Folder.swift */,
 			);
 			path = "File Handling";
 			sourceTree = "<group>";
@@ -198,6 +211,7 @@
 		635CF87A2931280700184766 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				636F5907294E78BE001A82E7 /* Onboarding */,
 				63F0B94729324CFB00317642 /* Reusables */,
 				635CF88E2931396100184766 /* Misc */,
 				635CF889293132E200184766 /* Settings */,
@@ -246,6 +260,7 @@
 			children = (
 				63F0B94D2932622400317642 /* View - Conditional Modifiers.swift */,
 				63CED977294E3BC80011905A /* Color - Encode and Decode into Data.swift */,
+				63CED97D294E55D70011905A /* Button - Encode and Decode Button Style to Data.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -288,6 +303,15 @@
 				63F0B9562932A90500317642 /* InstanceSettingMinecraftOptions.swift */,
 			);
 			path = "Instance Settings";
+			sourceTree = "<group>";
+		};
+		636F5907294E78BE001A82E7 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				636F5908294E78CF001A82E7 /* OnboardingView.swift */,
+				636F590A294E7BD7001A82E7 /* OnboardingPicture.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		639D7561293E9AFC00BD2946 /* Misc */ = {
@@ -426,6 +450,7 @@
 			children = (
 				63F4C0D02935042E00BC0328 /* UISettingsPane.swift */,
 				63CED979294E40350011905A /* AccountSettingsPage.swift */,
+				636F5905294E778F001A82E7 /* OtherSettingsPane.swift */,
 			);
 			path = Panes;
 			sourceTree = "<group>";
@@ -491,6 +516,7 @@
 			name = MCStart;
 			packageProductDependencies = (
 				63F4C0E12935231E00BC0328 /* SymbolPicker */,
+				63260F07295603B300402E98 /* DSFSearchField */,
 			);
 			productName = MCStart;
 			productReference = 635CF868293127C300184766 /* MCStart.app */;
@@ -504,7 +530,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1410;
-				LastUpgradeCheck = 1410;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					635CF867293127C300184766 = {
 						CreatedOnToolsVersion = 14.1;
@@ -522,6 +548,7 @@
 			mainGroup = 635CF85F293127C300184766;
 			packageReferences = (
 				63F4C0E02935231E00BC0328 /* XCRemoteSwiftPackageReference "SymbolPicker" */,
+				63260F06295603B200402E98 /* XCRemoteSwiftPackageReference "DSFSearchField" */,
 			);
 			productRefGroup = 635CF869293127C300184766 /* Products */;
 			projectDirPath = "";
@@ -565,6 +592,7 @@
 				635CF893293141F300184766 /* Open Finder.swift in Sources */,
 				63F0B95229328A7C00317642 /* Check if Exists At Path.swift in Sources */,
 				63F4C0D12935042E00BC0328 /* UISettingsPane.swift in Sources */,
+				63CED97E294E55D70011905A /* Button - Encode and Decode Button Style to Data.swift in Sources */,
 				63F4C0D62935073B00BC0328 /* Initialize User Defaults.swift in Sources */,
 				63F0B96C2932D31E00317642 /* ImportArgumentSheet.swift in Sources */,
 				63CED97A294E40350011905A /* AccountSettingsPage.swift in Sources */,
@@ -577,6 +605,7 @@
 				63F0B95E2932B52700317642 /* Get Login Prerequisites.swift in Sources */,
 				63A63289293E7A5C007FD5A0 /* Add Category.swift in Sources */,
 				635CF8902931396F00184766 /* EditableLabel.swift in Sources */,
+				636F5909294E78CF001A82E7 /* OnboardingView.swift in Sources */,
 				63E7F6E2293B70E800D0C6FB /* Decode From Disk.swift in Sources */,
 				63F0B94E2932622400317642 /* View - Conditional Modifiers.swift in Sources */,
 				63F0B9502932870F00317642 /* App Globals.swift in Sources */,
@@ -589,15 +618,18 @@
 				63F0B9572932A90500317642 /* InstanceSettingMinecraftOptions.swift in Sources */,
 				63F0B9632932BDFE00317642 /* DividerMaintainingGridWidth.swift in Sources */,
 				635CF86C293127C300184766 /* MCStartApp.swift in Sources */,
+				637F79DD295A0F2A0048A781 /* Get Contents of Folder.swift in Sources */,
 				63CED976294E34360011905A /* FileSystemPickerView.swift in Sources */,
 				63F0B9462932488100317642 /* Select File.swift in Sources */,
 				63F0B95529328AA600317642 /* Initialize Folders.swift in Sources */,
 				635CF89E293169CF00184766 /* App State.swift in Sources */,
+				636F5906294E778F001A82E7 /* OtherSettingsPane.swift in Sources */,
 				635CF88629312A3200184766 /* Instance.swift in Sources */,
 				63AA3E1E293FF0CF005C7CDF /* Mod Loaders.swift in Sources */,
 				63A6328D293E8BA5007FD5A0 /* Add Instance.swift in Sources */,
 				63F0B96E2932D32A00317642 /* ExportArgumentSheet.swift in Sources */,
 				635CF87C2931281300184766 /* SidebarView.swift in Sources */,
+				636F590B294E7BD7001A82E7 /* OnboardingPicture.swift in Sources */,
 				63F4C0EC29357F6700BC0328 /* Alert Types.swift in Sources */,
 				635CF88D2931338C00184766 /* Instance Settings.swift in Sources */,
 				63C29B552939758E0083151C /* InstanceListItemView.swift in Sources */,
@@ -643,6 +675,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -703,6 +736,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -729,9 +763,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MCStart/MCStart.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"MCStart/Preview Content\"";
 				DEVELOPMENT_TEAM = ZSVA6DVZHM;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -756,9 +792,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MCStart/MCStart.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"MCStart/Preview Content\"";
 				DEVELOPMENT_TEAM = ZSVA6DVZHM;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -801,6 +839,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		63260F06295603B200402E98 /* XCRemoteSwiftPackageReference "DSFSearchField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dagronf/DSFSearchField";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		63F4C0E02935231E00BC0328 /* XCRemoteSwiftPackageReference "SymbolPicker" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/xnth97/SymbolPicker?ref=iosexample.com";
@@ -812,6 +858,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		63260F07295603B300402E98 /* DSFSearchField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63260F06295603B200402E98 /* XCRemoteSwiftPackageReference "DSFSearchField" */;
+			productName = DSFSearchField;
+		};
 		63F4C0E12935231E00BC0328 /* SymbolPicker */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 63F4C0E02935231E00BC0328 /* XCRemoteSwiftPackageReference "SymbolPicker" */;

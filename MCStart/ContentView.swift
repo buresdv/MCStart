@@ -12,6 +12,8 @@ struct ContentView: View {
     @StateObject var instanceCategories = InstanceCategories()
     @StateObject var appState = AppState()
     
+    @AppStorage("showOnboarding") var showOnboarding: Bool = false
+    
     var body: some View {
         NavigationView {
             SidebarView(instanceCategories: instanceCategories)
@@ -21,15 +23,36 @@ struct ContentView: View {
         .environmentObject(instanceCategories)
         .environmentObject(appState)
         .onAppear {
+            #if DEBUG
             print(AppGlobals.categoriesDirectoryPath)
+            #endif
+            
             initializeFolders(categoryTracker: instanceCategories)
             
             Task {
                 let loginPrerequisites: [String] = await getLoginPrerequisites()
+                
+                #if DEBUG
                 print("sFTTag: \(loginPrerequisites[0])")
                 print("urlPost: \(loginPrerequisites[1])")
+                #endif
             }
+            
+            #if DEBUG
             print(instanceCategories.categories)
+            #endif
+            
+            #if DEBUG
+            print("Here's what the file reading funtion found:")
+            do {
+                print(try getContentsOfFolder(at: URL(filePath: "/Users/david/Library/Application Support/MCStart/Categories/CB63C5F8-6F53-410A-AE3B-5CEFDA9F0932/7FC61A08-5FF1-4731-8158-4A4BD3EE7C55/mods"), returns: .all))
+            } catch let error as NSError {
+                print("Error reading contents of folder: \(error)")
+            }
+            #endif
+        }
+        .sheet(isPresented: $showOnboarding) {
+            OnboardingView(isShowingSheet: $showOnboarding)
         }
     }
 }

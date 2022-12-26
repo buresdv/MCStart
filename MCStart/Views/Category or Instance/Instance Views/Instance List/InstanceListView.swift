@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DSFSearchField
 
 struct InstanceListView: View {
     
@@ -14,15 +15,29 @@ struct InstanceListView: View {
     
     @State var searchString: String = ""
     
+    @State private var isShowingFilteringField: Bool = false
+    @State private var instanceFilter: String = ""
+    
     @State private var newInstance: Instance = Instance(name: "", version: "", dateCreated: Date(), iconSymbolName: "", modLoader: .vanilla, mods: [], settings: InstanceSettings(javaExecutablePath: "", javaArguments: []))
     
     @State var isShowingAddInstanceSheet: Bool = false
     
+    @AppStorage("accentColor") var accentColor: Color = .black
+    @AppStorage("accentColorAlsoAppliesToActiveButtonState") var accentColorAlsoAppliesToActiveButtonState: Bool = false
+    
     var body: some View {
         VStack {
             
+            if isShowingFilteringField {
+                DSFSearchField.SwiftUI(text: $instanceFilter, placeholderText: "Filter Instances", autosaveName: "instance-search") { text in
+                    
+                    print(text)
+
+                }
+            }
+            
             List {
-                ForEach(instanceTracker) { instance in
+                ForEach(filteredInstances) { instance in
                     NavigationLink {
                         InstanceDetailView(parentCategory: parentCategory, instance: instance)
                     } label: {
@@ -62,6 +77,29 @@ struct InstanceListView: View {
             .navigationTitle(parentCategory.name)
             .navigationSubtitle("\(instanceTracker.count) instances")
             
+            // This would put the button up in the sidebar. Consider what looks nicer
+            .toolbar {
+                ToolbarItem {
+                    Button {
+                        
+                        withAnimation {
+                            isShowingFilteringField.toggle()
+                        }
+                    } label: {
+                        if isShowingFilteringField {
+                            Label("Filter Instances", systemImage: "line.3.horizontal.decrease.circle.fill")
+                                .if(accentColorAlsoAppliesToActiveButtonState, transform: { view in
+                                    view.foregroundColor(accentColor)
+                                })
+                        } else {
+                            Label("Filter Instances", systemImage: "line.3.horizontal.decrease.circle")
+                        }
+                    }
+                    .keyboardShortcut("f", modifiers: [.command])
+
+                }
+            }
+            
             Spacer()
             
             VStack(alignment: .leading) {
@@ -99,6 +137,14 @@ struct InstanceListView: View {
         }
         .sheet(isPresented: $isShowingAddInstanceSheet) {
             AddInstanceSheet(isShowingSheet: $isShowingAddInstanceSheet, parentCategory: $parentCategory, newInstance: $newInstance, instanceTracker: $instanceTracker)
+        }
+    }
+    
+    var filteredInstances: [Instance] {
+        if searchString.isEmpty {
+            return instanceTracker
+        } else {
+            return instanceTracker.filter({ $0.name.localizedCaseInsensitiveContains(searchString) })
         }
     }
     
