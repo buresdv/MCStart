@@ -12,6 +12,8 @@ struct InstanceSettingMods: View {
     @State var parentCategory: InstanceCategory
     @Binding var instance: Instance
     
+    @State var availableMods: [Mod]
+    
     var body: some View {
         
         let pathToModsFolder: URL = AppGlobals.categoriesDirectoryPath.appendingPathComponent(parentCategory.id.uuidString, conformingTo: .directory).appendingPathComponent(instance.id.uuidString, conformingTo: .directory).appendingPathComponent("mods", conformingTo: .directory)
@@ -21,16 +23,16 @@ struct InstanceSettingMods: View {
             if instance.modLoader == .vanilla {
                 NoticeView(noticeType: .error, noticeText: "Vanilla instances don't support modding", isFullscreen: true)
             } else {
-                if !instance.mods.isEmpty {
-                    Table(instance.mods) {
+                if !availableMods.isEmpty {
+                    Table(availableMods) {
                         TableColumn("Enabled") { mod in
                             Toggle("", isOn: Binding<Bool>(
                                 get: {
                                     return mod.isEnabled
                                 },
                                 set: {
-                                    if let index = instance.mods.firstIndex(where: { $0.id == mod.id }) {
-                                        instance.mods[index].isEnabled = $0
+                                    if let index = availableMods.firstIndex(where: { $0.id == mod.id }) {
+                                        availableMods[index].isEnabled = $0
                                     }
                                 }
                             ))
@@ -42,13 +44,13 @@ struct InstanceSettingMods: View {
                     }
                     
                     HStack {
-                        if instance.mods.allSatisfy({ $0.isEnabled == true }) {
+                        if availableMods.allSatisfy({ $0.isEnabled == true }) {
                             Button {
                                 print("Would disable all")
                             } label: {
                                 Text("Disable All")
                             }
-                        } else if instance.mods.allSatisfy({ $0.isEnabled == false }) {
+                        } else if availableMods.allSatisfy({ $0.isEnabled == false }) {
                             Button {
                                 print("Would enable all")
                             } label: {

@@ -24,11 +24,11 @@ func getContentsOfFolder(at URL: URL, returns: FolderContentType) throws -> [URL
     do {
         switch returns {
         case .folders:
-            folderContents = try FileManager.default.contentsOfDirectory(at: URL, includingPropertiesForKeys: [.isDirectoryKey])
+            folderContents = try FileManager.default.contentsOfDirectory(at: URL, includingPropertiesForKeys: [.isDirectoryKey, .isRegularFileKey])
             folderContents = folderContents.filter({ $0.hasDirectoryPath })
         case .files:
-            folderContents = try FileManager.default.contentsOfDirectory(at: URL, includingPropertiesForKeys: [.isRegularFileKey])
-            folderContents = folderContents.filter({ $0.isFileURL })
+            folderContents = try FileManager.default.contentsOfDirectory(at: URL, includingPropertiesForKeys: [.isDirectoryKey, .isRegularFileKey])
+            folderContents = folderContents.filter({ !$0.hasDirectoryPath })
         case .all:
             folderContents = try FileManager.default.contentsOfDirectory(at: URL, includingPropertiesForKeys: [.isRegularFileKey, .isDirectoryKey])
         }

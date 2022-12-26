@@ -17,7 +17,12 @@ struct InstanceDetailView: View {
     @AppStorage("accentColor") var accentColor: Color = .black
     @AppStorage("accentColorAlsoAppliesToActiveButtonState") var accentColorAlsoAppliesToActiveButtonState: Bool = false
     
+    @State var availableMods: [Mod] = []
+    
     var body: some View {
+        
+        let pathToModsFolder: URL = AppGlobals.categoriesDirectoryPath.appendingPathComponent(parentCategory.id.uuidString, conformingTo: .directory).appendingPathComponent(instance.id.uuidString, conformingTo: .directory).appendingPathComponent("mods", conformingTo: .directory)
+        
         HSplitView {
             VStack(alignment: .leading) {
                 
@@ -101,7 +106,7 @@ struct InstanceDetailView: View {
                             Label("Minecraft", systemImage: "cube")
                         }
                         .tag(1)
-                    InstanceSettingMods(parentCategory: parentCategory, instance: $instance)
+                    InstanceSettingMods(parentCategory: parentCategory, instance: $instance, availableMods: availableMods)
                         .tabItem {
                             Label("Mods", systemImage: "checklist")
                         }
@@ -128,7 +133,22 @@ struct InstanceDetailView: View {
             }
         }
         .onAppear {
+            // Initialize mod view
+            let contentsOfModsFolder = try! getContentsOfFolder(at: pathToModsFolder, returns: .files)
             
+            for pathToMod in contentsOfModsFolder {
+                let fixedPathToMod = pathToMod.path
+                
+                if fixedPathToMod.hasSuffix("jar") {
+                    
+                    availableMods.append(Mod(name: pathToMod.lastPathComponent, version: "1234", isEnabled: true))
+                    
+                } else {
+                    
+                    availableMods.append(Mod(name: pathToMod.lastPathComponent, version: "4321", isEnabled: false))
+                }
+                
+            }
         }
         .frame(
             minWidth: 400,
