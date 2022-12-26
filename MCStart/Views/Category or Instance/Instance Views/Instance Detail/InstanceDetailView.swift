@@ -141,11 +141,11 @@ struct InstanceDetailView: View {
                 
                 if fixedPathToMod.hasSuffix("jar") {
                     
-                    availableMods.append(Mod(name: pathToMod.lastPathComponent, version: "1234", isEnabled: true))
+                    availableMods.append(Mod(name: pathToMod.lastPathComponent, version: "1234", path: pathToMod, isEnabled: true))
                     
                 } else {
                     
-                    availableMods.append(Mod(name: pathToMod.lastPathComponent, version: "4321", isEnabled: false))
+                    availableMods.append(Mod(name: pathToMod.lastPathComponent, version: "4321", path: pathToMod, isEnabled: false))
                 }
                 
             }
@@ -158,7 +158,7 @@ struct InstanceDetailView: View {
             alignment: .leading
         )
         .toolbar {
-            ToolbarItemGroup(placement: .primaryAction) {
+            ToolbarItemGroup(placement: .automatic) {
                 Button {
                     withAnimation {
                         appState.isShowingInstanceSettings.toggle()

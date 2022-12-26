@@ -13,5 +13,7 @@ struct Mod: Codable, Identifiable {
     let name: String
     let version: String
     
+    let path: URL
+    
     var isEnabled: Bool
 }

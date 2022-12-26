@@ -32,6 +32,10 @@
 		636F5909294E78CF001A82E7 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F5908294E78CF001A82E7 /* OnboardingView.swift */; };
 		636F590B294E7BD7001A82E7 /* OnboardingPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F590A294E7BD7001A82E7 /* OnboardingPicture.swift */; };
 		637F79DD295A0F2A0048A781 /* Get Contents of Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F79DC295A0F2A0048A781 /* Get Contents of Folder.swift */; };
+		637F79E0295A22CF0048A781 /* Enable Mod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F79DF295A22CE0048A781 /* Enable Mod.swift */; };
+		637F79E2295A22D60048A781 /* Disable Mod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F79E1295A22D60048A781 /* Disable Mod.swift */; };
+		637F79E4295A2A680048A781 /* Copy File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F79E3295A2A680048A781 /* Copy File.swift */; };
+		637F79E6295A2FE60048A781 /* Delete File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F79E5295A2FE60048A781 /* Delete File.swift */; };
 		639D7563293E9B0C00BD2946 /* Get Category Folder By UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639D7562293E9B0C00BD2946 /* Get Category Folder By UUID.swift */; };
 		63A63289293E7A5C007FD5A0 /* Add Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A63288293E7A5C007FD5A0 /* Add Category.swift */; };
 		63A6328B293E7D19007FD5A0 /* Create Metadata File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6328A293E7D19007FD5A0 /* Create Metadata File.swift */; };
@@ -100,6 +104,10 @@
 		636F5908294E78CF001A82E7 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		636F590A294E7BD7001A82E7 /* OnboardingPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPicture.swift; sourceTree = "<group>"; };
 		637F79DC295A0F2A0048A781 /* Get Contents of Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Get Contents of Folder.swift"; sourceTree = "<group>"; };
+		637F79DF295A22CE0048A781 /* Enable Mod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enable Mod.swift"; sourceTree = "<group>"; };
+		637F79E1295A22D60048A781 /* Disable Mod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Disable Mod.swift"; sourceTree = "<group>"; };
+		637F79E3295A2A680048A781 /* Copy File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Copy File.swift"; sourceTree = "<group>"; };
+		637F79E5295A2FE60048A781 /* Delete File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Delete File.swift"; sourceTree = "<group>"; };
 		639D7562293E9B0C00BD2946 /* Get Category Folder By UUID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Get Category Folder By UUID.swift"; sourceTree = "<group>"; };
 		63A63288293E7A5C007FD5A0 /* Add Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add Category.swift"; sourceTree = "<group>"; };
 		63A6328A293E7D19007FD5A0 /* Create Metadata File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create Metadata File.swift"; sourceTree = "<group>"; };
@@ -157,6 +165,7 @@
 		63267A71293AB0F200E66588 /* File Handling */ = {
 			isa = PBXGroup;
 			children = (
+				637F79DE295A22C60048A781 /* Mods */,
 				63267A72293AB10800E66588 /* Encode Data for Saving to Disk.swift */,
 				63E7F6E1293B70E800D0C6FB /* Decode From Disk.swift */,
 				637F79DC295A0F2A0048A781 /* Get Contents of Folder.swift */,
@@ -314,6 +323,15 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		637F79DE295A22C60048A781 /* Mods */ = {
+			isa = PBXGroup;
+			children = (
+				637F79DF295A22CE0048A781 /* Enable Mod.swift */,
+				637F79E1295A22D60048A781 /* Disable Mod.swift */,
+			);
+			path = Mods;
+			sourceTree = "<group>";
+		};
 		639D7561293E9AFC00BD2946 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,6 +414,8 @@
 				63F0B9452932488100317642 /* Select File.swift */,
 				63F0B95129328A7C00317642 /* Check if Exists At Path.swift */,
 				63C8ED7D293E5EB600394803 /* Get Path to Metadata File.swift */,
+				637F79E3295A2A680048A781 /* Copy File.swift */,
+				637F79E5295A2FE60048A781 /* Delete File.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -592,6 +612,7 @@
 				635CF893293141F300184766 /* Open Finder.swift in Sources */,
 				63F0B95229328A7C00317642 /* Check if Exists At Path.swift in Sources */,
 				63F4C0D12935042E00BC0328 /* UISettingsPane.swift in Sources */,
+				637F79E2295A22D60048A781 /* Disable Mod.swift in Sources */,
 				63CED97E294E55D70011905A /* Button - Encode and Decode Button Style to Data.swift in Sources */,
 				63F4C0D62935073B00BC0328 /* Initialize User Defaults.swift in Sources */,
 				63F0B96C2932D31E00317642 /* ImportArgumentSheet.swift in Sources */,
@@ -606,6 +627,7 @@
 				63A63289293E7A5C007FD5A0 /* Add Category.swift in Sources */,
 				635CF8902931396F00184766 /* EditableLabel.swift in Sources */,
 				636F5909294E78CF001A82E7 /* OnboardingView.swift in Sources */,
+				637F79E6295A2FE60048A781 /* Delete File.swift in Sources */,
 				63E7F6E2293B70E800D0C6FB /* Decode From Disk.swift in Sources */,
 				63F0B94E2932622400317642 /* View - Conditional Modifiers.swift in Sources */,
 				63F0B9502932870F00317642 /* App Globals.swift in Sources */,
@@ -621,11 +643,13 @@
 				637F79DD295A0F2A0048A781 /* Get Contents of Folder.swift in Sources */,
 				63CED976294E34360011905A /* FileSystemPickerView.swift in Sources */,
 				63F0B9462932488100317642 /* Select File.swift in Sources */,
+				637F79E0295A22CF0048A781 /* Enable Mod.swift in Sources */,
 				63F0B95529328AA600317642 /* Initialize Folders.swift in Sources */,
 				635CF89E293169CF00184766 /* App State.swift in Sources */,
 				636F5906294E778F001A82E7 /* OtherSettingsPane.swift in Sources */,
 				635CF88629312A3200184766 /* Instance.swift in Sources */,
 				63AA3E1E293FF0CF005C7CDF /* Mod Loaders.swift in Sources */,
+				637F79E4295A2A680048A781 /* Copy File.swift in Sources */,
 				63A6328D293E8BA5007FD5A0 /* Add Instance.swift in Sources */,
 				63F0B96E2932D32A00317642 /* ExportArgumentSheet.swift in Sources */,
 				635CF87C2931281300184766 /* SidebarView.swift in Sources */,

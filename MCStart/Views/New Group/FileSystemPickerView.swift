@@ -19,7 +19,7 @@ struct FileSystemPickerView: View {
             TextField(label, text: $selectedPath)
             Button {
                 do {
-                    var newPath = try selectFile(canChooseFiles: false, canChooseDirectories: true, title: "Select Java Installation")
+                    var newPath = try selectFile(canChooseFiles: false, canChooseDirectories: true, canChooseMultipleFiles: false, title: "Select Java Installation")
                     
                     selectedPath = newPath.path
                     

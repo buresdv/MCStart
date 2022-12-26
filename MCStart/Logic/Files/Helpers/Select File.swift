@@ -13,10 +13,11 @@ enum FilePickerResults: Error {
     case failure
 }
 
-func selectFile(canChooseFiles: Bool, canChooseDirectories: Bool, title: String? = nil) throws -> URL {
+func selectFile(canChooseFiles: Bool, canChooseDirectories: Bool, canChooseMultipleFiles: Bool, title: String? = nil) throws -> URL {
     let panel = NSOpenPanel()
     
-    panel.allowsMultipleSelection = false
+    panel.allowsMultipleSelection = canChooseMultipleFiles
+    
     panel.canChooseFiles = canChooseFiles
     panel.canChooseDirectories = canChooseDirectories
     
