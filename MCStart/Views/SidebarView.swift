@@ -45,7 +45,7 @@ struct SidebarView: View {
                 }
 
             }*/
-            ToolbarItem(placement: .automatic) {
+            ToolbarItemGroup(placement: .automatic) {
                 Button {
                     toggleSidebar()
                 } label: {

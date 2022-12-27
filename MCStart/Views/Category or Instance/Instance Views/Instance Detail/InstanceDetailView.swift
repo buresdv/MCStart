@@ -167,6 +167,8 @@ struct InstanceDetailView: View {
                     Label("Instance Settings", systemImage: "gear")
                 }
                 
+                Spacer()
+                
                 Button {
                     print("Started")
                 } label: {

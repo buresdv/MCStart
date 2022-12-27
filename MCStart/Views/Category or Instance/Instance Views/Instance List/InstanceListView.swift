@@ -79,7 +79,7 @@ struct InstanceListView: View {
             
             // This would put the button up in the sidebar. Consider what looks nicer
             .toolbar {
-                ToolbarItem {
+                ToolbarItemGroup(placement: .automatic) {
                     Button {
                         
                         withAnimation {
@@ -96,7 +96,6 @@ struct InstanceListView: View {
                         }
                     }
                     .keyboardShortcut("f", modifiers: [.command])
-
                 }
             }
             

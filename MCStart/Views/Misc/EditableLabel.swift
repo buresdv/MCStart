@@ -36,7 +36,9 @@ public struct EditableLabel: View {
         }
         // Enable EditMode on double tap
         .onTapGesture(count: 1, perform: {
-            editProcessGoing = true
+            withAnimation {
+                editProcessGoing = true
+            }
         })
         // Exit from EditMode on Esc key press
         .onExitCommand(perform: { editProcessGoing = false; newValue = text })
