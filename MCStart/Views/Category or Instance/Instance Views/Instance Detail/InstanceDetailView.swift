@@ -160,11 +160,16 @@ struct InstanceDetailView: View {
         .toolbar {
             ToolbarItemGroup(placement: .automatic) {
                 Button {
-                    withAnimation {
-                        appState.isShowingInstanceSettings.toggle()
-                    }
+                    appState.isShowingInstanceSettings.toggle()
                 } label: {
-                    Label("Instance Settings", systemImage: "gear")
+                    if appState.isShowingInstanceSettings {
+                        Label("Instance Settings", systemImage: "gearshape.fill")
+                            .if(accentColorAlsoAppliesToActiveButtonState) { view in
+                                view.foregroundColor(accentColor)
+                            }
+                    } else {
+                        Label("Instance Settings", systemImage: "gearshape")
+                    }
                 }
                 
                 Spacer()
