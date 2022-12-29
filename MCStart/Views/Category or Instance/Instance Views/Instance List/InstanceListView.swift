@@ -13,8 +13,6 @@ struct InstanceListView: View {
     @State var parentCategory: InstanceCategory
     @State var instanceTracker: [Instance] = []
     
-    @State var searchString: String = ""
-    
     @State private var isShowingFilteringField: Bool = false
     @State private var instanceFilter: String = ""
     
@@ -34,10 +32,16 @@ struct InstanceListView: View {
                     print(text)
 
                 }
+                .onExitCommand { // Hide the search field upon pressing "escape"
+                    withAnimation {
+                        isShowingFilteringField.toggle()
+                    }
+                }
             }
             
             List {
-                ForEach(filteredInstances) { instance in
+                // Make the instances searchable
+                ForEach(instanceTracker.filter({ instanceFilter.isEmpty ? true : $0.name.localizedCaseInsensitiveContains(instanceFilter) })) { instance in
                     NavigationLink {
                         InstanceDetailView(parentCategory: parentCategory, instance: instance)
                     } label: {
@@ -136,14 +140,6 @@ struct InstanceListView: View {
         }
         .sheet(isPresented: $isShowingAddInstanceSheet) {
             AddInstanceSheet(isShowingSheet: $isShowingAddInstanceSheet, parentCategory: $parentCategory, newInstance: $newInstance, instanceTracker: $instanceTracker)
-        }
-    }
-    
-    var filteredInstances: [Instance] {
-        if searchString.isEmpty {
-            return instanceTracker
-        } else {
-            return instanceTracker.filter({ $0.name.localizedCaseInsensitiveContains(searchString) })
         }
     }
     
