@@ -15,6 +15,7 @@ struct InstanceListView: View {
     
     @State private var isShowingFilteringField: Bool = false
     @State private var instanceFilter: String = ""
+    @FocusState private var isSearchFieldFocused: Bool
     
     @State private var newInstance: Instance = Instance(name: "", version: "", dateCreated: Date(), iconSymbolName: "", modLoader: .vanilla, mods: [], settings: InstanceSettings(javaExecutablePath: "", javaArguments: []))
     
@@ -32,6 +33,7 @@ struct InstanceListView: View {
                     print(text)
 
                 }
+                .focused($isSearchFieldFocused)
                 .onExitCommand { // Hide the search field upon pressing "escape"
                     withAnimation {
                         isShowingFilteringField.toggle()
@@ -89,6 +91,8 @@ struct InstanceListView: View {
                         withAnimation {
                             isShowingFilteringField.toggle()
                         }
+                        
+                        isSearchFieldFocused.toggle()
                     } label: {
                         if isShowingFilteringField {
                             Label("Filter Instances", systemImage: "line.3.horizontal.decrease.circle.fill")

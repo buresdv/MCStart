@@ -102,8 +102,9 @@ struct InstanceSettingMods: View {
                         Button {
                             print("Will disable all")
                             
-                            for mod in availableMods {
+                            for (index, mod) in availableMods.enumerated() { // It has to be written this way because I need to access the index of the mod in its parent array to change its isEnabled value. Otherwise it just does nothing
                                 disableMod(mod: mod)
+                                availableMods[index].isEnabled = false
                             }
                             
                         } label: {
@@ -113,8 +114,9 @@ struct InstanceSettingMods: View {
                         Button {
                             print("Will enable all")
                             
-                            for mod in availableMods {
+                            for (index, mod) in availableMods.enumerated() {
                                 enableMod(mod: mod)
+                                availableMods[index].isEnabled = true
                             }
                         } label: {
                             Text("Enable All")

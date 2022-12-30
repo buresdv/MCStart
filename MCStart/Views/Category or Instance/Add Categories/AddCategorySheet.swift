@@ -69,6 +69,7 @@ struct AddCategorySheet: View {
                         Label("Add", systemImage: "plus")
                             .labelStyle(.titleOnly)
                     }
+                    .keyboardShortcut(.defaultAction)
 
                 }
             }
@@ -76,7 +77,7 @@ struct AddCategorySheet: View {
         .alert(isPresented: $isShowingAlert) {
             switch activeAlert {
             case .name:
-                return Alert(title: Text("Instance Name Empty"), message: Text("Please name your instance"), dismissButton: .default(Text("Close")))
+                return Alert(title: Text("Category Name Empty"), message: Text("Please name your category"), dismissButton: .default(Text("Close")))
             case .version:
                 return Alert(title: Text("No Version Selected"), message: Text("Please choose a game version"), dismissButton: .default(Text("Close")))
             case .memory:

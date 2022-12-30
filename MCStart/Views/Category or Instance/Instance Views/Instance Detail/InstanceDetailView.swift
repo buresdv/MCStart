@@ -21,7 +21,7 @@ struct InstanceDetailView: View {
     
     var body: some View {
         
-        let pathToModsFolder: URL = AppGlobals.categoriesDirectoryPath.appendingPathComponent(parentCategory.id.uuidString, conformingTo: .directory).appendingPathComponent(instance.id.uuidString, conformingTo: .directory).appendingPathComponent("mods", conformingTo: .directory)
+        let pathToModsFolder: URL = getPathToModsFolder(categoryUUID: parentCategory.id, instanceUUID: instance.id)
         
         HSplitView {
             VStack(alignment: .leading) {

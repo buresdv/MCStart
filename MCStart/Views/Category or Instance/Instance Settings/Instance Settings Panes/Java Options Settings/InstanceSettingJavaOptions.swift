@@ -64,7 +64,13 @@ struct InstanceSettingJavaOptions: View {
                             HStack {
                                 TextField("Argument", text: $newArgument)
                                     .onSubmit {
-                                        addNewArgument()
+                                        if newArgument.starts(with: "-") { // Is the user is trying to add an argument that starts with a dash, remove it before adding it. If this didn't happen, some arguments would have two dashes at the beginning
+                                            newArgument.remove(at: newArgument.startIndex)
+                                            
+                                            addNewArgument()
+                                        } else {
+                                            addNewArgument()
+                                        }
                                     }
                                 Button {
                                     addNewArgument()

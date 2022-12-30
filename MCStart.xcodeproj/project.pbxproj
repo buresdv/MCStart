@@ -31,6 +31,7 @@
 		636F5906294E778F001A82E7 /* OtherSettingsPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F5905294E778F001A82E7 /* OtherSettingsPane.swift */; };
 		636F5909294E78CF001A82E7 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F5908294E78CF001A82E7 /* OnboardingView.swift */; };
 		636F590B294E7BD7001A82E7 /* OnboardingPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F590A294E7BD7001A82E7 /* OnboardingPicture.swift */; };
+		63752950295F13040066EAC4 /* Get Path to Mods Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375294F295F13040066EAC4 /* Get Path to Mods Folder.swift */; };
 		637F79DD295A0F2A0048A781 /* Get Contents of Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F79DC295A0F2A0048A781 /* Get Contents of Folder.swift */; };
 		637F79E0295A22CF0048A781 /* Enable Mod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F79DF295A22CE0048A781 /* Enable Mod.swift */; };
 		637F79E2295A22D60048A781 /* Disable Mod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F79E1295A22D60048A781 /* Disable Mod.swift */; };
@@ -103,6 +104,7 @@
 		636F5905294E778F001A82E7 /* OtherSettingsPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherSettingsPane.swift; sourceTree = "<group>"; };
 		636F5908294E78CF001A82E7 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		636F590A294E7BD7001A82E7 /* OnboardingPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPicture.swift; sourceTree = "<group>"; };
+		6375294F295F13040066EAC4 /* Get Path to Mods Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Get Path to Mods Folder.swift"; sourceTree = "<group>"; };
 		637F79DC295A0F2A0048A781 /* Get Contents of Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Get Contents of Folder.swift"; sourceTree = "<group>"; };
 		637F79DF295A22CE0048A781 /* Enable Mod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enable Mod.swift"; sourceTree = "<group>"; };
 		637F79E1295A22D60048A781 /* Disable Mod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Disable Mod.swift"; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 				63F0B95329328A9700317642 /* Helpers */,
 				63F0B95429328AA600317642 /* Initialize Folders.swift */,
 				63A6328A293E7D19007FD5A0 /* Create Metadata File.swift */,
+				6375294F295F13040066EAC4 /* Get Path to Mods Folder.swift */,
 			);
 			path = Files;
 			sourceTree = "<group>";
@@ -305,11 +308,9 @@
 		635CF8982931649B00184766 /* Instance Settings */ = {
 			isa = PBXGroup;
 			children = (
+				63A0750F295DB62E00BA80C8 /* Instance Settings Panes */,
 				63F0B9642932C90200317642 /* Child Views */,
 				63F0B94A2932590900317642 /* Buttons */,
-				635CF899293164B700184766 /* InstanceSettingMods.swift */,
-				635CF89B293164CC00184766 /* InstanceSettingJavaOptions.swift */,
-				63F0B9562932A90500317642 /* InstanceSettingMinecraftOptions.swift */,
 			);
 			path = "Instance Settings";
 			sourceTree = "<group>";
@@ -338,6 +339,64 @@
 				639D7562293E9B0C00BD2946 /* Get Category Folder By UUID.swift */,
 			);
 			path = Misc;
+			sourceTree = "<group>";
+		};
+		63A0750F295DB62E00BA80C8 /* Instance Settings Panes */ = {
+			isa = PBXGroup;
+			children = (
+				63A07512295DB64F00BA80C8 /* Minecraft Settings */,
+				63A07511295DB63E00BA80C8 /* Java Options Settings */,
+				63A07510295DB63700BA80C8 /* Mods Settings */,
+			);
+			path = "Instance Settings Panes";
+			sourceTree = "<group>";
+		};
+		63A07510295DB63700BA80C8 /* Mods Settings */ = {
+			isa = PBXGroup;
+			children = (
+				63A07515295DB67800BA80C8 /* Child Views */,
+				635CF899293164B700184766 /* InstanceSettingMods.swift */,
+			);
+			path = "Mods Settings";
+			sourceTree = "<group>";
+		};
+		63A07511295DB63E00BA80C8 /* Java Options Settings */ = {
+			isa = PBXGroup;
+			children = (
+				63A07513295DB66A00BA80C8 /* Child Views */,
+				635CF89B293164CC00184766 /* InstanceSettingJavaOptions.swift */,
+			);
+			path = "Java Options Settings";
+			sourceTree = "<group>";
+		};
+		63A07512295DB64F00BA80C8 /* Minecraft Settings */ = {
+			isa = PBXGroup;
+			children = (
+				63A07514295DB67300BA80C8 /* Child Views */,
+				63F0B9562932A90500317642 /* InstanceSettingMinecraftOptions.swift */,
+			);
+			path = "Minecraft Settings";
+			sourceTree = "<group>";
+		};
+		63A07513295DB66A00BA80C8 /* Child Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Child Views";
+			sourceTree = "<group>";
+		};
+		63A07514295DB67300BA80C8 /* Child Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Child Views";
+			sourceTree = "<group>";
+		};
+		63A07515295DB67800BA80C8 /* Child Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Child Views";
 			sourceTree = "<group>";
 		};
 		63C29B4C293971BE0083151C /* Adding + Removing */ = {
@@ -628,6 +687,7 @@
 				635CF8902931396F00184766 /* EditableLabel.swift in Sources */,
 				636F5909294E78CF001A82E7 /* OnboardingView.swift in Sources */,
 				637F79E6295A2FE60048A781 /* Delete File.swift in Sources */,
+				63752950295F13040066EAC4 /* Get Path to Mods Folder.swift in Sources */,
 				63E7F6E2293B70E800D0C6FB /* Decode From Disk.swift in Sources */,
 				63F0B94E2932622400317642 /* View - Conditional Modifiers.swift in Sources */,
 				63F0B9502932870F00317642 /* App Globals.swift in Sources */,

@@ -125,6 +125,7 @@ struct AddInstanceSheet: View {
                     Label("Add", systemImage: "plus")
                         .labelStyle(.titleOnly)
                 }
+                .keyboardShortcut(.defaultAction)
 
             }
             .alert(isPresented: $isShowingAlert) {

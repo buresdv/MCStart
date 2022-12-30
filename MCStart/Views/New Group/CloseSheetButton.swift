@@ -20,5 +20,6 @@ struct CloseSheetButton: View {
             Label(customButtonText ?? "Close", systemImage: "xmark")
                 .labelStyle(.titleOnly)
         }
+        .keyboardShortcut(.cancelAction)
     }
 }

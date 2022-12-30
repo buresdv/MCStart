@@ -11,4 +11,5 @@ struct AppGlobals {
     static let applicationSupportDirectoryPath: URL = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!.appendingPathComponent("MCStart", conformingTo: .directory)
     
     static let categoriesDirectoryPath: URL = AppGlobals.applicationSupportDirectoryPath.appendingPathComponent("Categories", conformingTo: .directory)
+    
 }
