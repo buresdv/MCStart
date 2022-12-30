@@ -29,6 +29,10 @@ struct ContentView: View {
             
             initializeFolders(categoryTracker: instanceCategories)
             
+            /*if let url: URL = URL(string: "https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?client_id=\(AppGlobals.clientID)&response_type=code&redirect_uri=\(AppGlobals.redirectURL)&response_mode=query&scope=offline_access%20user.read%20mail.read") {
+                NSWorkspace.shared.open(url)
+            }*/
+            
             Task {
                 //let loginPrerequisites: [String] = await getLoginPrerequisites()
                 
@@ -36,6 +40,8 @@ struct ContentView: View {
                 //print("sFTTag: \(loginPrerequisites[0])")
                 //print("urlPost: \(loginPrerequisites[1])")
                 #endif
+                
+                //await print("Request Microsoft authorization result: \(requestMicrosoftAuthorization())")
             }
             
             #if DEBUG

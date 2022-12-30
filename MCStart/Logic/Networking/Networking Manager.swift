@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import SwiftUI
 
-class NetworkingManager {
+final class NetworkingManager {    
     func sendRequest(endpointURL: String) async throws -> String {
         guard let url = URL(string: endpointURL) else {
             return String("FAILURE")
@@ -25,4 +26,5 @@ class NetworkingManager {
         
         return dataDecoded
     }
+
 }
