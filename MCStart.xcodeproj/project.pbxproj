@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		63260F08295603B300402E98 /* DSFSearchField in Frameworks */ = {isa = PBXBuildFile; productRef = 63260F07295603B300402E98 /* DSFSearchField */; };
 		63267A70293AA8AB00E66588 /* Get Current Time and Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63267A6F293AA8AB00E66588 /* Get Current Time and Date.swift */; };
 		63267A73293AB10800E66588 /* Encode Data for Saving to Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63267A72293AB10800E66588 /* Encode Data for Saving to Disk.swift */; };
+		635B4EC4295F5012003D31B6 /* SymbolPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 635B4EC3295F5012003D31B6 /* SymbolPicker */; };
+		635B4EC7295F5055003D31B6 /* DSFSearchField in Frameworks */ = {isa = PBXBuildFile; productRef = 635B4EC6295F5055003D31B6 /* DSFSearchField */; };
+		635B4EC9295F5367003D31B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B4EC8295F5367003D31B6 /* AppDelegate.swift */; };
+		635B4ECB295F540E003D31B6 /* NSApplication - Get App Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B4ECA295F540E003D31B6 /* NSApplication - Get App Name.swift */; };
+		635B4ECD295F542C003D31B6 /* NSApplication - Get App Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B4ECC295F542C003D31B6 /* NSApplication - Get App Version.swift */; };
+		635B4ECF295F5472003D31B6 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B4ECE295F5472003D31B6 /* AboutView.swift */; };
+		635B4ED2295F5572003D31B6 /* Used Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B4ED1295F5572003D31B6 /* Used Package.swift */; };
 		635CF86C293127C300184766 /* MCStartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF86B293127C300184766 /* MCStartApp.swift */; };
 		635CF86E293127C300184766 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF86D293127C300184766 /* ContentView.swift */; };
 		635CF870293127C400184766 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635CF86F293127C400184766 /* Assets.xcassets */; };
@@ -73,7 +79,6 @@
 		63F4C0D32935047D00BC0328 /* SettingsPaneTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4C0D22935047D00BC0328 /* SettingsPaneTemplate.swift */; };
 		63F4C0D62935073B00BC0328 /* Initialize User Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4C0D52935073B00BC0328 /* Initialize User Defaults.swift */; };
 		63F4C0DF29351B1C00BC0328 /* AddCategorySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4C0DE29351B1C00BC0328 /* AddCategorySheet.swift */; };
-		63F4C0E22935231E00BC0328 /* SymbolPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 63F4C0E12935231E00BC0328 /* SymbolPicker */; };
 		63F4C0E42935353200BC0328 /* SheetWithHeadline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4C0E32935353200BC0328 /* SheetWithHeadline.swift */; };
 		63F4C0E72935388800BC0328 /* AddInstanceSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4C0E62935388800BC0328 /* AddInstanceSheet.swift */; };
 		63F4C0E929353D4700BC0328 /* IconPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4C0E829353D4700BC0328 /* IconPicker.swift */; };
@@ -83,6 +88,11 @@
 /* Begin PBXFileReference section */
 		63267A6F293AA8AB00E66588 /* Get Current Time and Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Get Current Time and Date.swift"; sourceTree = "<group>"; };
 		63267A72293AB10800E66588 /* Encode Data for Saving to Disk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encode Data for Saving to Disk.swift"; sourceTree = "<group>"; };
+		635B4EC8295F5367003D31B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		635B4ECA295F540E003D31B6 /* NSApplication - Get App Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSApplication - Get App Name.swift"; sourceTree = "<group>"; };
+		635B4ECC295F542C003D31B6 /* NSApplication - Get App Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSApplication - Get App Version.swift"; sourceTree = "<group>"; };
+		635B4ECE295F5472003D31B6 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		635B4ED1295F5572003D31B6 /* Used Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Used Package.swift"; sourceTree = "<group>"; };
 		635CF868293127C300184766 /* MCStart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCStart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		635CF86B293127C300184766 /* MCStartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCStartApp.swift; sourceTree = "<group>"; };
 		635CF86D293127C300184766 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -160,8 +170,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63F4C0E22935231E00BC0328 /* SymbolPicker in Frameworks */,
-				63260F08295603B300402E98 /* DSFSearchField in Frameworks */,
+				635B4EC4295F5012003D31B6 /* SymbolPicker in Frameworks */,
+				635B4EC7295F5055003D31B6 /* DSFSearchField in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +187,14 @@
 				637F79DC295A0F2A0048A781 /* Get Contents of Folder.swift */,
 			);
 			path = "File Handling";
+			sourceTree = "<group>";
+		};
+		635B4ED0295F5568003D31B6 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				635B4ED1295F5572003D31B6 /* Used Package.swift */,
+			);
+			path = Misc;
 			sourceTree = "<group>";
 		};
 		635CF85F293127C300184766 = {
@@ -211,6 +229,7 @@
 				635CF871293127C400184766 /* Preview Content */,
 				635CF89D293169CF00184766 /* App State.swift */,
 				63F0B94F2932870F00317642 /* App Globals.swift */,
+				635B4EC8295F5367003D31B6 /* AppDelegate.swift */,
 			);
 			path = MCStart;
 			sourceTree = "<group>";
@@ -262,6 +281,7 @@
 		635CF88329312A2400184766 /* Structs */ = {
 			isa = PBXGroup;
 			children = (
+				635B4ED0295F5568003D31B6 /* Misc */,
 				635CF88529312A3200184766 /* Instance.swift */,
 				635CF88729312AA600184766 /* Instance Category.swift */,
 				635CF88C2931338C00184766 /* Instance Settings.swift */,
@@ -277,6 +297,8 @@
 				63F0B94D2932622400317642 /* View - Conditional Modifiers.swift */,
 				63CED977294E3BC80011905A /* Color - Encode and Decode into Data.swift */,
 				63CED97D294E55D70011905A /* Button - Encode and Decode Button Style to Data.swift */,
+				635B4ECA295F540E003D31B6 /* NSApplication - Get App Name.swift */,
+				635B4ECC295F542C003D31B6 /* NSApplication - Get App Version.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -295,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				635CF88F2931396F00184766 /* EditableLabel.swift */,
+				635B4ECE295F5472003D31B6 /* AboutView.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -600,8 +623,8 @@
 			);
 			name = MCStart;
 			packageProductDependencies = (
-				63F4C0E12935231E00BC0328 /* SymbolPicker */,
-				63260F07295603B300402E98 /* DSFSearchField */,
+				635B4EC3295F5012003D31B6 /* SymbolPicker */,
+				635B4EC6295F5055003D31B6 /* DSFSearchField */,
 			);
 			productName = MCStart;
 			productReference = 635CF868293127C300184766 /* MCStart.app */;
@@ -632,8 +655,9 @@
 			);
 			mainGroup = 635CF85F293127C300184766;
 			packageReferences = (
-				63F4C0E02935231E00BC0328 /* XCRemoteSwiftPackageReference "SymbolPicker" */,
-				63260F06295603B200402E98 /* XCRemoteSwiftPackageReference "DSFSearchField" */,
+				636915CB295F4FB700B7595F /* XCRemoteSwiftPackageReference "microsoft-authentication-library-for-objc" */,
+				635B4EC2295F5012003D31B6 /* XCRemoteSwiftPackageReference "SymbolPicker" */,
+				635B4EC5295F5055003D31B6 /* XCRemoteSwiftPackageReference "DSFSearchField" */,
 			);
 			productRefGroup = 635CF869293127C300184766 /* Products */;
 			projectDirPath = "";
@@ -693,6 +717,7 @@
 				63A63289293E7A5C007FD5A0 /* Add Category.swift in Sources */,
 				635CF8902931396F00184766 /* EditableLabel.swift in Sources */,
 				636F5909294E78CF001A82E7 /* OnboardingView.swift in Sources */,
+				635B4EC9295F5367003D31B6 /* AppDelegate.swift in Sources */,
 				637F79E6295A2FE60048A781 /* Delete File.swift in Sources */,
 				63752950295F13040066EAC4 /* Get Path to Mods Folder.swift in Sources */,
 				63E7F6E2293B70E800D0C6FB /* Decode From Disk.swift in Sources */,
@@ -707,6 +732,7 @@
 				63F0B9572932A90500317642 /* InstanceSettingMinecraftOptions.swift in Sources */,
 				63F0B9632932BDFE00317642 /* DividerMaintainingGridWidth.swift in Sources */,
 				635CF86C293127C300184766 /* MCStartApp.swift in Sources */,
+				635B4ECB295F540E003D31B6 /* NSApplication - Get App Name.swift in Sources */,
 				637F79DD295A0F2A0048A781 /* Get Contents of Folder.swift in Sources */,
 				63CED976294E34360011905A /* FileSystemPickerView.swift in Sources */,
 				63F0B9462932488100317642 /* Select File.swift in Sources */,
@@ -720,10 +746,13 @@
 				637F79E4295A2A680048A781 /* Copy File.swift in Sources */,
 				63A6328D293E8BA5007FD5A0 /* Add Instance.swift in Sources */,
 				63F0B96E2932D32A00317642 /* ExportArgumentSheet.swift in Sources */,
+				635B4ECD295F542C003D31B6 /* NSApplication - Get App Version.swift in Sources */,
 				635CF87C2931281300184766 /* SidebarView.swift in Sources */,
 				636F590B294E7BD7001A82E7 /* OnboardingPicture.swift in Sources */,
 				63F4C0EC29357F6700BC0328 /* Alert Types.swift in Sources */,
 				635CF88D2931338C00184766 /* Instance Settings.swift in Sources */,
+				635B4ED2295F5572003D31B6 /* Used Package.swift in Sources */,
+				635B4ECF295F5472003D31B6 /* AboutView.swift in Sources */,
 				63C29B552939758E0083151C /* InstanceListItemView.swift in Sources */,
 				63F4C0DF29351B1C00BC0328 /* AddCategorySheet.swift in Sources */,
 				63F4C0E929353D4700BC0328 /* IconPicker.swift in Sources */,
@@ -931,7 +960,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		63260F06295603B200402E98 /* XCRemoteSwiftPackageReference "DSFSearchField" */ = {
+		635B4EC2295F5012003D31B6 /* XCRemoteSwiftPackageReference "SymbolPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/xnth97/SymbolPicker";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		635B4EC5295F5055003D31B6 /* XCRemoteSwiftPackageReference "DSFSearchField" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dagronf/DSFSearchField";
 			requirement = {
@@ -939,26 +976,26 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		63F4C0E02935231E00BC0328 /* XCRemoteSwiftPackageReference "SymbolPicker" */ = {
+		636915CB295F4FB700B7595F /* XCRemoteSwiftPackageReference "microsoft-authentication-library-for-objc" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/xnth97/SymbolPicker?ref=iosexample.com";
+			repositoryURL = "https://github.com/AzureAD/microsoft-authentication-library-for-objc";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		63260F07295603B300402E98 /* DSFSearchField */ = {
+		635B4EC3295F5012003D31B6 /* SymbolPicker */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 63260F06295603B200402E98 /* XCRemoteSwiftPackageReference "DSFSearchField" */;
-			productName = DSFSearchField;
-		};
-		63F4C0E12935231E00BC0328 /* SymbolPicker */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 63F4C0E02935231E00BC0328 /* XCRemoteSwiftPackageReference "SymbolPicker" */;
+			package = 635B4EC2295F5012003D31B6 /* XCRemoteSwiftPackageReference "SymbolPicker" */;
 			productName = SymbolPicker;
+		};
+		635B4EC6295F5055003D31B6 /* DSFSearchField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 635B4EC5295F5055003D31B6 /* XCRemoteSwiftPackageReference "DSFSearchField" */;
+			productName = DSFSearchField;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct MCStartApp: App {
+    
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -18,6 +21,14 @@ struct MCStartApp: App {
             
             CommandGroup(after: .appInfo) {
                 
+            }
+            
+            CommandGroup(replacing: CommandGroupPlacement.appInfo) {
+                Button(action: {
+                    appDelegate.showAboutPanel()
+                }) {
+                    Text("About \(NSApplication.appName!)")
+                }
             }
         }
         
