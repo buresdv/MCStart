@@ -9,38 +9,24 @@ import SwiftUI
 
 struct AccountSettingsPage: View {
     
-    @State var demoAccounts: [MicrosoftAccount] = [
-        MicrosoftAccount(username: "lFenix"),
-        MicrosoftAccount(username: "ballsdeep69"),
-        MicrosoftAccount(username: "DamnBro")
-    ]
+    @State var demoAccount: MicrosoftAccount = MicrosoftAccount(username: "lFenix")
     
     var body: some View {
         SettingsPaneTemplate {
             VStack {
-                List(demoAccounts) { account in
-                    
-                    HStack {
-                        Text(account.username)
-                        
-                        Spacer()
-                        
-                        Button {
-                            print(account.username)
-                            
-                            withAnimation {
-                                demoAccounts = demoAccounts.filter({ $0.id != account.id })
-                            }
-                            
-                            
-                        } label: {
-                            Text("Remove")
-                        }
-
+                VStack(alignment: .center) {
+                    AsyncImage(url: URL(string: "https://crafatar.com/avatars/69dddb94-8ce5-405e-b8bb-29f237cc658e")) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 100, height: 100, alignment: .center)
+                    } placeholder: {
+                        ProgressView()
                     }
-                    
+
+                    Text(demoAccount.username)
+                        .font(.headline)
                 }
-                .listStyle(.bordered(alternatesRowBackgrounds: true))
                 
                 HStack {
                     Spacer()

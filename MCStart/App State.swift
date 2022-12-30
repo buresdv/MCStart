@@ -13,4 +13,6 @@ class AppState: ObservableObject {
     @Published var isShowingInstanceSettings: Bool = false
     @Published var currentlyOpenedSettingsTab: Int = 1
     
+    @Published var isSignedInToMicrosoft: Bool = false
+    
 }

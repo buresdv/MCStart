@@ -34,6 +34,7 @@
 		635CF89A293164B700184766 /* InstanceSettingMods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF899293164B700184766 /* InstanceSettingMods.swift */; };
 		635CF89C293164CC00184766 /* InstanceSettingJavaOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF89B293164CC00184766 /* InstanceSettingJavaOptions.swift */; };
 		635CF89E293169CF00184766 /* App State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635CF89D293169CF00184766 /* App State.swift */; };
+		6364D433295F5B9E00CDEFBB /* MSAL in Frameworks */ = {isa = PBXBuildFile; productRef = 6364D432295F5B9E00CDEFBB /* MSAL */; };
 		636F5906294E778F001A82E7 /* OtherSettingsPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F5905294E778F001A82E7 /* OtherSettingsPane.swift */; };
 		636F5909294E78CF001A82E7 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F5908294E78CF001A82E7 /* OnboardingView.swift */; };
 		636F590B294E7BD7001A82E7 /* OnboardingPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F590A294E7BD7001A82E7 /* OnboardingPicture.swift */; };
@@ -93,6 +94,7 @@
 		635B4ECC295F542C003D31B6 /* NSApplication - Get App Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSApplication - Get App Version.swift"; sourceTree = "<group>"; };
 		635B4ECE295F5472003D31B6 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		635B4ED1295F5572003D31B6 /* Used Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Used Package.swift"; sourceTree = "<group>"; };
+		635B4ED4295F5AAE003D31B6 /* microsoft-authentication-library-for-objc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "microsoft-authentication-library-for-objc"; path = "/Users/david/Library/Developer/Xcode/DerivedData/MCStart-gbrdwzgbzyoqsubutnbaqqwlvczr/SourcePackages/checkouts/microsoft-authentication-library-for-objc"; sourceTree = "<absolute>"; };
 		635CF868293127C300184766 /* MCStart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCStart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		635CF86B293127C300184766 /* MCStartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCStartApp.swift; sourceTree = "<group>"; };
 		635CF86D293127C300184766 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				635B4EC4295F5012003D31B6 /* SymbolPicker in Frameworks */,
+				6364D433295F5B9E00CDEFBB /* MSAL in Frameworks */,
 				635B4EC7295F5055003D31B6 /* DSFSearchField in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,12 +200,21 @@
 			path = Misc;
 			sourceTree = "<group>";
 		};
+		635B4ED3295F5AAE003D31B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				635B4ED4295F5AAE003D31B6 /* microsoft-authentication-library-for-objc */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		635CF85F293127C300184766 = {
 			isa = PBXGroup;
 			children = (
 				63F0B9582932AA6900317642 /* README.md */,
 				635CF86A293127C300184766 /* MCStart */,
 				635CF869293127C300184766 /* Products */,
+				635B4ED3295F5AAE003D31B6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -625,6 +637,7 @@
 			packageProductDependencies = (
 				635B4EC3295F5012003D31B6 /* SymbolPicker */,
 				635B4EC6295F5055003D31B6 /* DSFSearchField */,
+				6364D432295F5B9E00CDEFBB /* MSAL */,
 			);
 			productName = MCStart;
 			productReference = 635CF868293127C300184766 /* MCStart.app */;
@@ -655,9 +668,9 @@
 			);
 			mainGroup = 635CF85F293127C300184766;
 			packageReferences = (
-				636915CB295F4FB700B7595F /* XCRemoteSwiftPackageReference "microsoft-authentication-library-for-objc" */,
 				635B4EC2295F5012003D31B6 /* XCRemoteSwiftPackageReference "SymbolPicker" */,
 				635B4EC5295F5055003D31B6 /* XCRemoteSwiftPackageReference "DSFSearchField" */,
+				6364D431295F5B9E00CDEFBB /* XCRemoteSwiftPackageReference "microsoft-authentication-library-for-objc" */,
 			);
 			productRefGroup = 635CF869293127C300184766 /* Products */;
 			projectDirPath = "";
@@ -976,7 +989,7 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		636915CB295F4FB700B7595F /* XCRemoteSwiftPackageReference "microsoft-authentication-library-for-objc" */ = {
+		6364D431295F5B9E00CDEFBB /* XCRemoteSwiftPackageReference "microsoft-authentication-library-for-objc" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AzureAD/microsoft-authentication-library-for-objc";
 			requirement = {
@@ -996,6 +1009,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 635B4EC5295F5055003D31B6 /* XCRemoteSwiftPackageReference "DSFSearchField" */;
 			productName = DSFSearchField;
+		};
+		6364D432295F5B9E00CDEFBB /* MSAL */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6364D431295F5B9E00CDEFBB /* XCRemoteSwiftPackageReference "microsoft-authentication-library-for-objc" */;
+			productName = MSAL;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

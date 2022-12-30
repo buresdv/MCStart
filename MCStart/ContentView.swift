@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MSAL
 
 struct ContentView: View {
     
@@ -56,15 +57,38 @@ struct ContentView: View {
                 print("Error reading contents of folder: \(error)")
             }
             #endif
+            
+            /// Microsoft Authentication stuff
+            let MSConfig = MSALPublicClientApplicationConfig(clientId: AppGlobals.clientID)
+            let MSApplication = try? MSALPublicClientApplication(configuration: MSConfig)
+            let MSScopes = ["User.Read"]
+            
+            let MSWebviewParameters = MSALWebviewParameters()
+            
+            let MSInteractiveParameters = MSALInteractiveTokenParameters(scopes: MSScopes, webviewParameters: MSWebviewParameters)
+            MSApplication?.acquireToken(with: MSInteractiveParameters, completionBlock: { (result, error) in
+                guard let MSAuthResult = result, error == nil else {
+                    print("Error while authing: \(error!.localizedDescription)")
+                    if error!.localizedDescription.contains("WebAuthenticationSession") {
+                        print("Already signed in")
+                        
+                        // If the user is already signed in, set the appropriate AppState variable
+                        appState.isSignedInToMicrosoft = true
+                        print(appState.isSignedInToMicrosoft)
+                    }
+                    return
+                }
+                let MSAccessToken = MSAuthResult.accessToken
+                let MSAccountIdentifier = MSAuthResult.account.identifier
+                
+                print("Token: \(MSAccessToken)")
+                print("Account Identifier: \(MSAccountIdentifier)")
+            })
+            
+            /// End of Micosoft Authentication stuff
         }
         .sheet(isPresented: $showOnboarding) {
             OnboardingView(isShowingSheet: $showOnboarding)
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
