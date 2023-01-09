@@ -71,6 +71,7 @@ func decodeInstancesFromDisk(atCategoryPath: URL) throws -> [Instance] {
                             
                             finalInstances.append(decodedInstance)
                         } catch let error as NSError {
+                            print("Failed to create Instance objects from data: \(error)")
                             throw DecodingError.failedToCreateObject
                         }
                         
@@ -82,10 +83,12 @@ func decodeInstancesFromDisk(atCategoryPath: URL) throws -> [Instance] {
                 }
                 
             } catch let error as NSError {
+                print("Failed to access Instance metadata file: \(error)")
                 throw DecodingError.failedToAccessInstanceMetadata
             }
         }
     } catch let error as NSError {
+        print("Failed to access Instances folder: \(error)")
         throw DecodingError.failedToAccessInstancesFolder
     }
     
