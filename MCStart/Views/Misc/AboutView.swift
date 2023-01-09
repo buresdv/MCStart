@@ -14,6 +14,9 @@ struct AboutView: View {
         UsedPackage(name: "SymbolPicker", whyIsItUsed: "Picker for system icons, used for picking icons of categories and instances", packageURL: URL(string: "https://github.com/xnth97/SymbolPicker")!),
         UsedPackage(name: "DSFSearchField", whyIsItUsed: "SwiftUI wrapper for NSSearchField, because I am too lazy to write one myself", packageURL: URL(string: "https://github.com/dagronf/DSFSearchField")!)
     ]
+    @State private var acknowledgedContributors: [AcknowledgedContributor] = [
+        AcknowledgedContributor(name: "Giuliano Soria", reasonForAcknowledgement: "Helped implement Xbox authentication workflow", profileService: "Mastodon", profileURL: URL(string: "https://mstdn.social/@GiulianoSoriaP@mastodon.social")!)
+    ]
     
     var body: some View {
         
@@ -34,35 +37,59 @@ struct AboutView: View {
                     .font(.subheadline)
                     .foregroundColor(.gray)
                 
-                DisclosureGroup {
-                    
-                    List(usedPackages) { package in
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text(package.name)
-                                    .font(.headline)
-                                Text(package.whyIsItUsed)
-                                    .font(.subheadline)
-                            }
-                            
-                            Spacer()
-                            
-                            Button {
-                                NSWorkspace.shared.open(package.packageURL)
-                            } label: {
-                                Text("View")
-                            }
+                VStack {
+                    DisclosureGroup {
+                        
+                        List(usedPackages) { package in
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text(package.name)
+                                        .font(.headline)
+                                    Text(package.whyIsItUsed)
+                                        .font(.subheadline)
+                                }
+                                
+                                Spacer()
+                                
+                                ButtonThatOpensWebsites(websiteURL: package.packageURL, buttonText: "GitHub")
 
+                            }
                         }
+                        .listStyle(.bordered(alternatesRowBackgrounds: true))
+                        .frame(
+                            minWidth: 0,
+                            maxWidth: .infinity,
+                            idealHeight: 100
+                        )
+                    } label: {
+                        Text("Packages Used")
                     }
-                    .listStyle(.bordered(alternatesRowBackgrounds: true))
-                    .frame(
-                        minWidth: 0,
-                        maxWidth: .infinity,
-                        idealHeight: 100
-                    )
-                } label: {
-                    Text("Packages Used")
+                    DisclosureGroup {
+                        
+                        List(acknowledgedContributors) { contributor in
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text(contributor.name)
+                                        .font(.headline)
+                                    Text(contributor.reasonForAcknowledgement)
+                                        .font(.subheadline)
+                                }
+                                
+                                Spacer()
+                                
+                                ButtonThatOpensWebsites(websiteURL: contributor.profileURL, buttonText: contributor.profileService)
+
+                            }
+                        }
+                        .listStyle(.bordered(alternatesRowBackgrounds: true))
+                        .frame(
+                            minWidth: 0,
+                            maxWidth: .infinity,
+                            idealHeight: 100
+                        )
+                    } label: {
+                        Text("Acknowledged Contributors")
+                    }
                 }
                 
                 HStack {

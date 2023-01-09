@@ -8,6 +8,7 @@
 import Foundation
 import AppKit
 import SwiftUI
+import MSAL
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     

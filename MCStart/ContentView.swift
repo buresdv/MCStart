@@ -15,6 +15,9 @@ struct ContentView: View {
     
     @AppStorage("showOnboarding") var showOnboarding: Bool = false
     
+    @AppStorage("MSLoginToken") var MSLoginToken: String = ""
+    @AppStorage("MSAccountIdentifier") var MSAccountIdentifier: String = ""
+    
     var body: some View {
         NavigationView {
             SidebarView(instanceCategories: instanceCategories)
@@ -58,37 +61,61 @@ struct ContentView: View {
             }
             #endif
             
-            /// Microsoft Authentication stuff
-            let MSConfig = MSALPublicClientApplicationConfig(clientId: AppGlobals.clientID)
-            let MSApplication = try? MSALPublicClientApplication(configuration: MSConfig)
-            let MSScopes = ["User.Read"]
-            
-            let MSWebviewParameters = MSALWebviewParameters()
-            
-            let MSInteractiveParameters = MSALInteractiveTokenParameters(scopes: MSScopes, webviewParameters: MSWebviewParameters)
-            MSApplication?.acquireToken(with: MSInteractiveParameters, completionBlock: { (result, error) in
-                guard let MSAuthResult = result, error == nil else {
-                    print("Error while authing: \(error!.localizedDescription)")
-                    if error!.localizedDescription.contains("WebAuthenticationSession") {
-                        print("Already signed in")
-                        
-                        // If the user is already signed in, set the appropriate AppState variable
-                        appState.isSignedInToMicrosoft = true
-                        print(appState.isSignedInToMicrosoft)
-                    }
-                    return
-                }
-                let MSAccessToken = MSAuthResult.accessToken
-                let MSAccountIdentifier = MSAuthResult.account.identifier
+            DispatchQueue.main.async {
+                print("Client ID: \(AppGlobals.clientID)")
+                let MSConfig = MSALPublicClientApplicationConfig(clientId: AppGlobals.clientID)
+                let MSApplication = try? MSALPublicClientApplication(configuration: MSConfig)
+                let MSScopes = ["XboxLive.signin"]
                 
-                print("Token: \(MSAccessToken)")
-                print("Account Identifier: \(MSAccountIdentifier)")
-            })
+                let MSWebviewParameters = MSALWebviewParameters()
+                
+                let MSInteractiveParameters = MSALInteractiveTokenParameters(scopes: MSScopes, webviewParameters: MSWebviewParameters)
+                MSApplication?.acquireToken(with: MSInteractiveParameters, completionBlock: { (result, error) in
+                    guard let MSAuthResult = result, error == nil else {
+                        print("Error while authing: \(error!.localizedDescription)")
+                        print(error)
+                        return
+                    }
+                    let receivedMSAccessToken = MSAuthResult.accessToken
+                    let receivedMSAccountIdentifier = MSAuthResult.account.identifier
+                    print("Scopes: \(MSAuthResult.scopes)")
+                    
+                    if MSLoginToken != receivedMSAccessToken {
+                        MSLoginToken = receivedMSAccessToken
+                    }
+                    if MSAccountIdentifier != receivedMSAccountIdentifier {
+                        MSAccountIdentifier = receivedMSAccountIdentifier!
+                    }
+                    
+                    print("Received Token: \(receivedMSAccessToken)")
+                    print("Received Account Identifier: \(receivedMSAccountIdentifier)")
+                    print("-----")
+                    print("Stored Token: \(MSLoginToken)")
+                    print("Stored Account Identifier: \(MSAccountIdentifier)")
+                })
+                
+                Task {
+                    do {
+                        print("Will use \(MSLoginToken) as token")
+                        print("Identifier: \(MSAccountIdentifier)")
+                        
+                        let result = try await NetworkingManager().sendRequest(endpointURL: "https://user.auth.xboxlive.com/user/authenticate", httpMethod: .post, headers: [HTTPHeader(headerField: "Content-Type", fieldContents: "application/json"), HTTPHeader(headerField: "Accept", fieldContents: "application/json")], requestBody:"{\"Properties\":{\"AuthMethod\":\"RPS\",\"SiteName\":\"user.auth.xboxlive.com\",\"RpsTicket\":\"d=\(MSLoginToken)\"},\"RelyingParty\":\"https:\\/\\/auth.xboxlive.com\",\"TokenType\": \"JWT\"}")
+                        
+                        print("Result of XBox authentication: \(result)")
+                    } catch let error as NSError {
+                        print("Error while authenticating with XBox: \(error)")
+                    }
+                    
+                }
+            }
+            
+            /// Microsoft Authentication stuff
             
             /// End of Micosoft Authentication stuff
         }
         .sheet(isPresented: $showOnboarding) {
             OnboardingView(isShowingSheet: $showOnboarding)
         }
+
     }
 }
