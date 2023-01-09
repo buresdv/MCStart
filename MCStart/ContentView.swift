@@ -11,7 +11,7 @@ import MSAL
 struct ContentView: View {
     
     @StateObject var instanceCategories = InstanceCategories()
-    @StateObject var appState = AppState()
+    @StateObject var appState: AppState
     
     @AppStorage("showOnboarding") var showOnboarding: Bool = false
     
@@ -20,7 +20,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            SidebarView(instanceCategories: instanceCategories)
+            SidebarView(appState: appState, instanceCategories: instanceCategories)
             Text("No Category Selected")
             Text("No Instance Selected")
         }

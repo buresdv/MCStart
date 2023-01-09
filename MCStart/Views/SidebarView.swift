@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct SidebarView: View {
+    
+    @StateObject var appState: AppState
 
     @StateObject var instanceCategories: InstanceCategories
     
     @State private var newCategory: InstanceCategory = InstanceCategory(name: "", iconSymbolName: "", instances: [])
     
     @State private var isDefaultItemActive = true
-    
-    @State private var isShowingAddCategorySheet: Bool = false
     
     @AppStorage("accentColor") var accentColor: Color = .black
     @AppStorage("accentColorAlsoAppliesToCategoryList") var accentColorAlsoAppliesToCategoryList: Bool = false
@@ -24,7 +24,7 @@ struct SidebarView: View {
         List {
             ForEach(instanceCategories.categories) { category in
                 NavigationLink {
-                    InstanceListView(parentCategory: category)
+                    InstanceListView(appState: appState, parentCategory: category)
                 } label: {
                     Label(category.name, systemImage: category.iconSymbolName)
                         .if(accentColorAlsoAppliesToCategoryList, transform: { view in
@@ -59,7 +59,7 @@ struct SidebarView: View {
         VStack(alignment: .leading) {
             Button {
                 
-                isShowingAddCategorySheet.toggle()
+                appState.isShowingAddCategorySheet.toggle()
                 
             } label: {
                 Label("Add Category", systemImage: "plus")
@@ -74,8 +74,8 @@ struct SidebarView: View {
             maxWidth: .infinity,
             alignment: .leading
         )
-        .sheet(isPresented: $isShowingAddCategorySheet) {
-            AddCategorySheet(isShowingAddCategorySheet: $isShowingAddCategorySheet, categoryTracker: instanceCategories, newCategory: $newCategory)
+        .sheet(isPresented: $appState.isShowingAddCategorySheet) {
+            AddCategorySheet(isShowingAddCategorySheet: $appState.isShowingAddCategorySheet, categoryTracker: instanceCategories, newCategory: $newCategory)
         }
     }
 }

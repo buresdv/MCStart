@@ -12,9 +12,11 @@ struct MCStartApp: App {
     
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
+    @StateObject var appState = AppState()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(appState: appState)
         }
         .commands {
             SidebarCommands()
@@ -29,6 +31,24 @@ struct MCStartApp: App {
                 }) {
                     Text("About \(NSApplication.appName!)")
                 }
+            }
+            
+            CommandMenu("Categories") {
+                Button {
+                    appState.isShowingAddCategorySheet.toggle()
+                } label: {
+                    Text("Add Category")
+                }
+                .keyboardShortcut("n", modifiers: [.command, .shift])
+            }
+            
+            CommandMenu("Instances") {
+                Button {
+                    appState.isShowingAddInstanceSheet.toggle()
+                } label: {
+                    Text("Add Instance")
+                }
+                .keyboardShortcut("n")
             }
         }
         

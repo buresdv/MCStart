@@ -15,4 +15,6 @@ class AppState: ObservableObject {
     
     @Published var isSignedInToMicrosoft: Bool = false
     
+    @Published var isShowingAddCategorySheet: Bool = false
+    @Published var isShowingAddInstanceSheet: Bool = false
 }

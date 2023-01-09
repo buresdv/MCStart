@@ -10,6 +10,8 @@ import DSFSearchField
 
 struct InstanceListView: View {
     
+    @StateObject var appState: AppState
+    
     @State var parentCategory: InstanceCategory
     @State var instanceTracker: [Instance] = []
     
@@ -18,8 +20,6 @@ struct InstanceListView: View {
     @FocusState private var isSearchFieldFocused: Bool
     
     @State private var newInstance: Instance = Instance(name: "", version: "", dateCreated: Date(), iconSymbolName: "", modLoader: .vanilla, mods: [], settings: InstanceSettings(javaExecutablePath: "", javaArguments: []))
-    
-    @State var isShowingAddInstanceSheet: Bool = false
     
     @AppStorage("accentColor") var accentColor: Color = .black
     @AppStorage("accentColorAlsoAppliesToActiveButtonState") var accentColorAlsoAppliesToActiveButtonState: Bool = false
@@ -112,7 +112,8 @@ struct InstanceListView: View {
             VStack(alignment: .leading) {
                 Button {
                     
-                    isShowingAddInstanceSheet.toggle()
+                    appState.isShowingAddInstanceSheet.toggle()
+                    
                 } label: {
                     Label("Add Instance", systemImage: "plus")
                         .labelStyle(.iconOnly)
@@ -142,8 +143,8 @@ struct InstanceListView: View {
                 print("Failed while decoding instances in folder: \(error)")
             }
         }
-        .sheet(isPresented: $isShowingAddInstanceSheet) {
-            AddInstanceSheet(isShowingSheet: $isShowingAddInstanceSheet, parentCategory: $parentCategory, newInstance: $newInstance, instanceTracker: $instanceTracker)
+        .sheet(isPresented: $appState.isShowingAddInstanceSheet) {
+            AddInstanceSheet(isShowingSheet: $appState.isShowingAddInstanceSheet, parentCategory: $parentCategory, newInstance: $newInstance, instanceTracker: $instanceTracker)
         }
     }
     
