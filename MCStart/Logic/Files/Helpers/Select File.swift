@@ -13,7 +13,7 @@ enum FilePickerResults: Error {
     case failure
 }
 
-func selectFile(canChooseFiles: Bool, canChooseDirectories: Bool, canChooseMultipleFiles: Bool, title: String? = nil) throws -> URL {
+func selectFile(canChooseFiles: Bool, canChooseDirectories: Bool, canChooseMultipleFiles: Bool, title: String? = nil, fileExtension: [String]? = nil) throws -> URL {
     let panel = NSOpenPanel()
     
     panel.allowsMultipleSelection = canChooseMultipleFiles
@@ -25,6 +25,10 @@ func selectFile(canChooseFiles: Bool, canChooseDirectories: Bool, canChooseMulti
         panel.title = panelTitle
     }
     
+    if let selectedFileTypes = fileExtension {
+        panel.allowedFileTypes = selectedFileTypes
+    }
+
     if panel.runModal() == .OK {
         return panel.url!
     } else {

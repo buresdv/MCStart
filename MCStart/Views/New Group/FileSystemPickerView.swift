@@ -17,7 +17,10 @@ struct FileSystemPickerView: View {
     var body: some View {
         HStack {
             TextField(label, text: $selectedPath)
-            Button {
+            
+            AdjustableLabelButton {
+                Label(pickerButtonLabel, systemImage: "magnifyingglass")
+            } action: {
                 do {
                     var newPath = try selectFile(canChooseFiles: false, canChooseDirectories: true, canChooseMultipleFiles: false, title: "Select Java Installation")
                     
@@ -26,9 +29,6 @@ struct FileSystemPickerView: View {
                 } catch let error as NSError {
                     print(error)
                 }
-            } label: {
-                Label(pickerButtonLabel, systemImage: "magnifyingglass")
-                    .labelStyle(.iconOnly)
             }
 
         }

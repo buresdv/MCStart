@@ -57,6 +57,7 @@ struct SidebarView: View {
         
         Spacer()
         VStack(alignment: .leading) {
+            
             Button {
                 
                 appState.isShowingAddCategorySheet.toggle()

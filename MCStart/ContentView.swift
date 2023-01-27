@@ -65,7 +65,7 @@ struct ContentView: View {
                 print("Client ID: \(AppGlobals.clientID)")
                 let MSConfig = MSALPublicClientApplicationConfig(clientId: AppGlobals.clientID)
                 let MSApplication = try? MSALPublicClientApplication(configuration: MSConfig)
-                let MSScopes = ["XboxLive.signin"]
+                let MSScopes = ["User.Read"]
                 
                 let MSWebviewParameters = MSALWebviewParameters()
                 
@@ -80,13 +80,14 @@ struct ContentView: View {
                     let receivedMSAccountIdentifier = MSAuthResult.account.identifier
                     print("Scopes: \(MSAuthResult.scopes)")
                     
+                    /*
                     if MSLoginToken != receivedMSAccessToken {
                         MSLoginToken = receivedMSAccessToken
                     }
                     if MSAccountIdentifier != receivedMSAccountIdentifier {
                         MSAccountIdentifier = receivedMSAccountIdentifier!
                     }
-                    
+                    */
                     print("Received Token: \(receivedMSAccessToken)")
                     print("Received Account Identifier: \(receivedMSAccountIdentifier)")
                     print("-----")
@@ -94,7 +95,7 @@ struct ContentView: View {
                     print("Stored Account Identifier: \(MSAccountIdentifier)")
                 })
                 
-                Task {
+                /*Task {
                     do {
                         print("Will use \(MSLoginToken) as token")
                         print("Identifier: \(MSAccountIdentifier)")
@@ -106,7 +107,7 @@ struct ContentView: View {
                         print("Error while authenticating with XBox: \(error)")
                     }
                     
-                }
+                }*/
             }
             
             /// Microsoft Authentication stuff

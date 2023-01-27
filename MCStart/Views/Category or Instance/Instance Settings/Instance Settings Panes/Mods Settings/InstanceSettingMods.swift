@@ -135,11 +135,13 @@ struct InstanceSettingMods: View {
                     OpenModsFolderButton(modsFolder: pathToModsFolder)
                         .labelStyle(.titleOnly)
                     
-                    Button {
+                    AdjustableLabelButton {
+                        Label("Install Mods", systemImage: "plus")
+                    } action: {
                         print("Time to add some mods")
                         
                         #warning("TODO: Make it also possible to select more than one mod at a time")
-                        let selectedFile = try? selectFile(canChooseFiles: true, canChooseDirectories: false, canChooseMultipleFiles: false, title: "Select mod file")
+                        let selectedFile = try? selectFile(canChooseFiles: true, canChooseDirectories: false, canChooseMultipleFiles: false, title: "Select mod file", fileExtension: ["jar"])
                         
                         if let selectedFile {
                             copyFile(from: selectedFile, to: pathToModsFolder)
@@ -155,12 +157,9 @@ struct InstanceSettingMods: View {
                                 print("Failed while copying mod to the mods folder: \(error)")
                             }*/
                         }
-                        
-                    } label: {
-                        Label("Install Mods", systemImage: "plus")
-                            .labelStyle(.titleOnly)
                     }
                     .keyboardShortcut(.defaultAction)
+                    
                 }
             }
         }

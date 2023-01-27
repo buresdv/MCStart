@@ -95,10 +95,10 @@ struct AboutView: View {
                 HStack {
                     Spacer()
                     
-                    Button {
+                    AdjustableLabelButton {
+                        Label("Contact Me", systemImage: "paperplane")
+                    } action: {
                         NSWorkspace.shared.open(URL(string: "https://twitter.com/davidbures")!)
-                    } label: {
-                        Text("Contact Me")
                     }
 
                 }

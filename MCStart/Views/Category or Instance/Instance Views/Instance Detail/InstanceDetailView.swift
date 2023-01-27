@@ -72,17 +72,18 @@ struct InstanceDetailView: View {
                 
                 Spacer()
                 
-                HStack {
-                    Button {
+                HStack {                    
+                    AdjustableLabelButton {
+                        Label("Open Instance Folder", systemImage: "folder")
+                    } action: {
                         let pathToParentCategory: URL = AppGlobals.categoriesDirectoryPath.appendingPathComponent(parentCategory.id.uuidString, conformingTo: .directory)
                         let pathToInstance: URL = pathToParentCategory.appendingPathComponent(instance.id.uuidString, conformingTo: .directory)
                         
                         print("Trying to open \(pathToInstance)")
                         
                         openFinder(at: pathToInstance)
-                    } label: {
-                        Text("Open Instance Folder")
                     }
+
                     
                     Spacer()
                     

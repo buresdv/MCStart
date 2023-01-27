@@ -54,6 +54,8 @@
 		63A6328B293E7D19007FD5A0 /* Create Metadata File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6328A293E7D19007FD5A0 /* Create Metadata File.swift */; };
 		63A6328D293E8BA5007FD5A0 /* Add Instance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6328C293E8BA5007FD5A0 /* Add Instance.swift */; };
 		63AA3E1E293FF0CF005C7CDF /* Mod Loaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AA3E1D293FF0CF005C7CDF /* Mod Loaders.swift */; };
+		63C0798F2984774B00582DFB /* AdjustableLabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C0798E2984774B00582DFB /* AdjustableLabelButton.swift */; };
+		63C079912984786000582DFB /* Usable Button Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C079902984786000582DFB /* Usable Button Styles.swift */; };
 		63C29B4E293971CF0083151C /* Delete Instance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C29B4D293971CF0083151C /* Delete Instance.swift */; };
 		63C29B552939758E0083151C /* InstanceListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C29B542939758E0083151C /* InstanceListItemView.swift */; };
 		63C8ED7E293E5EB600394803 /* Get Path to Metadata File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8ED7D293E5EB600394803 /* Get Path to Metadata File.swift */; };
@@ -143,6 +145,8 @@
 		63A6328A293E7D19007FD5A0 /* Create Metadata File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create Metadata File.swift"; sourceTree = "<group>"; };
 		63A6328C293E8BA5007FD5A0 /* Add Instance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add Instance.swift"; sourceTree = "<group>"; };
 		63AA3E1D293FF0CF005C7CDF /* Mod Loaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mod Loaders.swift"; sourceTree = "<group>"; };
+		63C0798E2984774B00582DFB /* AdjustableLabelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustableLabelButton.swift; sourceTree = "<group>"; };
+		63C079902984786000582DFB /* Usable Button Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Usable Button Styles.swift"; sourceTree = "<group>"; };
 		63C29B4D293971CF0083151C /* Delete Instance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Delete Instance.swift"; sourceTree = "<group>"; };
 		63C29B542939758E0083151C /* InstanceListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceListItemView.swift; sourceTree = "<group>"; };
 		63C8ED7D293E5EB600394803 /* Get Path to Metadata File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Get Path to Metadata File.swift"; sourceTree = "<group>"; };
@@ -455,6 +459,15 @@
 			path = "Child Views";
 			sourceTree = "<group>";
 		};
+		63C0798B2984750100582DFB /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				63F0B9712932D3A700317642 /* CloseSheetButton.swift */,
+				63C0798E2984774B00582DFB /* AdjustableLabelButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		63C29B4C293971BE0083151C /* Adding + Removing */ = {
 			isa = PBXGroup;
 			children = (
@@ -502,10 +515,10 @@
 		63F0B94729324CFB00317642 /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
+				63C0798B2984750100582DFB /* Buttons */,
 				63F0B94829324D0C00317642 /* NoticeView.swift */,
 				63F0B9622932BDFE00317642 /* DividerMaintainingGridWidth.swift */,
 				63F0B9672932CE3000317642 /* NicerTextEditor.swift */,
-				63F0B9712932D3A700317642 /* CloseSheetButton.swift */,
 				63F4C0E32935353200BC0328 /* SheetWithHeadline.swift */,
 				63F4C0E829353D4700BC0328 /* IconPicker.swift */,
 				63CED975294E34360011905A /* FileSystemPickerView.swift */,
@@ -632,6 +645,7 @@
 				63AA3E1D293FF0CF005C7CDF /* Mod Loaders.swift */,
 				6364D434295F7E3F00CDEFBB /* HTTP Methods.swift */,
 				6348586829607C3B005B7358 /* Networking Error.swift */,
+				63C079902984786000582DFB /* Usable Button Styles.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -717,6 +731,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				635CF89A293164B700184766 /* InstanceSettingMods.swift in Sources */,
+				63C079912984786000582DFB /* Usable Button Styles.swift in Sources */,
 				635CF88829312AA600184766 /* Instance Category.swift in Sources */,
 				63F4C0D32935047D00BC0328 /* SettingsPaneTemplate.swift in Sources */,
 				6364D435295F7E3F00CDEFBB /* HTTP Methods.swift in Sources */,
@@ -763,6 +778,7 @@
 				635CF89C293164CC00184766 /* InstanceSettingJavaOptions.swift in Sources */,
 				63C29B4E293971CF0083151C /* Delete Instance.swift in Sources */,
 				63F0B94929324D0C00317642 /* NoticeView.swift in Sources */,
+				63C0798F2984774B00582DFB /* AdjustableLabelButton.swift in Sources */,
 				63F0B9572932A90500317642 /* InstanceSettingMinecraftOptions.swift in Sources */,
 				63F0B9632932BDFE00317642 /* DividerMaintainingGridWidth.swift in Sources */,
 				635CF86C293127C300184766 /* MCStartApp.swift in Sources */,

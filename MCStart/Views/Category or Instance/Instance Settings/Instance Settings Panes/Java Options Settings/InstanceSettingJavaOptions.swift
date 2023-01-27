@@ -36,20 +36,17 @@ struct InstanceSettingJavaOptions: View {
                                 
                                 Spacer()
                                 
-                                Button {
-                                    isShowingImportSheet.toggle()
-                                } label: {
+                                AdjustableLabelButton {
                                     Label("Import", systemImage: "square.and.arrow.down")
+                                } action: {
+                                    isShowingImportSheet.toggle()
                                 }
-                                .labelStyle(.titleOnly)
-
                                 
-                                Button {
-                                    isShowingExportSheet.toggle()
-                                } label: {
+                                AdjustableLabelButton {
                                     Label("Export", systemImage: "square.and.arrow.up")
+                                } action: {
+                                    isShowingExportSheet.toggle()
                                 }
-                                .labelStyle(.titleOnly)
 
                             }
                             List {
@@ -72,12 +69,11 @@ struct InstanceSettingJavaOptions: View {
                                             addNewArgument()
                                         }
                                     }
-                                Button {
-                                    addNewArgument()
-                                } label: {
+                                AdjustableLabelButton {
                                     Label("Add Argument", systemImage: "plus")
+                                } action: {
+                                    addNewArgument()
                                 }
-                                .labelStyle(.titleOnly)
 
                             }
                         }

@@ -29,15 +29,15 @@ struct AccountSettingsPage: View {
                 }
                 
                 HStack {
-                    Spacer()
-                    
-                    Button {
-                        print("Hello")
-                    } label: {
+                    Spacer()                    
+
+                    AdjustableLabelButton {
                         Label("Add Account", systemImage: "plus")
-                            .labelStyle(.titleOnly)
+                    } action: {
+                        print("Hello")
                     }
                     .keyboardShortcut(.defaultAction)
+                    
                 }
 
             }

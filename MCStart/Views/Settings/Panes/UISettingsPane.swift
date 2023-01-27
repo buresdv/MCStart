@@ -22,7 +22,7 @@ struct UISettingsPane: View {
     @AppStorage("accentColor") var accentColor: Color = .black
     @AppStorage("accentColorAlsoAppliesToCategoryList") var accentColorAlsoAppliesToCategoryList: Bool = false
     @AppStorage("accentColorAlsoAppliesToActiveButtonState") var accentColorAlsoAppliesToActiveButtonState: Bool = false
-    @AppStorage("buttonStyle") var buttonStyle: ButtonStyle = .textOnly
+    @AppStorage("buttonStyle") var buttonStyle: UsableButtonStyles = .textOnly
     
     var body: some View {
         SettingsPaneTemplate {
@@ -30,8 +30,8 @@ struct UISettingsPane: View {
                 Form {
                     Section { // Button Styles
                         Picker(selection: $buttonStyle) {
-                            Text("Text Only").tag(ButtonStyle.textOnly)
-                            Text("Text and Icon").tag(ButtonStyle.textAndIcon)
+                            Text("Text Only").tag(UsableButtonStyles.textOnly)
+                            Text("Text and Icon").tag(UsableButtonStyles.textAndIcon)
                         } label: {
                             Text("Button Style:")
                         }

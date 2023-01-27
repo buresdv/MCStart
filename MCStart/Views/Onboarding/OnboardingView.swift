@@ -56,13 +56,13 @@ struct OnboardingView: View {
             .frame(width: 350)
             .padding()
             
-            Button {
-                isShowingSheet.toggle()
-            } label: {
+            AdjustableLabelButton {
                 Label("Start Using MCStart", systemImage: "play.fill")
-                    .labelStyle(.titleOnly)
+            } action: {
+                isShowingSheet.toggle()
             }
             .buttonStyle(.borderedProminent)
+            
         }
         .padding()
     }

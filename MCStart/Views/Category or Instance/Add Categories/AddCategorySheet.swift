@@ -46,8 +46,9 @@ struct AddCategorySheet: View {
                     
                     Spacer()
                     
-                    Button {
-                        
+                    AdjustableLabelButton {
+                        Label("Add", systemImage: "plus")
+                    } action: {
                         if newCategory.name == "" {
                             activeAlert = .name
                             
@@ -64,10 +65,6 @@ struct AddCategorySheet: View {
                             
                             newCategory = emptyCategory
                         }
-                        
-                    } label: {
-                        Label("Add", systemImage: "plus")
-                            .labelStyle(.titleOnly)
                     }
                     .keyboardShortcut(.defaultAction)
 

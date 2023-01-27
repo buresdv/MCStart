@@ -71,8 +71,9 @@ struct AddInstanceSheet: View {
                 
                 Spacer()
                 
-                Button {
-                    
+                AdjustableLabelButton {
+                    Label("Add", systemImage: "plus")
+                } action: {
                     if newInstance.name == "" {
                         
                         // Name Empty
@@ -120,12 +121,9 @@ struct AddInstanceSheet: View {
                         
                         newInstance = emptyInstance
                     }
-                    
-                } label: {
-                    Label("Add", systemImage: "plus")
-                        .labelStyle(.titleOnly)
                 }
                 .keyboardShortcut(.defaultAction)
+                
 
             }
             .alert(isPresented: $isShowingAlert) {

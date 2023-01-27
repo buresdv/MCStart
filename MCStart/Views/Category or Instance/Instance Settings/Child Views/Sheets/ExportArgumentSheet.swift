@@ -26,11 +26,10 @@ struct ExportArgumentSheet: View {
             Spacer()
             
             HStack {
-                Button {
-                    copyToClipboard(textToCopy: currentActiveArgumentsJoined)
-                } label: {
+                AdjustableLabelButton {
                     Label("Copy", systemImage: "doc.on.doc")
-                        .labelStyle(.titleOnly)
+                } action: {
+                    copyToClipboard(textToCopy: currentActiveArgumentsJoined)
                 }
                 
                 Spacer()
