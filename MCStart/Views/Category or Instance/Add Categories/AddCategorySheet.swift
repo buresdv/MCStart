@@ -8,71 +8,78 @@
 import SwiftUI
 import SymbolPicker
 
-struct AddCategorySheet: View {
-    
+struct AddCategorySheet: View
+{
     @Binding var isShowingAddCategorySheet: Bool
-    
+
     @ObservedObject var categoryTracker: InstanceCategories
-    
+
     @Binding var newCategory: InstanceCategory
-    
+
     @State private var chosenSymbol: String = "magnifyingglass"
-    
+
     @State private var isShowingSymbolPicker: Bool = false
-    
+
     @State private var isShowingAlert: Bool = false
     @State private var activeAlert: ActiveAlert = .name
-    
-    var emptyCategory: InstanceCategory = InstanceCategory(name: "", iconSymbolName: "", instances: [])
-    
-    var body: some View {
-        
-        SheetWithHeadline(title: "Add Category") {
-            VStack(alignment: .leading, spacing: 20) {
-                Form {
-                    
+
+    var emptyCategory: InstanceCategory = .init(name: "", iconSymbolName: "", instances: [])
+
+    var body: some View
+    {
+        SheetWithHeadline(title: "Add Category")
+        {
+            VStack(alignment: .leading, spacing: 20)
+            {
+                Form
+                {
                     TextField("Category Name:", text: $newCategory.name)
-                    
-                    LabeledContent {
+
+                    LabeledContent
+                    {
                         IconPicker(selectedSymbolName: $chosenSymbol)
                     } label: {
                         Text("Category Icon:")
                     }
-                    
                 }
-                
-                HStack {
+
+                HStack
+                {
                     CloseSheetButton(isShowingSheet: $isShowingAddCategorySheet, customButtonText: "Cancel")
-                    
+
                     Spacer()
-                    
-                    AdjustableLabelButton {
+
+                    AdjustableLabelButton
+                    {
                         Label("Add", systemImage: "plus")
                     } action: {
-                        if newCategory.name == "" {
+                        if newCategory.name == ""
+                        {
                             activeAlert = .name
-                            
+
                             isShowingAlert.toggle()
-                        } else {
-                            
+                        }
+                        else
+                        {
                             newCategory.iconSymbolName = chosenSymbol
-                            
+
                             print("Will append: \(newCategory)")
-                            
+
                             addCategory(newCategory: newCategory, categoryTracker: categoryTracker)
-                            
+
                             isShowingAddCategorySheet.toggle()
-                            
+
                             newCategory = emptyCategory
                         }
                     }
                     .keyboardShortcut(.defaultAction)
-
                 }
             }
         }
-        .alert(isPresented: $isShowingAlert) {
-            switch activeAlert {
+        .alert(isPresented: $isShowingAlert)
+        {
+            switch activeAlert
+            {
             case .name:
                 return Alert(title: Text("Category Name Empty"), message: Text("Please name your category"), dismissButton: .default(Text("Close")))
             case .version:

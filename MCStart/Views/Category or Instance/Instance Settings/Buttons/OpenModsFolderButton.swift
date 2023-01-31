@@ -7,16 +7,17 @@
 
 import SwiftUI
 
-struct OpenModsFolderButton: View {
-    
+struct OpenModsFolderButton: View
+{
     @State var modsFolder: URL
-    
-    var body: some View {
-        Button {
+
+    var body: some View
+    {
+        Button
+        {
             openFinder(at: modsFolder)
         } label: {
             Label("Open Mods Folder", systemImage: "checklist")
         }
     }
 }
-

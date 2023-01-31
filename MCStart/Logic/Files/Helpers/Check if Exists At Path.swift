@@ -7,10 +7,14 @@
 
 import Foundation
 
-func existsAtPath(atPath path: String) -> Bool {
-    if FileManager.default.fileExists(atPath: path) {
+func existsAtPath(atPath path: String) -> Bool
+{
+    if FileManager.default.fileExists(atPath: path)
+    {
         return true
-    } else {
+    }
+    else
+    {
         return false
     }
 }

@@ -7,13 +7,14 @@
 
 import Foundation
 
-struct Mod: Codable, Identifiable {
-    var id: UUID = UUID()
-    
+struct Mod: Codable, Identifiable
+{
+    var id: UUID = .init()
+
     let name: String
     let version: String
-    
+
     let path: URL
-    
+
     var isEnabled: Bool
 }

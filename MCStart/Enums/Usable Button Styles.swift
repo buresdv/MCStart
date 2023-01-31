@@ -7,7 +7,8 @@
 
 import Foundation
 
-enum UsableButtonStyles: Int {
+enum UsableButtonStyles: Int
+{
     case textOnly = 0
     case textAndIcon = 1
 }

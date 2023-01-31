@@ -8,32 +8,37 @@
 import Foundation
 import SwiftUI
 
-func addCategory(newCategory: InstanceCategory, categoryTracker: InstanceCategories) -> Void {
-    
+func addCategory(newCategory: InstanceCategory, categoryTracker: InstanceCategories)
+{
     /// Just show the user a cool animation to it loks instant
-    withAnimation {
+    withAnimation
+    {
         categoryTracker.categories.append(newCategory)
     }
-    
+
     /// Here all the magic begins
-    do {
+    do
+    {
         /// Create a new folder in Application Support with the name of the folder
         let pathToNewCategory: URL = AppGlobals.categoriesDirectoryPath.appendingPathComponent(newCategory.id.uuidString, conformingTo: .directory)
-        
+
         try FileManager.default.createDirectory(at: pathToNewCategory, withIntermediateDirectories: false)
-        
-        do {
+
+        do
+        {
             /// Encode the new category
             let encodedData: Data = try encodeDataForSaving(from: newCategory)
-            
+
             /// Create the metadata file for that new category, and save it to the filesystem
             createMetadataFile(inFolder: pathToNewCategory, encodedData: encodedData)
-            
-        } catch let error as NSError {
+        }
+        catch let error as NSError
+        {
             print("Failed while encoding the new category: \(error)")
         }
-        
-    } catch let error as NSError {
+    }
+    catch let error as NSError
+    {
         print("Failed while creating folder for the new category: \(error)")
     }
 }

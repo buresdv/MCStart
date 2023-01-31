@@ -7,29 +7,35 @@
 
 import SwiftUI
 
-enum ButtonStyle: Identifiable {
-    
+enum ButtonStyle: Identifiable
+{
     case textOnly
     case textAndIcon
-    
+
     var id: Self { self }
 }
 
-struct UISettingsPane: View {
-    
+struct UISettingsPane: View
+{
     #warning("Make this actually work")
-    
+
     @AppStorage("accentColor") var accentColor: Color = .black
     @AppStorage("accentColorAlsoAppliesToCategoryList") var accentColorAlsoAppliesToCategoryList: Bool = false
     @AppStorage("accentColorAlsoAppliesToActiveButtonState") var accentColorAlsoAppliesToActiveButtonState: Bool = false
     @AppStorage("buttonStyle") var buttonStyle: UsableButtonStyles = .textOnly
-    
-    var body: some View {
-        SettingsPaneTemplate {
-            VStack {
-                Form {
-                    Section { // Button Styles
-                        Picker(selection: $buttonStyle) {
+
+    var body: some View
+    {
+        SettingsPaneTemplate
+        {
+            VStack
+            {
+                Form
+                {
+                    Section
+                    { // Button Styles
+                        Picker(selection: $buttonStyle)
+                        {
                             Text("Text Only").tag(UsableButtonStyles.textOnly)
                             Text("Text and Icon").tag(UsableButtonStyles.textAndIcon)
                         } label: {
@@ -37,21 +43,26 @@ struct UISettingsPane: View {
                         }
                         .pickerStyle(.inline)
                     }
-                    
-                    Section { // Accent Colors
-                        ColorPicker(selection: $accentColor) {
+
+                    Section
+                    { // Accent Colors
+                        ColorPicker(selection: $accentColor)
+                        {
                             Text("Accent Color:")
                         }
-                        Picker(selection: $accentColorAlsoAppliesToCategoryList) {
+                        Picker(selection: $accentColorAlsoAppliesToCategoryList)
+                        {
                             Text("Instances Only").tag(false)
                             Text("Instances and Categories").tag(true)
                         } label: {
                             Text("Accent Color Applies To:")
                         }
                         .pickerStyle(.inline)
-                        
-                        LabeledContent {
-                            Toggle(isOn: $accentColorAlsoAppliesToActiveButtonState) {
+
+                        LabeledContent
+                        {
+                            Toggle(isOn: $accentColorAlsoAppliesToActiveButtonState)
+                            {
                                 Text("Active Buttons")
                             }
 
@@ -59,7 +70,6 @@ struct UISettingsPane: View {
                             Text("")
                         }
                         .labelsHidden()
-
                     }
                 }
             }

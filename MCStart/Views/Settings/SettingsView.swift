@@ -7,19 +7,25 @@
 
 import SwiftUI
 
-struct SettingsView: View {
-    var body: some View {
-        TabView {
+struct SettingsView: View
+{
+    var body: some View
+    {
+        TabView
+        {
             UISettingsPane()
-                .tabItem {
+                .tabItem
+                {
                     Label("UI Settings", systemImage: "macwindow")
                 }
             AccountSettingsPage()
-                .tabItem {
+                .tabItem
+                {
                     Label("Accounts", systemImage: "person.crop.circle")
                 }
             OtherSettingsPane()
-                .tabItem {
+                .tabItem
+                {
                     Label("Other", systemImage: "gearshape")
                 }
         }
@@ -27,8 +33,10 @@ struct SettingsView: View {
     }
 }
 
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
+struct SettingsView_Previews: PreviewProvider
+{
+    static var previews: some View
+    {
         SettingsView()
     }
 }

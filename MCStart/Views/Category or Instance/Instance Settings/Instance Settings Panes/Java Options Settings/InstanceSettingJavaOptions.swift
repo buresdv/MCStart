@@ -7,74 +7,91 @@
 
 import SwiftUI
 
-struct InstanceSettingJavaOptions: View {
-    
+struct InstanceSettingJavaOptions: View
+{
     @Binding var settings: InstanceSettings
-    
+
     @State private var newArgument: String = ""
-    
+
     @State private var isShowingImportSheet: Bool = false
     @State private var isShowingExportSheet: Bool = false
-    
+
     @State var massInsertedArguments: String = ""
-    
-    var body: some View {
-        VStack {
-            GroupBox {
-                Grid(alignment: .leading) {
-                    GridRow {
+
+    var body: some View
+    {
+        VStack
+        {
+            GroupBox
+            {
+                Grid(alignment: .leading)
+                {
+                    GridRow
+                    {
                         Text("Java Executable Path")
                         FileSystemPickerView(label: "Java Executable Path", pickerButtonLabel: "Select Java Installation", selectedPath: $settings.javaExecutablePath)
                     }
-                    
+
                     DividerMaintainingGridWidth()
-                    
-                    GridRow {
-                        VStack {
-                            HStack {
+
+                    GridRow
+                    {
+                        VStack
+                        {
+                            HStack
+                            {
                                 Text("Java Arguments")
-                                
+
                                 Spacer()
-                                
-                                AdjustableLabelButton {
+
+                                AdjustableLabelButton
+                                {
                                     Label("Import", systemImage: "square.and.arrow.down")
                                 } action: {
                                     isShowingImportSheet.toggle()
                                 }
-                                
-                                AdjustableLabelButton {
+
+                                AdjustableLabelButton
+                                {
                                     Label("Export", systemImage: "square.and.arrow.up")
                                 } action: {
                                     isShowingExportSheet.toggle()
                                 }
-
                             }
-                            List {
-                                Section("Active Arguments") {
-                                    ForEach(settings.javaArguments, id: \.self) { argument in
+                            List
+                            {
+                                Section("Active Arguments")
+                                {
+                                    ForEach(settings.javaArguments, id: \.self)
+                                    { argument in
                                         Text(argument)
                                     }
                                 }
                             }
                             .listStyle(.inset(alternatesRowBackgrounds: true))
-                            
-                            HStack {
+
+                            HStack
+                            {
                                 TextField("Argument", text: $newArgument)
-                                    .onSubmit {
-                                        if newArgument.starts(with: "-") { // Is the user is trying to add an argument that starts with a dash, remove it before adding it. If this didn't happen, some arguments would have two dashes at the beginning
+                                    .onSubmit
+                                    {
+                                        if newArgument.starts(with: "-")
+                                        { // Is the user is trying to add an argument that starts with a dash, remove it before adding it. If this didn't happen, some arguments would have two dashes at the beginning
                                             newArgument.remove(at: newArgument.startIndex)
-                                            
+
                                             addNewArgument()
-                                        } else {
+                                        }
+                                        else
+                                        {
                                             addNewArgument()
                                         }
                                     }
-                                AdjustableLabelButton {
+                                AdjustableLabelButton
+                                {
                                     Label("Add Argument", systemImage: "plus")
                                 } action: {
                                     addNewArgument()
                                 }
-
                             }
                         }
                         .gridCellColumns(2)
@@ -83,15 +100,19 @@ struct InstanceSettingJavaOptions: View {
             } label: {
                 Text("Java Settings")
             }
-            
-            GroupBox {
-                Grid(alignment: .leading) {
-                    GridRow {
+
+            GroupBox
+            {
+                Grid(alignment: .leading)
+                {
+                    GridRow
+                    {
                         Text("Min Memory")
                         TextField("Min Memory", value: $settings.minMemory, formatter: NumberFormatter())
                     }
-                    
-                    GridRow {
+
+                    GridRow
+                    {
                         Text("Max Memory")
                         TextField("Max Memory", value: $settings.maxMemory, formatter: NumberFormatter())
                     }
@@ -99,38 +120,43 @@ struct InstanceSettingJavaOptions: View {
             } label: {
                 Text("Memory Settings")
             }
-            
+
             Spacer()
         }
         .padding()
-        .sheet(isPresented: $isShowingImportSheet) {
+        .sheet(isPresented: $isShowingImportSheet)
+        {
             ImportArgumentSheet(isShowingSheet: $isShowingImportSheet, massInsertedArguments: $massInsertedArguments)
         }
-        .sheet(isPresented: $isShowingExportSheet) {
+        .sheet(isPresented: $isShowingExportSheet)
+        {
             ExportArgumentSheet(isShowingSheet: $isShowingExportSheet, currentActiveArguments: settings.javaArguments)
         }
-        .onChange(of: massInsertedArguments) { newValue in
-            
+        .onChange(of: massInsertedArguments)
+        { _ in
             var massInsertedArgumentsSeparated: [String] = massInsertedArguments.components(separatedBy: "-")
-            
+
             massInsertedArgumentsSeparated.remove(at: 0)
-            
-            for argument in massInsertedArgumentsSeparated {
+
+            for argument in massInsertedArgumentsSeparated
+            {
                 newArgument = argument
                 addNewArgument()
             }
-            
+
             print(massInsertedArguments)
         }
     }
-    
-    func addNewArgument() -> Void {
+
+    func addNewArgument()
+    {
         let mostRecentArgument = newArgument.trimmingCharacters(in: .whitespacesAndNewlines)
-        
-        withAnimation {
+
+        withAnimation
+        {
             settings.javaArguments.append(mostRecentArgument)
         }
-        
+
         newArgument = ""
     }
 }

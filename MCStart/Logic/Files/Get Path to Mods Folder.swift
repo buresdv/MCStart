@@ -7,6 +7,7 @@
 
 import Foundation
 
-func getPathToModsFolder(categoryUUID: UUID, instanceUUID: UUID) -> URL {
+func getPathToModsFolder(categoryUUID: UUID, instanceUUID: UUID) -> URL
+{
     return AppGlobals.categoriesDirectoryPath.appendingPathComponent(categoryUUID.uuidString, conformingTo: .folder).appendingPathComponent(instanceUUID.uuidString, conformingTo: .folder).appendingPathComponent("mods", conformingTo: .folder)
 }

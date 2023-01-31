@@ -8,42 +8,50 @@
 import SwiftUI
 
 @main
-struct MCStartApp: App {
-    
+struct MCStartApp: App
+{
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    
+
     @StateObject var appState = AppState()
-    
-    var body: some Scene {
-        WindowGroup {
+
+    var body: some Scene
+    {
+        WindowGroup
+        {
             ContentView(appState: appState)
         }
-        .commands {
+        .commands
+        {
             SidebarCommands()
-            
-            CommandGroup(after: .appInfo) {
-                
-            }
-            
-            CommandGroup(replacing: CommandGroupPlacement.appInfo) {
+
+            CommandGroup(after: .appInfo)
+            {}
+
+            CommandGroup(replacing: CommandGroupPlacement.appInfo)
+            {
                 Button(action: {
                     appDelegate.showAboutPanel()
-                }) {
+                })
+                {
                     Text("About \(NSApplication.appName!)")
                 }
             }
-            
-            CommandMenu("Categories") {
-                Button {
+
+            CommandMenu("Categories")
+            {
+                Button
+                {
                     appState.isShowingAddCategorySheet.toggle()
                 } label: {
                     Text("Add Category")
                 }
                 .keyboardShortcut("n", modifiers: [.command, .shift])
             }
-            
-            CommandMenu("Instances") {
-                Button {
+
+            CommandMenu("Instances")
+            {
+                Button
+                {
                     appState.isShowingAddInstanceSheet.toggle()
                 } label: {
                     Text("Add Instance")
@@ -51,8 +59,9 @@ struct MCStartApp: App {
                 .keyboardShortcut("n")
             }
         }
-        
-        Settings {
+
+        Settings
+        {
             SettingsView()
         }
     }

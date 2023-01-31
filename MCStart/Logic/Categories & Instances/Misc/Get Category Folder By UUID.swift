@@ -7,6 +7,7 @@
 
 import Foundation
 
-func getPathToCategoryFolderByUUID(categoryUUID: UUID) -> URL {
+func getPathToCategoryFolderByUUID(categoryUUID: UUID) -> URL
+{
     return AppGlobals.categoriesDirectoryPath.appendingPathComponent(categoryUUID.uuidString, conformingTo: .directory)
 }

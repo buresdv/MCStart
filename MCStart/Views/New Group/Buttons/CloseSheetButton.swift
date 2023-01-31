@@ -7,19 +7,20 @@
 
 import SwiftUI
 
-struct CloseSheetButton: View {
-    
+struct CloseSheetButton: View
+{
     @Binding var isShowingSheet: Bool
-    
+
     @State var customButtonText: String?
-    
-    var body: some View {
-        AdjustableLabelButton {
+
+    var body: some View
+    {
+        AdjustableLabelButton
+        {
             Label(customButtonText ?? "Close", systemImage: "xmark")
         } action: {
             isShowingSheet.toggle()
         }
         .keyboardShortcut(.cancelAction)
-        
     }
 }

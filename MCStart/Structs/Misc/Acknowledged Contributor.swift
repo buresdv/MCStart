@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct AcknowledgedContributor: Identifiable {
-    var id: UUID = UUID()
-    
+struct AcknowledgedContributor: Identifiable
+{
+    var id: UUID = .init()
+
     let name: String
     let reasonForAcknowledgement: String
     let profileService: String

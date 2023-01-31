@@ -8,13 +8,13 @@
 import Foundation
 import SwiftUI
 
-class AppState: ObservableObject {
-    
+class AppState: ObservableObject
+{
     @Published var isShowingInstanceSettings: Bool = false
     @Published var currentlyOpenedSettingsTab: Int = 1
-    
+
     @Published var isSignedInToMicrosoft: Bool = false
-    
+
     @Published var isShowingAddCategorySheet: Bool = false
     @Published var isShowingAddInstanceSheet: Bool = false
 }

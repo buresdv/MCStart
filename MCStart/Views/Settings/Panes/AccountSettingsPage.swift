@@ -7,15 +7,20 @@
 
 import SwiftUI
 
-struct AccountSettingsPage: View {
-    
-    @State var demoAccount: MicrosoftAccount = MicrosoftAccount(username: "lFenix")
-    
-    var body: some View {
-        SettingsPaneTemplate {
-            VStack {
-                VStack(alignment: .center) {
-                    AsyncImage(url: URL(string: "https://crafatar.com/avatars/69dddb94-8ce5-405e-b8bb-29f237cc658e")) { image in
+struct AccountSettingsPage: View
+{
+    @State var demoAccount: MicrosoftAccount = .init(username: "lFenix")
+
+    var body: some View
+    {
+        SettingsPaneTemplate
+        {
+            VStack
+            {
+                VStack(alignment: .center)
+                {
+                    AsyncImage(url: URL(string: "https://crafatar.com/avatars/69dddb94-8ce5-405e-b8bb-29f237cc658e"))
+                    { image in
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fill)
@@ -27,19 +32,19 @@ struct AccountSettingsPage: View {
                     Text(demoAccount.username)
                         .font(.headline)
                 }
-                
-                HStack {
-                    Spacer()                    
 
-                    AdjustableLabelButton {
+                HStack
+                {
+                    Spacer()
+
+                    AdjustableLabelButton
+                    {
                         Label("Add Account", systemImage: "plus")
                     } action: {
                         print("Hello")
                     }
                     .keyboardShortcut(.defaultAction)
-                    
                 }
-
             }
         }
     }

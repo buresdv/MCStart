@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct UsedPackage: Identifiable {
-    var id: UUID = UUID()
-    
+struct UsedPackage: Identifiable
+{
+    var id: UUID = .init()
+
     let name: String
     let whyIsItUsed: String
     let packageURL: URL

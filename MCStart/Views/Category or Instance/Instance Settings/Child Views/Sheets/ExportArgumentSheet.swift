@@ -7,33 +7,38 @@
 
 import SwiftUI
 
-struct ExportArgumentSheet: View {
-    
+struct ExportArgumentSheet: View
+{
     @Binding var isShowingSheet: Bool
-    
+
     @State var currentActiveArguments: [String]
     @State private var currentActiveArgumentsJoined: String = ""
-    
-    var body: some View {
-        VStack(alignment: .leading) {
+
+    var body: some View
+    {
+        VStack(alignment: .leading)
+        {
             Text("Copy the arguments")
             NicerTextEditor(text: $currentActiveArgumentsJoined)
-                .onAppear {
+                .onAppear
+                {
                     currentActiveArgumentsJoined = currentActiveArguments.joined(separator: " -")
                     currentActiveArgumentsJoined = "-\(currentActiveArgumentsJoined)"
                 }
-            
+
             Spacer()
-            
-            HStack {
-                AdjustableLabelButton {
+
+            HStack
+            {
+                AdjustableLabelButton
+                {
                     Label("Copy", systemImage: "doc.on.doc")
                 } action: {
                     copyToClipboard(textToCopy: currentActiveArgumentsJoined)
                 }
-                
+
                 Spacer()
-                
+
                 CloseSheetButton(isShowingSheet: $isShowingSheet)
             }
         }

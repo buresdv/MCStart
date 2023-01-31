@@ -8,23 +8,25 @@
 import SwiftUI
 import SymbolPicker
 
-struct IconPicker: View {
-    
+struct IconPicker: View
+{
     @Binding var selectedSymbolName: String
-    
+
     @State private var isShowingSymbolPicker: Bool = false
-    
-    var body: some View {
-        Button {
+
+    var body: some View
+    {
+        Button
+        {
             print("Tapped")
             isShowingSymbolPicker.toggle()
         } label: {
             Label("Pick Icon", systemImage: selectedSymbolName)
                 .labelStyle(.iconOnly)
         }
-        .popover(isPresented: $isShowingSymbolPicker) {
+        .popover(isPresented: $isShowingSymbolPicker)
+        {
             SymbolPicker(symbol: $selectedSymbolName)
         }
     }
 }
-

@@ -7,6 +7,7 @@
 
 import Foundation
 
-enum ActiveAlert {
+enum ActiveAlert
+{
     case name, version, memory
 }

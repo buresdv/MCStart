@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct MicrosoftAccount: Codable, Identifiable {
-    var id: UUID = UUID()
-    
+struct MicrosoftAccount: Codable, Identifiable
+{
+    var id: UUID = .init()
+
     let username: String
 }

@@ -7,16 +7,18 @@
 
 import Foundation
 
-func copyFile(from originalPath: URL, to targetPath: URL) -> Void {
-    
+func copyFile(from originalPath: URL, to targetPath: URL)
+{
     let fileName: String = originalPath.lastPathComponent
-    
-    do {
+
+    do
+    {
         try FileManager.default.copyItem(at: originalPath, to: targetPath.appendingPathComponent(fileName, conformingTo: .archive))
-    } catch let error as NSError {
+    }
+    catch let error as NSError
+    {
         print("Failed while copying file: \(error)")
     }
-    
+
     print(fileName)
-    
 }

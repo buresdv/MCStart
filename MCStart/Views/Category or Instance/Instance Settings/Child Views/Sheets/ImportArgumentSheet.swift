@@ -7,20 +7,23 @@
 
 import SwiftUI
 
-struct ImportArgumentSheet: View {
-    
+struct ImportArgumentSheet: View
+{
     @Binding var isShowingSheet: Bool
-    
+
     @Binding var massInsertedArguments: String
-    
-    var body: some View {
-        VStack(alignment: .leading) {
+
+    var body: some View
+    {
+        VStack(alignment: .leading)
+        {
             Text("Paste the arguments below")
             NicerTextEditor(text: $massInsertedArguments)
-            
-            HStack {
+
+            HStack
+            {
                 Spacer()
-                
+
                 CloseSheetButton(isShowingSheet: $isShowingSheet)
             }
         }

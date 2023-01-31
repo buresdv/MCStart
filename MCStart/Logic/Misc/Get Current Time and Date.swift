@@ -9,8 +9,7 @@ import Foundation
 
 #warning("Make this actually do something")
 
-func getCurrentTimeAndDate() -> Date {
-    
+func getCurrentTimeAndDate() -> Date
+{
     return Date()
-    
 }

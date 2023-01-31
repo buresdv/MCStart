@@ -7,30 +7,34 @@
 
 import SwiftUI
 
-struct FileSystemPickerView: View {
-    
+struct FileSystemPickerView: View
+{
     @State var label: String
     @State var pickerButtonLabel: String
-    
+
     @Binding var selectedPath: String
-    
-    var body: some View {
-        HStack {
+
+    var body: some View
+    {
+        HStack
+        {
             TextField(label, text: $selectedPath)
-            
-            AdjustableLabelButton {
+
+            AdjustableLabelButton
+            {
                 Label(pickerButtonLabel, systemImage: "magnifyingglass")
             } action: {
-                do {
+                do
+                {
                     var newPath = try selectFile(canChooseFiles: false, canChooseDirectories: true, canChooseMultipleFiles: false, title: "Select Java Installation")
-                    
+
                     selectedPath = newPath.path
-                    
-                } catch let error as NSError {
+                }
+                catch let error as NSError
+                {
                     print(error)
                 }
             }
-
         }
     }
 }

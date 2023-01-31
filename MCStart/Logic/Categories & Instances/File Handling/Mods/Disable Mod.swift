@@ -7,14 +7,16 @@
 
 import Foundation
 
-func disableMod(mod: Mod) -> Void {
-    
+func disableMod(mod: Mod)
+{
     let modPathWithoutExtension: URL = mod.path.deletingPathExtension()
-    
-    do {
+
+    do
+    {
         try FileManager.default.moveItem(at: modPathWithoutExtension.appendingPathExtension("jar"), to: modPathWithoutExtension.appendingPathExtension("disabled"))
-    } catch let error as NSError {
+    }
+    catch let error as NSError
+    {
         print("Failed while moving mod: \(error)")
     }
-    
 }

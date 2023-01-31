@@ -5,9 +5,10 @@
 //  Created by David Bureš on 25.11.2022.
 //
 
-import Foundation
 import AppKit
+import Foundation
 
-func toggleSidebar() -> Void {
+func toggleSidebar()
+{
     NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
 }

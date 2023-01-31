@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct HTTPHeader {
+struct HTTPHeader
+{
     let headerField: String
     let fieldContents: String
 }

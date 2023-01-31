@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-func initializeUserDefaults() -> Void {
+func initializeUserDefaults()
+{
     let userDefaults = UserDefaults.standard
-    
 }

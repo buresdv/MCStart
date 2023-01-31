@@ -7,22 +7,26 @@
 
 import SwiftUI
 
-enum NoticeTypes: String {
+enum NoticeTypes: String
+{
     case notice = "eyeglasses"
     case warning = "questionmark.diamond"
     case tip = "lightbulb"
     case error = "exclamationmark.triangle"
 }
 
-struct NoticeView: View {
-    
+struct NoticeView: View
+{
     @State var noticeType: NoticeTypes
     @State var noticeText: String
     @State var isFullscreen: Bool
-    
-    var body: some View {
-        VStack {
-            VStack(spacing: 20) {
+
+    var body: some View
+    {
+        VStack
+        {
+            VStack(spacing: 20)
+            {
                 Image(systemName: noticeType.rawValue)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -30,7 +34,6 @@ struct NoticeView: View {
                 Text(noticeText)
                     .font(.title)
                     .multilineTextAlignment(.center)
-                    
             }
             .foregroundColor(Color(nsColor: NSColor.lightGray))
         }

@@ -7,6 +7,7 @@
 
 import Foundation
 
-enum HTTPMethods {
+enum HTTPMethods
+{
     case post, get, none
 }

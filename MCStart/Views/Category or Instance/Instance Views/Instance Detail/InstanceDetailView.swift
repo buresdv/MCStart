@@ -7,48 +7,54 @@
 
 import SwiftUI
 
-struct InstanceDetailView: View {
-    
+struct InstanceDetailView: View
+{
     @State var parentCategory: InstanceCategory
     @State var instance: Instance
-    
+
     @EnvironmentObject var appState: AppState
-    
+
     @AppStorage("accentColor") var accentColor: Color = .black
     @AppStorage("accentColorAlsoAppliesToActiveButtonState") var accentColorAlsoAppliesToActiveButtonState: Bool = false
-    
+
     @State var availableMods: [Mod] = []
-    
-    var body: some View {
-        
+
+    var body: some View
+    {
         let pathToModsFolder: URL = getPathToModsFolder(categoryUUID: parentCategory.id, instanceUUID: instance.id)
-        
-        HSplitView {
-            VStack(alignment: .leading) {
-                
-                HStack(alignment: .center) {
-                    
+
+        HSplitView
+        {
+            VStack(alignment: .leading)
+            {
+                HStack(alignment: .center)
+                {
                     Image(systemName: instance.iconSymbolName)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(height: 40)
                         .foregroundStyle(accentColor)
-                    
-                    EditableLabel($instance.name) {
+
+                    EditableLabel($instance.name)
+                    {
                         print("New Name: \(instance.name)")
                     }
                     .font(.title)
                 }
-                //.border(.blue)
-                
-                GroupBox {
-                    Grid(alignment: .leading) {
-                        GridRow {
+                // .border(.blue)
+
+                GroupBox
+                {
+                    Grid(alignment: .leading)
+                    {
+                        GridRow
+                        {
                             Text("Version")
                             Text(instance.version)
                         }
                         DividerMaintainingGridWidth()
-                        GridRow {
+                        GridRow
+                        {
                             Text("Mod Loader")
                             Text(instance.modLoader.rawValue)
                         }
@@ -57,9 +63,12 @@ struct InstanceDetailView: View {
                     Text("Version Information")
                 }
 
-                GroupBox {
-                    Grid(alignment: .leading) {
-                        GridRow {
+                GroupBox
+                {
+                    Grid(alignment: .leading)
+                    {
+                        GridRow
+                        {
                             Text("Created")
                             Text(instance.convertDateToPresentableFormat(date: instance.dateCreated))
                         }
@@ -69,25 +78,23 @@ struct InstanceDetailView: View {
                     Text("Statistics")
                 }
 
-                
                 Spacer()
-                
-                HStack {                    
-                    AdjustableLabelButton {
+
+                HStack
+                {
+                    AdjustableLabelButton
+                    {
                         Label("Open Instance Folder", systemImage: "folder")
                     } action: {
                         let pathToParentCategory: URL = AppGlobals.categoriesDirectoryPath.appendingPathComponent(parentCategory.id.uuidString, conformingTo: .directory)
                         let pathToInstance: URL = pathToParentCategory.appendingPathComponent(instance.id.uuidString, conformingTo: .directory)
-                        
+
                         print("Trying to open \(pathToInstance)")
-                        
+
                         openFinder(at: pathToInstance)
                     }
 
-                    
                     Spacer()
-                    
-                    
                 }
             }
             .padding()
@@ -98,22 +105,26 @@ struct InstanceDetailView: View {
                 maxHeight: .infinity,
                 alignment: .leading
             )
-            
-            if appState.isShowingInstanceSettings {
-                
-                TabView(selection: $appState.currentlyOpenedSettingsTab) {
+
+            if appState.isShowingInstanceSettings
+            {
+                TabView(selection: $appState.currentlyOpenedSettingsTab)
+                {
                     InstanceSettingMinecraftOptions()
-                        .tabItem {
+                        .tabItem
+                        {
                             Label("Minecraft", systemImage: "cube")
                         }
                         .tag(1)
                     InstanceSettingMods(parentCategory: parentCategory, instance: $instance, availableMods: availableMods)
-                        .tabItem {
+                        .tabItem
+                        {
                             Label("Mods", systemImage: "checklist")
                         }
                         .tag(2)
                     InstanceSettingJavaOptions(settings: $instance.settings)
-                        .tabItem {
+                        .tabItem
+                        {
                             Label("Java Options", systemImage: "memorychip")
                         }
                         .tag(3)
@@ -126,29 +137,30 @@ struct InstanceDetailView: View {
                     maxHeight: .infinity,
                     alignment: .leading
                 )
-                //Remember which tab was opened when switching between instances
-                .onChange(of: appState.currentlyOpenedSettingsTab) { newValue in
+                // Remember which tab was opened when switching between instances
+                .onChange(of: appState.currentlyOpenedSettingsTab)
+                { newValue in
                     appState.currentlyOpenedSettingsTab = newValue
                 }
-                
             }
         }
-        .onAppear {
+        .onAppear
+        {
             // Initialize mod view
             let contentsOfModsFolder = try! getContentsOfFolder(at: pathToModsFolder, returns: .files)
-            
-            for pathToMod in contentsOfModsFolder {
+
+            for pathToMod in contentsOfModsFolder
+            {
                 let fixedPathToMod = pathToMod.path
-                
-                if fixedPathToMod.hasSuffix("jar") {
-                    
+
+                if fixedPathToMod.hasSuffix("jar")
+                {
                     availableMods.append(Mod(name: pathToMod.lastPathComponent, version: "1234", path: pathToMod, isEnabled: true))
-                    
-                } else {
-                    
+                }
+                else
+                {
                     availableMods.append(Mod(name: pathToMod.lastPathComponent, version: "4321", path: pathToMod, isEnabled: false))
                 }
-                
             }
         }
         .frame(
@@ -158,24 +170,32 @@ struct InstanceDetailView: View {
             maxHeight: .infinity,
             alignment: .leading
         )
-        .toolbar {
-            ToolbarItemGroup(placement: .automatic) {
-                Button {
+        .toolbar
+        {
+            ToolbarItemGroup(placement: .automatic)
+            {
+                Button
+                {
                     appState.isShowingInstanceSettings.toggle()
                 } label: {
-                    if appState.isShowingInstanceSettings {
+                    if appState.isShowingInstanceSettings
+                    {
                         Label("Instance Settings", systemImage: "gearshape.fill")
-                            .if(accentColorAlsoAppliesToActiveButtonState) { view in
+                            .if(accentColorAlsoAppliesToActiveButtonState)
+                            { view in
                                 view.foregroundColor(accentColor)
                             }
-                    } else {
+                    }
+                    else
+                    {
                         Label("Instance Settings", systemImage: "gearshape")
                     }
                 }
-                
+
                 Spacer()
-                
-                Button {
+
+                Button
+                {
                     print("Started")
                 } label: {
                     Label("Start", systemImage: "play.fill")

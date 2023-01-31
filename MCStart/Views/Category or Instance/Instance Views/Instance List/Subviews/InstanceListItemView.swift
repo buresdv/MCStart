@@ -7,18 +7,21 @@
 
 import SwiftUI
 
-struct InstanceListItemView: View {
-    
+struct InstanceListItemView: View
+{
     @State var instance: Instance
-    
+
     @AppStorage("accentColor") var accentColor: Color = .black
-    
-    var body: some View {
-        HStack(alignment: .firstTextBaseline) {
+
+    var body: some View
+    {
+        HStack(alignment: .firstTextBaseline)
+        {
             Image(systemName: instance.iconSymbolName)
                 .foregroundStyle(accentColor)
-            
-            VStack(alignment: .leading) {
+
+            VStack(alignment: .leading)
+            {
                 Text(instance.name)
                 Text("\(instance.version) (\(instance.modLoader.rawValue))")
                     .font(.subheadline)

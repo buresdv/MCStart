@@ -5,15 +5,18 @@
 //  Created by David Bureš on 30.12.2022.
 //
 
-import Foundation
 import AppKit
+import Foundation
 
-extension NSApplication {
-    static var appVersion: String? {
+extension NSApplication
+{
+    static var appVersion: String?
+    {
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
     }
-    
-    static var buildVersion: String? {
+
+    static var buildVersion: String?
+    {
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String
     }
 }

@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct SettingsPaneTemplate<Content: View>: View {
-    
+struct SettingsPaneTemplate<Content: View>: View
+{
     // Pass whatever gets panned into this view into the variable "paneContent"
     @ViewBuilder var paneContent: Content
-    
-    var body: some View {
+
+    var body: some View
+    {
         paneContent
             .padding()
     }

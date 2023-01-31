@@ -7,32 +7,39 @@
 
 import Foundation
 
-enum EncodingError: Error {
+enum EncodingError: Error
+{
     case failedToEncodeToJSON
     case failedToEncodeToData
 }
 
 /// This function returns the JSON- and base64-encoded data ready to be saved to disk
 /// It accepts any Codable type, so, for my purposes, Categories and Instances
-func encodeDataForSaving(from originalData: some Codable) throws -> Data {
-    var encodedData: Data? = nil
-    
+func encodeDataForSaving(from originalData: some Codable) throws -> Data
+{
+    var encodedData: Data?
+
     let encoder = JSONEncoder()
-    
-    do {
+
+    do
+    {
         encodedData = try encoder.encode(originalData)
-        
-        do {
+
+        do
+        {
             encodedData = encodedData?.base64EncodedData()
-        } catch let error as NSError {
+        }
+        catch let error as NSError
+        {
             print("Error while encoding to Data type: \(error)")
             throw EncodingError.failedToEncodeToData
         }
-        
-    } catch let error as NSError {
+    }
+    catch let error as NSError
+    {
         print("Error while encoding to JSON: \(error)")
         throw EncodingError.failedToEncodeToJSON
     }
-    
+
     return encodedData!
 }

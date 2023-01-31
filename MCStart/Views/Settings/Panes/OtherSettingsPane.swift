@@ -7,14 +7,18 @@
 
 import SwiftUI
 
-struct OtherSettingsPane: View {
-    
+struct OtherSettingsPane: View
+{
     @AppStorage("showOnboarding") var showOnboarding: Bool = false
-    
-    var body: some View {
-        SettingsPaneTemplate {
-            VStack {
-                Toggle(isOn: $showOnboarding) {
+
+    var body: some View
+    {
+        SettingsPaneTemplate
+        {
+            VStack
+            {
+                Toggle(isOn: $showOnboarding)
+                {
                     Text("Show Onboarding Sheet")
                 }
                 Text("this is another super long text just so I can switch the damn tab")

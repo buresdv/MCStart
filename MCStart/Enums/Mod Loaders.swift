@@ -7,7 +7,8 @@
 
 import Foundation
 
-enum ModLoaders: String, Codable, Hashable, CaseIterable {
+enum ModLoaders: String, Codable, Hashable, CaseIterable
+{
     case vanilla = "Vanilla"
     case fabric = "Fabric"
     case forge = "Forge"

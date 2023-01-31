@@ -7,14 +7,15 @@
 
 import SwiftUI
 
-struct OnboardingPicture: View {
-    
+struct OnboardingPicture: View
+{
     @State var systemName: String
     @State var accentColor: Color
-    
+
     private let pictureSize: CGFloat = 35
-    
-    var body: some View {
+
+    var body: some View
+    {
         Image(systemName: systemName)
             .resizable()
             .foregroundStyle(accentColor)

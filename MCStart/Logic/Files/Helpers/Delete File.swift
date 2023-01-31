@@ -7,10 +7,14 @@
 
 import Foundation
 
-func deleteFile(at url: URL) -> Void {
-    do {
+func deleteFile(at url: URL)
+{
+    do
+    {
         try FileManager.default.removeItem(at: url)
-    } catch let error as NSError {
+    }
+    catch let error as NSError
+    {
         print("Failed while deleting file: \(error)")
     }
 }
